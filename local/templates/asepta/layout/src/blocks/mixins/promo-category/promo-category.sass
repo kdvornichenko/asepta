@@ -1,0 +1,120 @@
+.promo-blocks-list
+    width: 100%
+    @extend .u-flex-col
+    +yo('gap', ($mob-sm: 80px, $desktop-md: 200px))
+    
+.promo-category
+    width: 100%
+    max-width: 1036px
+    margin: 0 auto
+
+    &--reverse
+        .promo-category__body
+            flex-direction: row-reverse
+            .promo-category__body-column 
+                & > .btn
+                    margin-left: 0
+                    margin-right: auto
+
+.promo-category__title
+    text-align: center
+
+    & p
+        margin: 0 auto
+        +yo('margin-top', ($mob-sm: 16px, $desktop-md: 32px))
+        +yo('font-size', ($mob-sm: 20px, $desktop-md: 28px))
+        font-weight: 600
+        line-height: normal
+
+.promo-category__body
+    +yo('margin-top', ($mob-sm: 40px, $desktop-md: 100px))
+    display: flex
+    +yo('gap', ($mob-sm: 12px, $desktop-md: 100px))
+
+    @media (max-width: $tab-sm)
+        gap: 12px
+
+    .product-card
+        aspect-ratio: 468 / 572
+        width: 100%
+        height: auto
+
+        @media (max-width: $tab-sm)
+            aspect-ratio: 166 / 251
+
+        @media (max-width: $mob)
+            .product-card__info
+                & p
+                    &:first-child
+                        font-size: 10px
+                    &:last-child
+                        font-size: 12px
+            .btn
+                right: 10px
+                bottom: 10px
+                width: 22px
+                height: 22px
+
+                & svg
+                    width: 15px
+                    height: 15px
+                        
+
+
+.promo-category__body-column 
+    width: 50%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    @media (max-width: $tab-sm)
+        width: calc(50% - 6px)
+
+    & > p
+        @extend .t-body
+        color: rgba($bold, .36)
+        +yo('margin-bottom', ($mob-sm: 0px, $desktop-md: 116px))
+        @media (max-width: $tab-sm)
+            display: none
+
+    & > .btn
+        +yo('margin-top', ($mob-sm: 0px, $desktop-md: 116px))
+        margin-left: auto
+        padding: 14px 58px
+        @media (max-width: $tab-sm)
+            display: none
+            
+
+.promo-category__body-products
+    @media (max-width: $mob)
+        display: grid
+        grid-template-columns: 100%
+        grid-auto-rows: 1fr
+        height: 100%
+
+        .promo-item
+            .product-card
+                height: 100%
+
+
+    .promo-item
+        &:not(:first-child)
+            margin-top: 84px
+            @media (max-width: $tab-sm)
+                margin-top: 16px
+
+.promo-category__text-mobile 
+    margin-top: 16px
+
+    @media (min-width: $tab-sm + 1)
+        display: none
+
+    & p
+        @extend .t-body
+        color: rgba($bold, .36)
+
+
+.promo-page__btn
+    @extend .product-detail-page__btn
+
+    @media (min-width: $tab-sm)
+        display: none

@@ -1,0 +1,30 @@
+-
+    const filters = [
+        {
+            name: 'Все советы',
+            checked: true,
+        },
+        {
+            name: 'Здоровье дёсен',
+        },
+        {
+            name: 'Здоровье зубов',
+        },
+        {
+            name: 'Гигиена полости рта',
+        },
+        {
+            name: 'Детям',
+        },
+        {
+            name: 'Больше о&nbsp;продукции',
+        },
+    ]
+
+.articles__top
+    +crumbs(['Главная', 'Узнать больше', 'Советы эксперта'])
+    h1 Советы эксперта
+
+    +search.articles__search
+    .articles__filters
+        +filters(filters)

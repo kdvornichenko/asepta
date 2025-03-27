@@ -1,0 +1,19 @@
+.login-body.container
+    h1 Вход
+    +register-banner({
+        title: 'Вход в личный кабинет',
+        subtitle: 'Врачам',
+        quest: 'Еще нет личного кабинета?',
+        textBtn: 'Зарегистрироваться'
+    })
+    form(data-form="login").login-body__form 
+        fieldset.login-body__form-item
+            .form__input-wrapper
+                input(type="email" placeholder="E-mail").form__input.validate
+            .form__input-wrapper
+                input(type="password" placeholder="Пароль").form__input.validate
+            a(href="#") Восстановить пароль
+        +btn({
+            text: 'Войти'
+        })(type="submit" data-submit).btn--fill
+        p Нажимая кнопку, я даю согласие на обработку и передачу моих <a href="#">персональных данных</a>.

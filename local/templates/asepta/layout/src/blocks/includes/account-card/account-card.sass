@@ -1,0 +1,82 @@
+.account-card
+    +yo('margin-top', ($mob-sm: 40px, $desktop-md: 80px))
+    display: flex
+    width: 584px
+    @media (max-width: $tab-sm)
+        width: 100%
+.account-card__inner
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    +yo('gap', ($mob-sm: 20px, $desktop-md: 32px))
+    background: $grey-2
+    +yo('border-radius', ($mob-sm: 28px, $desktop-md: 44px))
+    +yo('padding', ($mob-sm: 16px, $desktop-md: 40px))
+    width: 100%
+    @media (max-width: $mob)
+        padding-left: 16px
+        padding-right: 16px
+
+.account-card__part
+    font-size: 16px
+    font-weight: 500
+    display: flex
+    gap: 12px
+    align-items: flex-start
+    h3
+        color: $bold
+        font-variant-numeric: lining-nums proportional-nums
+        font-feature-settings: 'ss05' on, 'ss20' on
+        +vela(b)
+        +yo('font-size', ($mob-sm: 28px, $desktop-md: 30px))
+        line-height: 1.2
+        margin-bottom: 12px
+    svg
+        width: 24px
+        height: 24px
+    span
+        display: block
+        color: rgba($bold, .36)
+        margin-bottom: 12px
+
+    p
+        color: $bold
+        font-feature-settings: 'salt' on, 'ss20' on
+        +vela(m)
+        font-size: 16px
+        line-height: 1.5
+    a
+        color: $bold
+        font-feature-settings: 'salt' on, 'ss20' on
+        +vela(m)
+        font-size: 16px
+        line-height: 1.5
+        text-decoration-line: underline
+        text-decoration-style: solid
+        text-decoration-skip-ink: none
+        text-decoration-thickness: auto
+        text-underline-offset: auto
+        text-underline-position: from-font
+        margin-top: 8px
+
+.account-card__content
+    display: flex
+    flex-direction: column
+    gap: 32px
+
+.account-card__btn
+    display: flex
+    padding: 14px 32px
+    justify-content: center
+    align-items: center
+    gap: 12px
+    align-self: stretch
+    border-radius: 100px
+    background: rgba(255, 255, 255, 0.95)
+    span
+        color: $dark-blue
+        text-align: center
+        font-feature-settings: 'salt' on, 'ss20' on
+        +vela(m)
+        font-size: 20px
+        line-height: 1.4

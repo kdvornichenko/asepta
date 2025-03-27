@@ -1,0 +1,57 @@
+.article-preview
+    position: relative
+    width: 100%
+    height: 100%
+    +yo('padding', ($mob-sm: 16px, $desktop-md: 28px))
+    +yo('border-radius', ($mob-sm: 32px, $desktop-md: 44px))
+    overflow: hidden
+    display: flex
+    align-items: flex-end
+    @media (max-width: $mob)
+        padding-bottom: 18px
+
+    > p
+        +yo('font-size', ($mob-sm: 24px, $desktop-md: 28px))
+        font-weight: 600
+        line-height: normal
+        color: $white
+
+    img
+        @extend .img__i
+        z-index: -1
+
+    &:hover
+        .article-preview__lock
+            display: flex
+
+.article-preview__lock
+    position: absolute
+    +yo('top', ($mob-sm: 16px, $desktop-md: 28px))
+    +yo('left', ($mob-sm: 16px, $desktop-md: 28px))
+    padding: 8px
+    padding-right: 16px
+    display: none
+    align-items: center
+    gap: 8px
+    background: $white
+    border-radius: 1999px
+    max-width: calc(100% - 56px)
+    @media (max-width: $tab)
+        display: flex
+    @media (max-width: $mob)
+        width: calc(100% - 32px)
+        max-width: 100%
+    p
+        @extend .t-body
+
+.article-preview__lock-icon
+    width: 40px
+    min-width: 40px
+    aspect-ratio: 1
+    background: $grey-2
+    border-radius: 50%
+    @extend .u-center
+
+    svg
+        width: 24px
+        height: 24px

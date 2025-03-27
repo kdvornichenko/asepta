@@ -1,0 +1,11 @@
+mixin big-link(data)
+    a(href="#").big-link
+        p !{ data.title }
+        +picture({
+            src: `${data.image}.jpg`,
+            srcWebp: `${data.image}.webp`
+        })
+        .big-link__icon 
+            +btn({
+                icon: 'arrow-up-right'
+            }).btn--icon.btn--icon-big

@@ -1,0 +1,50 @@
+include ../templates/mixins.pug
+
+-
+    const nav = [
+        {title: 'Категории', list: ['Зубные пасты','Бальзамы и&nbsp;гели','Ополаскиватели','Для детей','Для фиксации зубных протезов','Новинки']},
+        {title: 'Назначения', list: ['От воспаления и кровоточивости','Комплексный уход','Против повышенной чувствительности','Укрепление эмали и отбеливание']},
+    ]
+
++modal('menu', 'top')
+    .modal-menu
+        button.modal-menu__close(data-modal-close="menu")
+            +svg('cross')
+        .modal-menu__nav
+            each item in nav
+                .modal-menu__list
+                    .modal-menu__title !{item.title}
+                    ul
+                        each listItem in item.list
+                            li: a(href="#") !{listItem}
+            a(href="#").modal-menu__nav-btn Смотреть все
+
+        .modal-menu__categories
+            .modal-menu__title Узнайте больше о&nbsp;категориях нашей продукции
+            .modal-menu__cards.modal-menu__cards--3
+                each text, index in ['Для здоровья дёсен','Для детей','Для защиты эмали']
+                    a(href="#").modal-menu__card
+                        .modal-menu__card-title !{text}
+
+                        .modal-menu__card-img__holder
+                            +picture({
+                                src: `catalog-card-${index + 1}.jpg`,
+                                srcWebp: `catalog-card-${index + 1}.webp`,
+                            }).modal-menu__card-img
+
+                        .modal-menu__card-btn Смотреть все товары
+
+            .modal-menu__cards.modal-menu__cards--4
+                each text, index in ['Для здоровья дёсен','Для детей','Для защиты эмали','Ultra Care']
+                    a(href="#").modal-menu__card
+                        .modal-menu__card-title !{text}
+
+                        .modal-menu__card-img__holder
+                            +picture({
+                                src: `menu-card-${index + 1}.jpg`,
+                                srcWebp: `menu-card-${index + 1}.webp`,
+                            }).modal-menu__card-img
+
+                        .modal-menu__card-btn Смотреть товары
+
+

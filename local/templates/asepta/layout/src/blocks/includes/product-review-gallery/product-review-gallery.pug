@@ -1,0 +1,34 @@
+.product-review-gallery(data-slider-wrapper)
+    .swiper.product-review-gallery__main(data-slider-body data-slider-ratio)
+        .swiper-wrapper 
+            each i in Array(3)
+                .swiper-slide.product-review-gallery__main-slide
+                    +picture({
+                        src: 'review-1.jpg',
+                        srcWebp: 'review-1.webp'
+                    })
+                .swiper-slide.product-review-gallery__main-slide
+                    +picture({
+                        src: 'product-vertical.jpg',
+                        srcWebp: 'product-vertical.webp'
+                    })
+        .product-review-gallery__navigation
+            +btn({
+                icon: 'arrow-right'
+            }).btn--icon.btn--white.product-review-gallery__navigation-btn.product-review-gallery__navigation-btn--prev(data-slider-prev)
+            +btn({
+                icon: 'arrow-right'
+            }).btn--icon.btn--white.product-review-gallery__navigation-btn(data-slider-next)
+    .swiper.product-review-gallery__thumbs(data-slider-thumbs)
+        .swiper-wrapper.product-review-gallery__thumbs-wrapper
+            each i in Array(3)
+                .swiper-slide.product-review-gallery__thumbs-slide
+                    +picture({
+                        src: 'review-1.jpg',
+                        srcWebp: 'review-1.webp'
+                    })
+                .swiper-slide.product-review-gallery__thumbs-slide
+                    +picture({
+                        src: 'product-vertical.jpg',
+                        srcWebp: 'product-vertical.webp'
+                    })

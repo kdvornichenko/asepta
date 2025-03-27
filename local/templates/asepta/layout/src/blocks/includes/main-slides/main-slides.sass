@@ -1,0 +1,670 @@
+.main-slides__wrapper
+    height: 100vh
+    width: 100%
+    position: relative
+    &.is-active
+        height: 100dvh
+        .main-slide--parallax
+            height: 100vh
+
+.main-slides
+    transition-timing-function: ease !important
+
+.main-slide
+    height: 100%
+    width: 100%
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+.main-slide__inner
+    width: 100%
+    height: 100%
+    overflow-y: hidden
+
+.main-slide__content
+    height: 100%
+    padding-top: var(--header-height)
+
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.main-slide__title
+    text-align: center
+
+.main-slides__pagination
+    position: absolute
+    right: 0
+    top: 50%
+    translate: 100% -50%
+    z-index: 2
+
+    display: flex
+    flex-direction: column
+    gap: 12px
+
+    transition: $trs
+    @media ( max-width: $mob )
+        display: none
+
+    &.is-visible
+        right: $unit
+        translate: 0 -50%
+
+.main-slides__pagination-bullet
+    display: block
+
+    +yo('width', ($desktop-md: 6px, $desktop-lg: 8px))
+    +yo('height', ($desktop-md: 6px, $desktop-lg: 8px))
+
+    border-radius: 50%
+    background-color: $grey-2
+
+    transition: $trs
+    cursor: pointer
+    &.is-active
+        background-color: $blue
+
+// Logo
+.main-slide--logo
+    text-align: center
+    .main-slide__content
+        padding-top: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+    .main-slide__text
+        height: 100%
+        max-width: 60vw
+
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        row-gap: var(--row-gap, 100px)
+        @media ( max-width: $desktop-sm )
+            max-width: 100%
+
+    .main-slide__title
+        display: flex
+
+        overflow: hidden
+
+        position: absolute
+        top: calc(50% + var(--title-offset, 120px))
+        @media ( max-width: $tab )
+            top: 50%
+
+        & > [data-slot="logo-text-svg"]
+            width: 100%
+            transform: translateY(-100%)
+        svg
+            width: 100%
+            height: auto
+
+    .main-slide__descr
+        display: flex
+        flex-direction: column
+        align-items: center
+        +yo('row-gap', ($mob: 20px, $desktop-md: 55px))
+
+    .main-slide__descr-text
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        +vela(b)
+        +yo('font-size', ($mob: 30px, $desktop-bg: 80px))
+        span
+            line-height: 1
+
+    .main-slide__descr-subtext-wrapper
+        display: flex
+        align-items: center
+        +yo('column-gap', ($mob: 20px, $desktop-md: 30px))
+
+        +yo('padding-inline', ($mob: 20px, $desktop-md: 32px))
+        +yo('padding-block', ($mob: 20px, $desktop-md: 32px))
+
+        +yo('border-radius', ($mob: 28px, $desktop-md: 44px))
+        background-color: $grey-2
+
+        svg
+            flex: 1 0 auto
+
+            +yo('width', ($mob: 32px, $desktop-md: 50px))
+            +yo('height', ($mob: 32px, $desktop-md: 50px))
+
+    .main-slide__descr-subtext
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        color: $dark-blue
+        +yo('font-size', ($mob: 20px, $desktop-md: 30px))
+        +yo('line-height', ($mob: 26px, $desktop-md: 30px))
+        +vela(b)
+        @media ( max-width: $mob )
+            flex-direction: column
+            align-items: flex-start
+
+    .main-slide__arrow
+        +yo('width', ($mob: 60px, $desktop-md: 100px))
+        +yo('height', ($mob: 60px, $desktop-md: 100px))
+
+        +yo('padding', ($mob: 20px, $desktop-md: 32px))
+        margin-top: auto
+        +yo('margin-bottom', ($mob: 120px, $desktop-md: 170px))
+
+        display: flex
+        align-items: center
+        justify-content: center
+
+        translate: 0 0
+        scale: var(--scale-arrow, 0)
+
+        opacity: var(--opacity-arrow, 0)
+
+        border-radius: 50%
+        border: 1px solid rgba($black, 0.2)
+        box-sizing: border-box
+        svg
+            width: 100%
+            height: 100%
+            rotate: 90deg
+
+// RUNNING
+.main-slide--running
+    .main-slide__content
+        +yo('row-gap', ($mob: 60px, $desktop-md: 70px))
+        @media ( max-width: $tab-sm )
+            padding-top: 0
+            justify-content: center
+
+    .main-slide__title-wrapper
+        max-width: 780px
+
+        position: relative
+        @media ( max-width: $tab )
+            max-width: 700px
+
+        @media ( max-width: $tab-sm )
+            width: 100%
+            max-width: 100%
+
+        svg
+            position: absolute
+            &:first-of-type
+                width: 40px
+                height: 40px
+
+                rotate: -30deg
+
+                bottom: 0
+                left: 0
+                @media ( max-width: $tab-sm )
+                    bottom: -1em
+                    left: 10px
+
+            &:last-of-type
+                width: 65px
+                height: 65px
+
+                top: 40px
+                right: -80px
+                @media ( max-width: $tab-sm )
+                    top: unset
+                    bottom: 0
+                    right: 0
+
+    .main-slide__title
+        br
+            display: none
+            @media ( max-width: $tab-sm )
+                display: block
+
+    .main-slide__running-sliders
+        width: 100%
+
+    .main-slide__running-slider
+        display: flex
+        &:not(:first-child)
+            +yo('margin-top', ($mob: 10px, $desktop-md: 16px))
+
+        .splide__pagination, .splide__arrows
+            display: none
+
+        .splide__track
+            padding-block: 2px
+
+    .main-slide__running-slide
+        width: fit-content
+
+        +yo('padding-inline', ($mob: 32px, $desktop-md: 64px))
+        +yo('padding-block', ($mob: 16px, $desktop-md: 32px))
+        +yo('margin-right', ($mob: 8px, $desktop-md: 20px))
+
+        background-color: rgba($grey-2, 0.6)
+        border-radius: 100px
+        border: 1px solid transparent
+        color: $dark-blue
+
+        @extend .t-h4
+        white-space: nowrap
+
+        transition: $trs
+        &.is-highlited
+            background-color: var(--running-line-color)
+            color: $white
+        @media ( hover: hover )
+            &:hover
+                border-color: $blue
+
+// COVERFLOW
+.main-slide--coverflow
+    .main-catalog
+        position: relative
+
+    .main-slide__title-wrapper
+        display: flex
+        flex-direction: column
+        +yo('row-gap', ($mob: 16px, $desktop-md: 33px))
+        align-items: center
+        @media ( max-width: $tab-sm )
+            top: 15vh
+            width: 100%
+
+        .btn
+            width: fit-content
+
+// REVIEWS
+.main-slide--reviews
+    position: relative
+    touch-action: pan-y
+    .main-slide__inner
+        overflow: hidden
+
+    .main-slide__reviews-bg
+        position: absolute
+
+        opacity: 1
+        pointer-events: none
+        z-index: 0
+
+    .main-slide__reviews-bg--1
+        top: 0
+        right: 0
+        @media ( max-width: $tab )
+            display: none
+
+    .main-slide__reviews-bg--2
+        left: 0
+        bottom: 0
+
+    .main-slide__title-wrapper
+        z-index: 1
+
+    .main-slide__reviews-sliders
+        width: 100%
+        +yo('margin-top', ($mob: 60px, $desktop-md: 75px))
+
+        display: flex
+        flex-direction: column
+        +yo('row-gap', ($mob: 24px, $desktop-md: 40px))
+        z-index: 1
+
+    .main-slide__reviews-slider
+        display: flex
+        width: 100%
+
+        overflow: unset
+
+    .main-slide__reviews-slide
+        width: min-content
+        max-width: 400px
+        overflow: unset
+
+        padding-right: 30px
+
+        .review-card
+            +yo('padding', ($mob: 20px, $desktop-md: 24px))
+
+            display: flex
+            flex-direction: column
+            row-gap: 16px
+
+            border: 1px solid $grey-2
+            border-radius: 32px
+            background-color: rgba($grey-3, 0.8)
+            backdrop-filter: blur(25px)
+
+            cursor: pointer
+            transition: border-color $trs
+            @media ( hover: hover )
+                &:hover
+                    border-color: $blue
+
+        .review-card__header
+            display: flex
+            justify-content: space-between
+            +yo('column-gap', ($mob: 16px, $desktop-md: 40px))
+
+        .review-card__header-left
+            display: flex
+            align-items: center
+            column-gap: 12px
+
+        .review-card__avatar
+            width: 40px
+            height: 40px
+
+            border-radius: 50%
+            overflow: hidden
+            img
+                width: 100%
+                height: 100%
+                object-fit: contain
+
+        .review-card__name
+            @extend .t-body
+            white-space: nowrap
+
+        .review-card__date
+            @extend .t-desc
+            color: rgba($black, 0.35)
+            white-space: nowrap
+
+        .review-card__rating
+            display: flex
+            align-items: center
+            column-gap: 4px
+
+            height: fit-content
+
+            svg
+                +yo('width', ($mob: 16px, $desktop-md: 24px))
+                +yo('height', ($mob: 16px, $desktop-md: 24px))
+                color: $blue
+
+        .review-card__text
+            +yo('font-size', ($mob: 12px, $desktop-md: 16px))
+            +vela(m)
+            +overflow-clamp(3)
+            @media ( max-width: $tab )
+                +overflow-clamp(5)
+
+        .review-card__more
+            @extend .t-body
+            color: $blue
+
+// PARALLAX
+.main-slide--parallax
+    .main-slide__content
+        padding: 0
+
+    .main-slide__title-wrapper
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+
+    .main-slide__title
+        +yo('font-size', ($mob: 40px, $desktop-md: 100px))
+        +yo('line-height', ($mob: 47px, $desktop-md: 80px))
+        +vela(b)
+
+    .main-slide__parallax
+        width: 100%
+
+        overflow: hidden auto
+        scrollbar-width: none
+
+        z-index: 1
+
+    .main-slide__parallax-grid
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        +yo('column-gap', ($mob: 20px, $desktop-md: 60px))
+
+        +yo('padding-inline', ($mob: 16px, $desktop-md: 48px))
+        padding-bottom: calc(#{$header-height} + 30px)
+
+        box-sizing: border-box
+        @media ( max-width: $desktop-md )
+            row-gap: 20px
+
+        @media ( max-width: $tab-sm )
+            grid-template-columns: 1fr 1fr
+
+    .main-slide__parallax-spacer
+        width: 100%
+        height: 100vh
+
+    .main-slide__parallax-card
+        display: flex
+        flex-direction: column
+
+        position: relative
+
+        +yo('padding', ($mob: 20px, $desktop-md: 40px))
+
+        +yo('border-radius', ($mob: 20px, $desktop-md: 44px))
+        @media ( max-width: $desktop-md )
+            &.main-slide__parallax-card--years
+                grid-row: 1
+                grid-column: 2 / 4
+
+            &.main-slide__parallax-card--1
+                grid-row: 2
+
+            &.main-slide__parallax-card--research
+                grid-column: 1 / 3
+
+            &.main-slide__parallax-card--quality
+                grid-column: 3
+
+        @media ( max-width: $tab-sm )
+            &.main-slide__parallax-card--research
+                grid-row: 2
+                grid-column: 1
+                justify-self: flex-start
+
+                width: 100%
+
+                .main-slide__parallax-card__imgs, .main-slide__parallax-card__bg
+                    display: none
+
+            &.main-slide__parallax-card--years
+                display: none
+
+            &.main-slide__parallax-card--quality
+                grid-row: 2
+                grid-column: 2
+                justify-self: flex-end
+
+                width: 100%
+                .main-slide__parallax-card__imgs
+                    width: 75px
+                    justify-content: flex-start
+                    img
+                        width: 100%
+
+            &.main-slide__parallax-card--default
+                flex-direction: column-reverse
+                justify-content: space-between
+                row-gap: 16px
+                grid-column: 1 / 3
+                justify-self: center
+
+                padding-bottom: 0
+                .main-slide__parallax-card__text
+                    margin: 0
+
+                .main-slide__parallax-card__imgs
+                    img
+                        height: 80px
+
+                &.main-slide__parallax-card--1
+                    margin: 0
+                    grid-row: 1
+
+                &.main-slide__parallax-card--3
+                    margin-top: 40px
+                    grid-row: 3
+
+                    .main-slide__parallax-card__img-line
+                        right: -80px
+                        top: 30px
+                        rotate: 160deg
+
+    .main-slide__parallax-card--default
+        background-color: $grey-5
+        overflow: hidden
+
+        .main-slide__parallax-card__text
+            margin-top: auto
+
+            +yo('font-size', ($mob: 16px, $desktop-md: 24px))
+            +yo('line-height', ($mob: 20px, $desktop-md: 28px))
+            +vela(b)
+
+    .main-slide__parallax-card--years, .main-slide__parallax-card--default
+        +yo('min-height', ($mob: 160px, $desktop-md: 300px))
+
+    .main-slide__parallax-card--years
+        width: fit-content
+        height: fit-content
+
+        margin-left: 40px
+
+        background-color: $grey-2
+
+        .main-slide__parallax-card__title
+            +yo('font-size', ($mob: 30px, $desktop-md: 60px))
+            line-height: 1
+            +vela(b)
+
+        .main-slide__parallax-card__text
+            margin-top: 50px
+
+            @extend .t-h4
+            color: $dark-blue
+
+    .main-slide__parallax-card--1
+        grid-column: 1 / 2
+        grid-row: 1
+        justify-self: flex-end
+
+        width: fit-content
+        height: fit-content
+
+        margin-top: 60px
+
+    .main-slide__parallax-card--3
+        grid-column: 3 / 4
+        grid-row: 2
+
+        width: fit-content
+
+        +yo('padding-right', ($mob: 20px, $desktop-md: 120px))
+        .main-slide__parallax-card__imgs
+            .main-slide__parallax-card__img-line
+                position: absolute
+
+                top: 10px
+                right: 10px
+
+    .main-slide__parallax-card--research
+        grid-column: 1 / 2
+
+        padding-right: 0
+        padding-bottom: 0
+
+        display: grid
+        justify-self: flex-end
+
+        width: fit-content
+
+        background-color: $pink
+        color: $white
+        overflow: hidden
+
+        .main-slide__parallax-card__title
+            grid-column: 1
+            grid-row: 1 / 2
+
+            +yo('font-size', ($mob: 40px, $desktop-md: 100px))
+            +yo('line-height', ($mob: 48px, $desktop-md: 62px))
+            +vela(b)
+            z-index: 1
+
+        .main-slide__parallax-card__text
+            grid-column: 1
+            grid-row: 2 / 3
+
+            @extend .t-h4
+            line-height: 1
+
+            margin-top: 40px
+            z-index: 1
+
+        .main-slide__parallax-card__bg
+            picture
+                display: contents
+            img
+                position: absolute
+                top: 50%
+                left: 0
+                translate: -5% -50%
+                rotate: -15deg
+
+                width: 115%
+
+        .main-slide__parallax-card__imgs
+            grid-column: 2/ 3
+            grid-row: 1 / 5
+            justify-self: flex-end
+
+            margin-top: -15px
+            margin-left: -20px
+            z-index: 1
+
+            picture
+                display: contents
+
+    .main-slide__parallax-card--research,.main-slide__parallax-card--quality
+        grid-row: 3
+
+    .main-slide__parallax-card--quality
+        max-width: 250px
+        height: fit-content
+
+        align-self: center
+
+        padding-bottom: 0
+        +yo('padding-right', ($mob: 16px, $desktop-md: 26px))
+
+        background-color: $white
+        border: 1px solid $blue
+        overflow: hidden
+
+        .main-slide__parallax-card__text
+            +yo('font-size', ($mob: 10px, $desktop-md: 16px))
+            +yo('line-height', ($mob: 14px, $desktop-md: 24px))
+            +vela(m)
+
+        .main-slide__parallax-card__imgs
+            display: flex
+            justify-content: center
+
+            margin-bottom: -3px
+            margin-top: 20px
+
+            picture
+                display: flex
+            img
+                rotate: -16deg

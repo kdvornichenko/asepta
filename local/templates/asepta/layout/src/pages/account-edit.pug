@@ -1,0 +1,8 @@
+extends ../templates/template.pug
+block content
+    .page.account-page
+        +doctor-sidebar(true)
+        +crumbs(['Главная', 'Врачам', 'Личный кабинет', 'Редактирование'])
+        .page__inner
+            include ../blocks/includes/account-data/account-data.pug
+            include ../blocks/includes/doctor-actions/doctor-actions.pug

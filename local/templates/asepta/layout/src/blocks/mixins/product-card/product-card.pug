@@ -1,0 +1,19 @@
+mixin product-card(data)
+    a(href="#").product-card&attributes(attributes)
+        if data.tags && data.tags.legth > 0
+            .product-card__tags
+                each tag in data.tags
+                    span !{ tag }
+        .product-card__image 
+            +picture({
+                src: `${data.image}.png`,
+                srcWebp: `${data.image}.webp`
+            })
+        .product-card__info 
+            if data.desc
+                p !{ data.desc }
+            if data.title
+                p !{ data.title }
+        +btn({
+            icon: 'arrow-up-right'
+        }).btn--icon.btn--icon-big

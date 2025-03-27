@@ -1,0 +1,30 @@
+-
+    const filters = [
+        {
+            name: 'Все',
+            checked: true,
+            filter: 'reset'
+        },
+        {
+            name: 'Интернет-аптеки',
+            filter: 'internet-pharm'
+        },
+        {
+            name: 'Маркетплейсы',
+            filter: 'marketplaces'
+        },
+        {
+            name: 'Дистрибьюторы',
+            filter: 'distributors'
+        },
+    ]
+
+.buy-body.container
+    +crumbs(['Главная', 'Где купить'])
+    h1 Где купить
+    .buy-body__filters
+        +filters(filters, true)
+
+    .buy-blocks
+        +buy-block('Интернет-аптеки', ['apteka-ru', 'doctor-slon', 'eapteka', 'apteka-ru', 'doctor-slon', 'eapteka'])(data-filter-target="internet-pharm")
+        +buy-block('Маркетплейсы', ['wildberries', 'ozon', 'yandex-market', 'wildberries', 'ozon', 'yandex-market'])(data-filter-target="marketplaces")

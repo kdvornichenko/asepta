@@ -1,0 +1,27 @@
+mixin review-item(data)
+    .review-item(data-review-item)
+        .review-item__head 
+            .review-item__main 
+                if (data.icon)
+                    .review-item__main-img
+                        img(src=data.icon)
+                .review-item__main-info
+                    p !{ data.name }
+                    span !{ data.date }
+            .review-item__rating 
+                each i in Array(data.rating)
+                    .review-item__rating-item
+                        +svg('tooth')
+                each i in Array(5 - data.rating)
+                    .review-item__rating-item--empty
+                        +svg('tooth-empty')
+        p(data-review-item-text) !{ data.text }
+        .review-item__read-more Читать полностью
+        if data.images
+            .review-item__gallery 
+                each image in data.images
+                    .review-item__gallery-item 
+                        +picture({
+                            src: `${image}.jpg`,
+                            srcWebp: `${image}.webp`
+                        })

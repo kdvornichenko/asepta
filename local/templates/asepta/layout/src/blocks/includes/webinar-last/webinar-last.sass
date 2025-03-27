@@ -1,0 +1,34 @@
+.webinar-last
+    width: 100%
+    h2
+        text-align: center
+
+.webinar-last__filters
+    +yo('margin-top', ($mob-sm: 32px, $desktop-md: 48px))
+    @extend .u-center
+
+    .filters
+        justify-content: center
+
+.webinar-last__body 
+    +yo('margin-top', ($mob-sm: 32px, $desktop-md: 48px))
+    display: flex
+    flex-wrap: wrap
+    column-gap: 20px
+    +yo('row-gap', ($mob-sm: 14px, $desktop-md: 40px))
+
+.webinar-last__body-item
+    width: calc(100% / 3 - 20px * 2 / 3)
+
+    @media (min-width: $desktop)
+        width: calc(100% / 4 - 20px * 3 / 4)
+
+    @media (max-width: $tab)
+        width: calc(100% / 2 - 20px * 1 / 2)
+    
+    @media (max-width: $tab-sm)
+        width: 100%
+
+.webinar-last__btn 
+    +yo('margin-top', ($mob-sm: 32px, $desktop-md: 56px))
+    @extend .u-center

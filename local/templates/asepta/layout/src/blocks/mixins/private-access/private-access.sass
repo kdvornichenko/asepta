@@ -1,0 +1,101 @@
+.private-access
+    position: relative
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 40px
+    +yo('padding-top', ($mob-sm: 24px, $desktop-md: 40px))
+    +yo('padding-bottom', ($mob-sm: 24px, $desktop-md: 40px))
+    +yo('padding-left', ($mob-sm: 16px, $desktop-md: 32px))
+    +yo('padding-right', ($mob-sm: 16px, $desktop-md: 32px))
+    border-radius: 28px
+    color: $white
+    overflow: hidden
+
+    @media (max-width: $tab)
+        flex-direction: column
+        align-items: flex-start
+
+    &--blue
+        background: radial-gradient(47.76% 47.76% at 51.51% 76.32%, #0B92BB 0%, $blue 100%)
+
+        .private-access__btns
+            +yo('padding-right', ($mob: 0, $desktop-md: 88px))
+
+    &--yellow
+        background: $yellow
+
+        .private-access__text
+            @media (max-width: $mob)
+                max-width: 80%
+            span
+                max-width: 435px
+                @extend .t-body
+                @media (max-width: $mob)
+                    font-size: 14px !important
+        .private-access__image
+            img
+                @media (max-width: $mob)
+                    transform: translate(40%, -60%) rotate(15deg)
+
+.private-access__text
+    @extend .u-flex-col
+    gap: 20px
+    z-index: 1
+    max-width: 80%
+
+    @media (max-width: $mob)
+        max-width: 275px
+
+    p
+        max-width: 333px
+        +yo('font-size', ($mob-sm: 24px, $desktop-md: 30px))
+        font-weight: 700
+        line-height: 1.16
+
+    span
+        display: inline-block
+        max-width: 382px
+        @extend .t-desc
+        @media (max-width: $mob)
+            font-size: 12px !important
+
+.private-access__image
+    img
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: auto
+        height: 140%
+
+        @media (max-width: $tab)
+            height: 80%
+            left: unset
+            right: 0
+            transform: translate(50%, -40%) rotate(15deg)
+
+.private-access__btns
+    display: flex
+    align-items: center
+    flex-direction: column
+    gap: 8px
+    z-index: 1
+    @media (max-width: $mob)
+        width: 100%
+        flex-direction: column
+
+    .btn
+        padding: 14px 32px
+        width: 100%
+        @media (max-width: $mob)
+            width: 100%
+
+        &.btn--outline
+            border: 1px solid rgba($white, .8)
+            .btn__text
+                color: $white
+
+        .btn__text
+            color: $dark-blue

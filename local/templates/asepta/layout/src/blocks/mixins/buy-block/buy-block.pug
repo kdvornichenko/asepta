@@ -1,0 +1,8 @@
+mixin buy-block(title, items)
+    .buy-block&attributes(attributes)
+        h2 !{title}
+        .buy-block__items
+            each item in items
+                .buy-block__item
+                    +partner({img: item})
+

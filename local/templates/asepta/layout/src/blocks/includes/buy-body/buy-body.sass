@@ -1,0 +1,26 @@
+.buy-body
+    width: 100%
+    +yo('margin-top', ($mob: 24px, $desktop-md: 40px))
+
+    h1
+        text-align: center
+
+.buy-body__filters
+    display: flex
+    justify-content: center
+
+    +yo('margin-top', ($mob: 32px, $desktop-md: 48px))
+
+    .filters
+        justify-content: center
+
+.buy-blocks
+    margin-top: 80px
+
+    display: flex
+    flex-direction: column
+    +yo('row-gap', ($mob: 80px, $desktop-md: 126px))
+    @media (max-width: $mob)
+        margin-top: 30px
+        & h2
+            display: none

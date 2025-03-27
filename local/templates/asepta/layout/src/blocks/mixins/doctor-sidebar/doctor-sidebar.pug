@@ -1,0 +1,26 @@
+mixin doctor-sidebar(access)
+    .doctor-sidebar(class=access ? 'doctor-sidebar--access' : '')
+        .doctor-sidebar__inner.container
+            .doctor-sidebar__item
+                +search.doctor-sidebar__search
+            .doctor-sidebar__item
+                button.doctor-sidebar__btn-menu(data-modal-url="/modals/modal-doctor-nav.html" data-modal-open="doctor-nav")
+                    +svg('menu')
+                    span Врачам
+                nav.doctor-sidebar__nav
+                    ul
+                        li: a(href="#") Статьи
+                        li: a(href="#") Клинические исследования
+                        li: a(href="#") Вебинары
+            .doctor-sidebar__item(data-acc)
+                .doctor-sidebar__account(data-modal-url="/modals/modal-account-nav.html" data-modal-breakpoint="1024" data-modal-open="account-nav")
+                    .doctor-sidebar__account-icon
+                        +svg('account')
+                    span !{access ? 'Оксана Смирнова' : 'Авторизация'}
+                    if (access)
+                        .doctor-sidebar__account-arrow
+                            +svg('arrow-down')
+                    .doctor-sidebar__account-nav(data-acc-content)
+                        ul(data-acc-content-inner)
+                            li: a(href="#") В&nbsp;личный кабинет
+                            li: a(href="#") Выйти

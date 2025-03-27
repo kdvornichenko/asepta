@@ -1,0 +1,59 @@
+-
+    navList = [
+        [
+            {
+                title: 'Категории',
+                list: ['Зубные пасты', 'Бальзамы и гели', 'Ополаскиватели', 'Для детей', 'Для фиксации зубных протезов', 'Новинки']
+            },
+            {
+                title: 'Линейки',
+                list: ['Parodontal', 'Ultra Care', 'Ultra Care для детей']
+            },
+        ],
+        [
+            {
+                title: 'Быстрые ссылки',
+                list: ['О производителе', 'Советы эксперта', 'Вопросы и ответы', 'Вертекс клуб', 'Контроль качества', 'Специалисты', 'Где купить', 'Отзывы', 'Документы']
+            },
+        ],
+    ]
+
+footer.footer.container
+    .footer__item.footer__item--big.footer__list
+        nav
+            each column in navList
+                .footer__list-column
+                    each part in column
+                        ul
+                            li: p !{ part.title }
+                            each link in part.list
+                                li: a(href="#") !{ link }
+        a(href="#") Политика обработки и&nbsp;защиты персональных данных
+        a(href="#") Согласие на&nbsp;обработку персональных данных
+    .footer__item.footer__item--big.footer__contacts
+        img(
+            src="assets/img/footer-maskot.png"
+            alt="asepta maskot"
+            data-parallax="slideLeft slideBottom"
+            data-parallax-multiplier="0"
+            data-parallax-start="top bottom"
+            data-parallax-end="center center"
+        ).footer__contacts-picture
+        nav
+            ul
+                li: a(href="#") Продукция
+                li: a(href="#") Узнать больше
+                li: a(href="#") Врачам
+        .footer__contacts-bottom
+            a(href="tel: 8 800 200 03 05").footer__contacts-phone 8 800 200 03 05
+            a(href="mailto: info@asepta.ru").footer__contacts-email info@asepta.ru
+        .footer__contacts-add
+            +picture({src: "/svg/vertex.svg"}).footer__vertex-logo
+            p © Аseptа 2024
+    .footer__item.footer__add
+        +logo
+        .footer__add-main
+            p Профессиональные средства для зубов и десен АСЕПТА
+            span &laquo;АСЕПТА&raquo;&nbsp;&mdash; это профессиональная серия средств, предназначенных для борьбы с&nbsp;воспалением слизистых оболочек ротовой полости и&nbsp;десен. Благодаря своему уникальному составу средства для лечения десен и&nbsp;зубов &laquo;АСЕПТА&raquo; устраняют причины заболевания, а&nbsp;также его симптомы. Даже самые современные средства гигиены полости рта не&nbsp;способны обеспечить настолько быстрый результат, как специализированные препараты &laquo;АСЕПТА&raquo;.
+        .footer__add-copyrite
+            p Сделано<br>в <a href="#">its.agency</a>

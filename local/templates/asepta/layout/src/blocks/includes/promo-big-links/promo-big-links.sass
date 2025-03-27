@@ -1,0 +1,13 @@
+.promo-big-links
+    +yo('margin-top', ($mob-sm: 16px, $desktop-md: 105px))
+    width: 100%
+    display: flex
+    +yo('gap', ($mob-sm: 12px, $desktop-md: 20px))
+
+    @media (max-width: $tab-sm)
+        flex-direction: column
+
+    .big-link
+        width: 100%
+        aspect-ratio: 662 / 582
+        max-height: calc(100vh - #{$header-height})

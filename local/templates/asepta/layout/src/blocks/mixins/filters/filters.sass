@@ -1,0 +1,45 @@
+@mixin active-filter
+    background: $dark-blue
+    border-color: transparent
+    color: $white
+    
+.filters
+    display: flex
+    +yo('gap', ($mob: 8px, $desktop-md: 16px))
+    flex-wrap: wrap
+
+    @media (max-width: $tab-sm)
+        max-width: 435px
+        padding: 0 20px
+    @media (max-width: $mob)
+        max-width: 345px
+
+.filters__item
+    & input
+        display: none
+
+        &:checked ~
+            & label
+                @include active-filter
+            
+    & a, & label
+        display: block
+        +yo('padding-top', ($mob: 8px, $desktop-md: 12px))
+        +yo('padding-bottom', ($mob: 8px, $desktop-md: 12px))
+        +yo('padding-left', ($mob: 15px, $desktop-md: 24px))
+        +yo('padding-right', ($mob: 15px, $desktop-md: 24px))
+        border: 1px solid rgba($bold, .2)
+        +yo('border-radius', ($mob: 703px, $desktop-md: 1000px))
+        @extend .t-body
+        cursor: pointer
+        transition: $trs
+
+        &.is-active
+            @include active-filter
+
+        @media (hover: hover)
+            &:hover
+                @include active-filter
+
+        @media (max-width: $mob)
+            font-size: 14px !important

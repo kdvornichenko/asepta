@@ -1,0 +1,29 @@
+-
+    const webinarList = [
+        {
+            title: 'Эндодонтия под микроскопом&nbsp;&mdash; современный подход к&nbsp;лечению корневых каналов',
+            image: 'webinar-1',
+            time: '3&nbsp;марта в&nbsp;17:00-19:30 мск'
+        },
+        {
+            title: 'Эстетика мягких тканей вокруг имплантатов: анатомические особенности',
+            image: 'webinar-2',
+            time: '18&nbsp;марта в&nbsp;18:00-19:00 мск'
+        },
+        {
+            title: 'Мотивационное консультирование, или как сделать так, чтобы пациент сам захотел лечиться у&nbsp;вас',
+            image: 'webinar-3',
+            time: '22&nbsp;марта в&nbsp;19:00-20:30 мск'
+        },
+    ]
+
+.another-webinars.container
+    h2 Другие вебинары
+    .another-webinars__body 
+        each item in webinarList
+            .another-webinars__item 
+                +webinar-item(item)
+    +btn({
+        isLink: true,
+        text: 'Смотреть все'
+    }).btn--outline

@@ -1,0 +1,29 @@
+.search
+
+.search__input
+    position: relative
+
+    label
+        position: absolute
+        top: 50%
+        left: 24px
+        transform: translateY(-50%)
+        @extend .u-center
+        cursor: pointer
+
+    svg
+        width: 24px
+        height: 24px
+        color: $blue
+
+    input
+        background: $white
+        padding: 13px
+        padding-left: 60px
+        border-radius: 1000px
+        font-size: 16px !important
+        @extend .t-desc
+
+        &::placeholder
+            opacity: .5
+            color: black

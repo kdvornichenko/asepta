@@ -1,0 +1,24 @@
+extends ../templates/template.pug
+block content
+    .page.webinars
+        +doctor-sidebar
+        +crumbs(['Главная', 'Врачам', 'Вебинары'])
+        h1 Вебинары
+        .page__inner
+            .container
+                +private-access({
+                    text: 'Для просмотра этого раздела, необходимо войти или зарегистрироваться.',
+                    btns: [
+                        {
+                            text: 'Войти',
+                            isLink: true,
+                            className: 'btn--outline'
+                        },
+                        {
+                            text: 'Зарегистрироваться',
+                            isLink: true,
+                            className: 'btn--white'
+                        }
+                    ],
+                }).private-access--yellow
+            include ../blocks/includes/doctor-actions/doctor-actions.pug

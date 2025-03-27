@@ -1,0 +1,15 @@
+mixin private-access(data)
+    .private-access&attributes(attributes)
+        .private-access__text 
+            if data.title
+                p !{data.title}
+            if data.text
+                span !{data.text}
+        .private-access__image 
+            img(src="/assets/img/lock.png", alt="lock")
+        .private-access__btns
+            each btn in data.btns
+                +btn({
+                    isLink: btn.isLink,
+                    text: btn.text
+                })(class=btn.className)

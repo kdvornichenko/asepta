@@ -1,0 +1,37 @@
+.main-links.container
+    a(href="#" data-parallax-parent).main-links__item
+        p Где купить
+        .main-links__item-img.main-links__item-img--first(data-parallax="slideTop" data-parallax-start="top bottom" data-parallax-end="center bottom")
+            +picture({
+                src: 'wave.png',
+                srcWebp: 'wave.webp'
+            })
+        .main-links__item-img.main-links__item-img--second(data-parallax="slideTop" data-parallax-start="parent bottom" data-parallax-end="parent top" data-parallax-multiplier="2")
+            +picture({
+                src: 'product-stone.png',
+                srcWebp: 'product-stone.webp'
+            })
+        .main-links__icon 
+            +btn({
+                icon: 'arrow-up-right'
+            }).btn--icon.btn--icon-big
+    a(href="#").main-links__item
+        p Врачам
+        .main-links__item-img(data-parallax="slideLeft slideTop" data-parallax-end="center bottom" data-parallax-translateX="20%")
+            +picture({
+                src: 'magnifier.png',
+                srcWebp: 'magnifier.webp'
+            })
+        .main-links__icon 
+            +btn({
+                icon: 'arrow-up-right'
+            }).btn--icon.btn--icon-big
+
+    //- +big-link({
+    //-     title: 'Где купить',
+    //-     image: 'big-link-1'
+    //- })
+    //- +big-link({
+    //-     title: 'Врачам',
+    //-     image: 'big-link-2'
+    //- })

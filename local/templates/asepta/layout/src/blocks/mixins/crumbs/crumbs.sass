@@ -1,0 +1,32 @@
+.crumbs
+    @extend .u-center
+    flex-wrap: wrap
+    padding-inline: 5px
+
+    & li
+        &:last-child
+            .crumbs__link
+                pointer-events: none
+                opacity: 1
+                &::after
+                    display: none
+
+.crumbs__link
+    display: flex
+    align-items: center
+    @extend .t-desc
+    opacity: .36
+    transition: $trs opacity
+
+    @media (hover: hover)
+        &:hover
+            opacity: 1
+
+    &::after
+        content: ''
+        display: block
+        margin: 0 8px
+        min-width: 3px
+        height: 3px
+        background: $black
+        border-radius: 50%

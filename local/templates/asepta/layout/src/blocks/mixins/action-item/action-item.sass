@@ -1,0 +1,29 @@
+.action-item
+    position: relative
+    +yo('padding', ($mob-sm: 24px, $desktop-md: 44px))
+    +yo('padding-left', ($mob-sm: 16px, $desktop-md: 44px))
+    +yo('padding-right', ($mob-sm: 16px, $desktop-md: 44px))
+    +yo('border-radius', ($mob-sm: 28px, $desktop-md: 44px))
+    @extend .u-flex-col
+    justify-content: space-between
+    align-items: flex-start
+    gap: 48px
+    color: $white
+    overflow: hidden
+
+    img
+        @extend .img__i
+        z-index: -1
+
+.action-item__info
+    @extend .u-flex-col
+    +yo('gap', ($mob-sm: 24px, $desktop-md: 32px))
+
+.action-item__title
+    max-width: 480px
+    @extend .t-h3
+    line-height: 1.18
+
+.action-item__desc
+    max-width: 450px
+    @extend .t-body

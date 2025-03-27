@@ -1,0 +1,16 @@
+mixin articles-card(card)
+    a(href="#" class=card.isMain ? 'articles__card--main' : '').articles__card
+        .articles__card-img__holder
+            .articles__card-img__label !{card.label}
+            +picture({
+                src: card.img.src,
+                srcWebp: card.img.srcWebp,
+            }).articles__card-img
+        .articles__card-info
+            if card.isMain
+                .articles__card-info__label !{card.label}
+            .articles__card-info__title !{card.title}
+            .articles__card-info__descr !{card.descr}
+            if card.isMain
+                +btn({text: 'Читать'}).articles__card-info__btn.btn--outline
+            

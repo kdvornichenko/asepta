@@ -1,0 +1,113 @@
+.modal--main-review
+    &.modal--active
+        .modal__container
+            @media ( max-width: $tab-sm )
+                transform: translate(-50%, 0)
+
+    .modal__container
+        +yo('padding', ($mob: 16px, $desktop-md: 60px))
+
+        border-radius: 24px
+        overflow: hidden
+
+        width: 100%
+        max-width: 800px
+        @media ( max-width: $tab-sm )
+            padding-bottom: 40px
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: 0
+
+            width: 100%
+            top: unset
+            bottom: 0
+
+            transform: translate(-50%, 100%)
+
+    .modal__content
+        overflow: hidden auto
+
+    .modal-main-review__header-top
+        display: flex
+        justify-content: space-between
+
+    .modal-main-review__title
+        font-size: 28px
+        +vela(b)
+        display: none
+
+        @media ( max-width: $tab-sm )
+            display: block
+
+    .modal-main-review__close
+        position: absolute
+        top: 8px
+        right: 8px
+
+        padding: 8px
+
+        svg
+            width: 24px
+            height: 24px
+
+    .modal-main-review__header-bottom
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    .modal-main-review__info
+        display: flex
+        flex-direction: column
+
+        +vela(m)
+
+    .modal-main-review__name
+        font-size: 20px
+
+    .modal-main-review__date
+        font-size: 14px
+        color: rgba($black, 0.36)
+
+    .modal-main-review__rating
+        display: flex
+        align-items: center
+        column-gap: 4px
+
+        color: $blue
+
+        svg
+            width: 24px
+            height: 24px
+
+    .modal-main-review__body
+        margin-top: 16px
+
+    .modal-main-review__product
+        +yo('font-size', ($mob-sm: 24px, $desktop-md: 28px))
+        line-height: 28px
+        +vela(b)
+
+        color: $blue
+
+    .modal-main-review__text
+        margin-top: 16px
+
+        font-size: 16px
+        line-height: 24px
+
+    .modal-main-review__btn
+        +yo('margin-top', ($mob-sm: 16px, $desktop-md: 24px))
+        padding-block: 8px
+
+        width: fit-content
+
+        column-gap: 12px
+
+        picture
+            display: flex
+
+        img
+            width: 40px
+            height: 40px
+
+        @media ( max-width: $tab-sm )
+            width: 100%

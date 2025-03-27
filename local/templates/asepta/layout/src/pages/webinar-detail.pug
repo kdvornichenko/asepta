@@ -1,0 +1,13 @@
+extends ../templates/template.pug
+block content
+    .page.webinar-detail
+        +doctor-sidebar(true)
+        +crumbs(['Главная', 'Врачам', 'Вебинары', 'Статья'])
+        .page__inner.webinar-detail__inner
+            include ../blocks/includes/webinar-body/webinar-body.pug
+            include ../blocks/includes/another-webinars/another-webinars.pug
+            .webinar-detail__btn.container(data-active-inner=".webinar-detail__inner")
+                +btn({
+                    text: 'Зарегистрироваться',
+                    isLink: true,
+                }).btn--fill

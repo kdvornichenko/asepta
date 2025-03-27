@@ -1,0 +1,64 @@
+.modal-select-distributors
+    position: relative
+
+.modal-select-distributors__close
+    position: absolute
+    +yo('top', ($mob-sm: 16px, $desktop-md: 14px))
+    +yo('right', ($mob-sm: 16px, $desktop-md: 14px))
+    @extend .link-hover
+
+    svg
+        width: 24px
+        height: 24px
+
+.modal-select-distributors__inner
+    +yo('padding-top', ($mob-sm: 16px, $desktop-md: 60px))
+    +yo('padding-bottom', ($mob-sm: 40px, $desktop-md: 60px))
+
+.modal-select-distributors__head 
+    p
+        +yo('font-size', ($mob-sm: 28px, $desktop-md: 38px))
+        font-weight: 700
+        line-height: 1.2
+        margin-bottom: 16px
+
+    span
+        font-size: 16px
+        font-weight: 500
+        line-height: 1.5
+
+.modal-select-distributors__list
+    @extend .u-flex-col
+    gap: 16px
+    +yo('margin-top', ($mob-sm: 16px, $desktop-md: 32px))
+
+    a
+        padding: 20px 48px
+        @extend .u-center
+        gap: 8px
+        border: 1px solid rgba($bold, .36)
+        +yo('border-radius', ($mob-sm: 24px, $desktop-md: 100px))
+
+        @media (hover: hover)
+            transition: $trs border-color
+            &:hover
+                border-color: $bold
+                img
+                    filter: brightness(1)
+
+        @media (max-width: $tab-sm)
+            flex-direction: column
+
+        span
+            font-size: 20px
+            font-weight: 500
+            line-height: 1.4
+
+        img
+            max-height: 28px
+            filter: brightness(0)
+            transition: $trs filter
+            @media (max-width: $tab-sm)
+                max-width: 100px
+                max-height: 100%
+                filter: brightness(1)

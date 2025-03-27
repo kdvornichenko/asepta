@@ -1,0 +1,14 @@
+mixin video(data)
+    if data.isYoutube
+        .youtube(data-ytb="container" data-name=data.name || false)&attributes(attributes)
+            .youtube__cover(data-ytb="cover")
+                +picture({src: data.poster})
+                .video__btn
+            // Для вставки ютуб видео, вместо iframe
+            // <div id="ytb-video" data-id="VIDEO_ID" data-ytb="video"></div>
+            #ytb-video(data-id="7bszqZTrmPQ" data-ytb="video")
+    else
+        .video.img&attributes(attributes)
+            video(src=`/assets/img/${data.src}` width="1400" height="610" poster=`/assets/img/${data.poster}`).img__i
+            +btn({}).btn--video.video__btn
+        

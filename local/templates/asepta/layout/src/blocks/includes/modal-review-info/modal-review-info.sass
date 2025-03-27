@@ -1,0 +1,33 @@
+.modal-review-info
+
+.modal-review-info__inner
+    +yo('padding-top', ($mob: 16px, $desktop-md: 60px))
+    +yo('padding-bottom', ($mob: 40px, $desktop-md: 60px))
+    +yo('padding-left', ($mob: 16px, $desktop-md: 60px))
+    +yo('padding-right', ($mob: 16px, $desktop-md: 60px))
+
+    & > p
+        margin: 16px 0
+        @extend .t-desc
+
+.modal-review__close
+    position: absolute
+    top: 0
+    right: 0
+    @media (max-width: $tab-sm)
+        top: 16px
+        right: 16px
+
+.modal-review-info__main-title
+    @extend .modal-review__main-title
+
+.modal-review-info__main-head
+    @extend .modal-review__main-head 
+
+.modal-review-info__main-info 
+    @extend .modal-review__main-info 
+
+.modal-review-info__main-rating 
+    @extend .modal-review__main-rating 
+
+.modal-review-info__main-rating-item

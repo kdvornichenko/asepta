@@ -1,0 +1,30 @@
+.another-webinars
+    @extend .u-flex-col
+    align-items: center
+
+    h2
+        text-align: center
+
+    .btn
+        +yo('margin-top', ($mob-sm: 32px, $desktop-md: 56px))
+
+.another-webinars__body 
+    +yo('margin-top', ($mob-sm: 28px, $desktop-md: 48px))
+    display: flex
+    flex-wrap: wrap
+    +yo('gap', ($mob-sm: 14px, $desktop-md: 20px))
+
+    .another-webinars__item 
+        &:nth-child(3)
+            @media (max-width: $tab)
+                width: 100%
+
+.another-webinars__item 
+    width: calc(100% / 3 - 20px * 2 / 3)
+
+    @media (max-width: $tab)
+        width: calc(100% / 2 - 10px)
+        max-height: 60vh
+
+    @media (max-width: $mob)
+        width: 100%

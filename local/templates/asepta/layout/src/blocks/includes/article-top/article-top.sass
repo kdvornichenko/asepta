@@ -1,0 +1,19 @@
+.article__top
+
+.article__top-img__holder
+    +yo('height', ($mob: 240px, $desktop-md: 266px, $desktop-bg: 320px))
+    +yo('margin-top', ($mob: 24px, $desktop-md: 80px))
+
+    display: flex
+
+    border-radius: 28px
+    overflow: hidden
+    picture
+        display: contents
+
+.article__top-img
+    width: 100%
+    height: 100%
+
+    object-fit: cover
+    object-position: center

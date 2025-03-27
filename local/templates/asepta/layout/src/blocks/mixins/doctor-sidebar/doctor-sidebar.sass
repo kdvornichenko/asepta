@@ -1,0 +1,117 @@
+.doctor-sidebar
+    width: 100%
+    background: $grey-2
+    +yo('padding-top', ($mob-sm: 28px, $desktop-md: 24px))
+    +yo('padding-bottom', ($mob-sm: 28px, $desktop-md: 24px))
+    +yo('margin-bottom', ($mob-sm: 32px, $desktop-md: 40px))
+
+    &--access
+        .doctor-sidebar__account-icon
+            background: $white
+            padding: 10px
+
+.doctor-sidebar__inner
+    display: grid
+    grid-template-columns: 1fr auto 1fr
+    align-items: center
+
+    @media (max-width: $tab)
+        display: flex
+        justify-content: space-between
+
+.doctor-sidebar__item
+    &:nth-of-type(1)
+        @media (max-width: $tab)
+            display: none
+    &:nth-child(2)
+        @extend .u-center
+    &:nth-child(3)
+        @extend .u-flex, .u-jce
+
+.doctor-sidebar__nav
+    ul
+        display: flex
+        gap: 24px
+        @media (max-width: $tab)
+            display: none
+
+        a
+            @extend .t-desc, .link-hover
+            font-size: 16px !important
+
+.doctor-sidebar__btn-menu
+    display: none
+    align-items: center
+    gap: 8px
+    @extend .link-hover
+
+    @media (max-width: $tab)
+        display: flex
+
+    svg
+        width: 24px
+        height: 24px
+
+    span
+        @extend .t-body
+
+.doctor-sidebar__account
+    position: relative
+    display: flex
+    align-items: center
+    +yo('gap', ($mob-sm: 8px, $desktop-md: 12px))
+    color: $blue
+    @extend .t-desc, .link-hover
+    font-size: 16px !important
+
+    @media (hover: hover) and (min-width: $tab + 1)
+        &:hover
+            opacity: 1
+            .doctor-sidebar__account-nav
+                height: calc(var(--acc-max-height) + 16px)
+                box-shadow: 0px 6px 12px -6px rgba(24, 39, 75, 0.12), 0px 8px 24px -4px rgba(24, 39, 75, 0.08)
+            .doctor-sidebar__account-arrow
+                svg
+                    transform: rotate(180deg)
+
+.doctor-sidebar__account-icon
+    @extend .u-center
+    border-radius: 50%
+
+    svg
+        width: 24px
+        height: 24px
+
+.doctor-sidebar__account-nav
+    position: absolute
+    width: 220px
+    right: 0
+    top: 100%
+    padding-top: 16px
+    border-radius: 20px
+    box-shadow: 0px 6px 12px -6px rgba(24, 39, 75, 0), 0px 8px 24px -4px rgba(24, 39, 75, 0)
+
+    ul
+        background: $white
+        @extend .u-flex-col
+        align-items: flex-start
+        padding: 16px 24px
+        border-radius: 20px
+        box-shadow: 0px 6px 12px -6px rgba(24, 39, 75, 0.12), 0px 8px 24px -4px rgba(24, 39, 75, 0.08)
+        & li:last-child
+            a
+                border: none
+
+    a
+        display: block
+        padding: 16px
+        border-bottom: 1px solid $grey-2
+        @extend .link-hover
+
+.doctor-sidebar__account-arrow
+    @extend .u-center
+
+    svg
+        width: 20px
+        height: 20px
+        transition: $trs transform

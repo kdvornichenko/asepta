@@ -1,0 +1,16 @@
+.recovery-body.container
+    .recovery-body__inner
+        h1 Восстановление пароля
+        
+        form(data-form="recovery-password")
+            p На&nbsp;указанную почту будет отправлена ссылка для восстановления пароля.
+            .form__input-wrapper
+                input(type="email" placeholder="E-mail").form__input.validate 
+            +btn({
+                text: 'Отправить'
+            })(type="submit" data-submit).btn--fill
+
+        //- p Ссылка для восстановления пароля отправлена. Проверьте вашу электронную почту, это может занять несколько минут. Не&nbsp;забудьте проверить папку &quot;Спам&quot;
+        //- +btn({
+        //-     text: 'Отправить повторно'
+        //- }).btn--fill

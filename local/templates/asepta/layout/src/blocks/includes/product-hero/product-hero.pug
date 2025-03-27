@@ -1,0 +1,76 @@
+.product-hero.container
+	.product-hero__gallery
+		include ../product-gallery/product-gallery.pug
+	.product-hero__info
+		.product-hero__info-main 
+			p.product-hero__info-article ULTRA CARE Детство
+			h1 Детская зубная паста BABY от&nbsp;0&nbsp;до&nbsp;3&nbsp;лет
+			p.product-hero__info-description Зубная паста ASEPTA Baby для бережного ухода за&nbsp;молочными зубами малышей от&nbsp;0&nbsp;до&nbsp;3&nbsp;лет. Бережно очищает зубы, десны и&nbsp;язык малыша от&nbsp;налёта, защищает от&nbsp;кариеса. Безопасна при случайном проглатывании.
+			ul.product-hero__advantages
+				li 
+					+svg('star')
+					p Приятная гелевая текстура
+				li 
+					+svg('star')
+					p Снижает воспаление дёсен при прорезывании зубов
+				li 
+					+svg('star')
+					p Мягкий вкус &laquo;клубника и&nbsp;йогурт&raquo;
+			.product-hero__info-btns 
+				+btn({
+					text: 'Где купить'
+				}).btn--fill(data-modal-url="/modals/modal-buy-product.html" data-modal-open="buy-product")
+				a(href="#" target="_blank")
+					img(src="/assets/img/wildberries-circle.png", alt="wildberries")
+				a(href="#" target="_blank")
+					img(src="/assets/img/ozon-circle.png", alt="ozon")
+				a(href="#" target="_blank")
+					img(src="/assets/img/eapteka-circle.png", alt="eapteka")
+				a(href="#" target="_blank")
+					img(src="/assets/img/apteka-ru-circle.png", alt="apteka-ru")
+				a(href="#" target="_blank")
+					img(src="/assets/img/yandex-market-circle.png", alt="yandex-market")
+				+btn({
+					icon: 'quest'
+				}).btn--outline.btn--icon
+		.product-hero__acc-wrapper 
+			.product-hero__acc(data-acc)
+				.product-hero__acc-btn.is-active(data-acc-btn="info-product")
+					p О товаре
+					+svg('arrow-down-add')
+				.product-hero__acc-content.is-open(data-acc-content="info-product")
+					.product-hero__acc-content-inner(data-acc-content-inner)
+						p Первая зубная паста вашего малыша должна быть не&nbsp;только вкусной, но&nbsp;и&nbsp;полезной. Для бережного и&nbsp;эффективного очищения первых зубов и&nbsp;десен используйте специальную щеточку и&nbsp;пасту ASEPTA BABY с&nbsp;растительными экстрактами&nbsp;&mdash; она защищает молочные зубы от&nbsp;кариеса и&nbsp;предотвращает воспаление нежных детских десен.
+						p У&nbsp;пасты мягкий натуральный вкус&nbsp;&mdash; &laquo;клубника и&nbsp;йогурт&raquo;, который очень нравится малышам и&nbsp;делает чистку зубов комфортной и&nbsp;приятной.
+						p Зубная паста ASEPTA BABY подходит детям с&nbsp;рождения и&nbsp;до&nbsp;3&nbsp;лет, она не&nbsp;содержит агрессивных компонентов, поэтому безопасна при проглатывании, и&nbsp;её&nbsp;можно использовать постоянно.
+			.product-hero__acc(data-acc)
+				.product-hero__acc-btn(data-acc-btn="info-product")
+					p Активные компоненты
+					+svg('arrow-down-add')
+				.product-hero__acc-content(data-acc-content="info-product")
+					.product-hero__acc-content-inner(data-acc-content-inner)
+						ul 
+							li Кальция лактат участвует в&nbsp;формировании кристаллической решетки зубной эмали;
+							li Ксилит поддерживает кислотно-щелочной баланс полости рта;
+							li Масло фенхеля укрепляет дёсны и&nbsp;предупреждает воспалительный процесс;
+							li Экстракты алоэ и&nbsp;ромашки уменьшает раздражение и&nbsp;стимулирует процесс регенерации слизистой.
+			.product-hero__acc(data-acc)
+				.product-hero__acc-btn(data-acc-btn="info-product")
+					p Исследования
+					+svg('arrow-down-add')
+				.product-hero__acc-content(data-acc-content="info-product")
+					.product-hero__acc-content-inner(data-acc-content-inner)
+						a(href="#" target="_blank") 
+							span Открыть документ
+							+svg('arrow-up-right')
+		//- .product-hero__info-btns-mobile
+		//- 	a(href="#") 
+		//- 		include ../../../assets/img/svg/wildberries-circle.svg
+		//- 	a(href="#") 
+		//- 		include ../../../assets/img/svg/ozon-circle.svg
+		//- 	a(href="#") 
+		//- 		include ../../../assets/img/svg/eapteka-circle.svg
+		//- 	+btn({
+		//- 		isLink: true,
+		//- 		icon: 'quest'
+		//- 	}).btn--outline.btn--icon

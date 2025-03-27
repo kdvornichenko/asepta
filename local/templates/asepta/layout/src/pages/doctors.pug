@@ -1,0 +1,11 @@
+extends ../templates/template.pug
+block content
+    .page 
+        +doctor-sidebar
+        +crumbs(['Главная', 'Врачам'])
+        .page__inner 
+            include ../blocks/includes/doctor-lock-main/doctor-lock-main.pug
+            include ../blocks/includes/doctor-articles/doctor-articles.pug
+            include ../blocks/includes/doctor-research/doctor-research.pug
+            include ../blocks/includes/doctor-lock-webinar/doctor-lock-webinar.pug
+            include ../blocks/includes/doctor-actions/doctor-actions.pug

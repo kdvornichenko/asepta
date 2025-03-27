@@ -1,0 +1,58 @@
+.product-gallery
+    width: 100%
+    height: 100%
+    @extend .u-flex-col
+    background: $grey-2
+
+.product-gallery__main
+    width: 100%
+    flex-grow: 1
+
+.product-gallery__main-slide
+    position: relative
+
+    & img
+        @extend .img__i
+        object-fit: contain
+        height: auto
+
+.product-gallery__thumbs
+    display: flex
+    justify-content: center
+    width: 100%
+    height: auto
+    padding: 40px
+    +yo('padding-top', ($mob: 47px, $desktop-md: 40px))
+    +yo('padding-bottom', ($mob: 28px, $desktop-md: 40px))
+    +yo('padding-left', ($mob: 28px, $desktop-md: 40px))
+    +yo('padding-right', ($mob: 28px, $desktop-md: 40px))
+
+    @media (max-width: $mob)
+        min-height: 135px
+
+.product-gallery__thumbs-wrapper
+    align-items: center
+
+    &:not(.overflow-slider-wrapper)
+        display: inline-flex
+        justify-content: center
+        width: auto
+        
+        .product-gallery__thumbs-slide
+            &:last-child
+                margin-right: 0 !important
+
+
+.product-gallery__thumbs-slide
+    +yo('width', ($mob: 60px, $desktop-md: 76px))
+    +yo('height', ($mob: 60px, $desktop-md: 76px))
+    background: $white
+    border-radius: 16px
+    overflow: hidden
+    cursor: pointer
+    @extend .link-hover
+
+    & img
+        @extend .img__i
+        object-fit: contain
+        

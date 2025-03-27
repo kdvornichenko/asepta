@@ -1,0 +1,68 @@
+.hurry-register
+    position: relative
+    +yo('margin-top', ($mob-sm: 32px, $desktop-md: 80px))
+
+    h2
+        text-align: center
+        line-height: 1.14
+        @media (max-width: $mob)
+            font-size: 30px
+
+.hurry-register__slider
+    position: static
+    overflow-y: visible
+    overflow-x: clip
+
+    .swiper-scrollbar
+        width: calc(100% - 32px)
+        left: 50%
+        bottom: -24px
+        transform: translateX(-50%)
+        background: $grey-2
+        z-index: 0
+        @media (min-width: $tab + 1)
+            display: none
+        .swiper-scrollbar-drag
+            background: $blue
+
+.hurry-register__slider-wrapper
+    align-items: stretch
+
+.hurry-register__slide 
+    box-sizing: border-box
+    width: 60%
+    height: auto
+    @media (max-width: $tab)
+        width: 90%
+    .webinar-item-horizontal
+        width: 100%
+        height: 100%
+
+.swiper.hurry-register__slider
+    +yo('margin-top', ($mob-sm: 28px, $desktop-md: 48px))
+
+.hurry-register__navigation
+    position: absolute
+    top: 0
+    right: 0
+    display: flex
+    gap: 32px
+    justify-content: space-between
+
+.hurry-register__navigation-btn
+    padding: 8px
+    @extend .link-hover
+    transition: $trs opacity
+
+    &.swiper-button-disabled
+        opacity: .15
+
+    &--prev
+        & svg
+            transform: rotate(180deg)
+
+    & svg
+        width: 36px
+        height: 36px
+        @media (max-width: $tab)
+            display: none

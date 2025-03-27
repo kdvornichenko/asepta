@@ -1,0 +1,78 @@
+.main-experts
+    width: 100%
+    @extend .u-flex-col
+    align-items: center
+
+.main-experts__body 
+    width: 100%
+    +yo('margin-top', ($mob-sm: 28px, $desktop-md: 40px))
+    +yo('margin-bottom', ($mob-sm: 28px, $desktop-md: 40px))
+    overflow-y: visible
+    overflow-x: clip
+
+    .swiper-scrollbar
+        width: calc(100% - 32px)
+        left: 50%
+        bottom: -17px
+        transform: translateX(-50%)
+        background: $grey-2
+        @media (min-width: $mob + 1)
+            display: none
+        .swiper-scrollbar-drag
+            background: $blue
+
+.main-experts__body-wrapper
+    display: flex
+    gap: 20px
+    @media (max-width: $tab)
+        flex-wrap: wrap
+    @media (max-width: $mob)
+        flex-wrap: nowrap
+        gap: 0
+
+    .main-experts__item
+        &:nth-child(1)
+            animation-delay: .5s
+        &:nth-child(2)
+            animation-delay: .7s
+        &:nth-child(3)
+            animation-delay: .9s
+            
+
+.main-experts__item
+    box-sizing: border-box !important
+    width: 100%
+    max-width: calc(100% / 3 - 13px)
+    height: 100%
+    max-height: 60vh
+    aspect-ratio: 435 / 514
+    opacity: 0
+
+    @media (max-width: $tab)
+        max-width: calc(100% / 2 - 10px)
+        max-height: 50vh
+        &:nth-child(3)
+            max-width: 100%
+
+    @media (max-width: $mob)
+        max-width: 100%
+        max-height: 100%
+
+    .expert-card
+        aspect-ratio: unset
+        height: 100%
+
+.main-experts__btn
+    @media (min-width: $tab-sm + 1)
+        animation-delay: .5s
+        animation-duration: 1s
+        animation-fill-mode: forwards
+        transform: translateY(100%)
+        opacity: 0
+        .scroll-to-block-finish &
+            animation-name: slideTop
+
+    @keyframes slideTop
+        100%
+            transform: translateY(0)
+            opacity: 1

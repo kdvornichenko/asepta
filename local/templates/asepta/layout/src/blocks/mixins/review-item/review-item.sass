@@ -1,0 +1,94 @@
+.review-item
+    +yo('padding', ($mob: 20px, $desktop-md: 24px))
+    width: 100%
+    height: 100%
+    @extend .u-flex-col
+    +yo('border-radius', ($mob: 16px, $desktop-md: 24px))
+    background: rgba($grey-2, .3)
+
+    @media (max-width: $mob)
+        padding-left: 16px
+        padding-right: 16px
+
+    & > p
+        margin-top: 16px
+        margin-bottom: 8px
+        @extend .t-desc
+        +overflow-clamp(4)
+        color: $bold
+
+        @media (max-width: $mob)
+            +overflow-clamp(5)
+    
+.review-item__head 
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    @media (max-width: $tab-sm)
+        align-items: flex-start
+
+.review-item__main 
+    display: flex
+    align-items: center
+    gap: 12px
+
+.review-item__main-info
+    @extend .u-flex-col
+    gap: 4px
+
+    p
+        @extend .t-body
+
+    span
+        font-size: 14px
+        font-weight: 500
+        line-height: 1.14
+        color: rgba($bold, .36)
+
+.review-item__main-img
+    position: relative
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    overflow: hidden
+
+    img
+        @extend .img__i
+
+.review-item__rating 
+    display: flex
+    +yo('gap', ($mob: 0, $desktop-md: 4px))
+
+    & svg
+        +yo('width', ($mob: 20px, $desktop-md: 24px))
+        +yo('height', ($mob: 20px, $desktop-md: 24px))
+        color: $blue
+
+.review-item__rating-item
+    &--empty
+        & svg
+            color: rgba($bold, .36)
+
+.review-item__gallery
+    margin-top: auto
+    display: flex
+    +yo('gap', ($mob: 10px, $desktop-md: 12px))
+
+.review-item__gallery-item 
+    position: relative
+    aspect-ratio: 1
+    width: 60px
+    height: auto
+    border-radius: 12px
+    overflow: hidden
+
+    & img
+        @extend .img__i
+
+.review-item__read-more
+    @extend .t-desc
+    color: $blue
+    margin-bottom: 16px
+    &.disabled
+        display: none

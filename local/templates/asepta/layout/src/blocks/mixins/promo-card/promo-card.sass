@@ -1,0 +1,74 @@
+$background: var(--card-background)
+    
+.promo-card
+    position: relative
+    width: 100%
+    +yo('padding-top', ($mob-sm: 16px, $desktop-md: 80px))
+    +yo('padding-bottom', ($mob-sm: 16px, $desktop-md: 80px))
+    +yo('border-radius', ($mob-sm: 20px, $desktop-md: 28px))
+    background: $background
+    color: $white
+    overflow: hidden
+
+.promo-card__info
+    +yo('padding-left', ($mob-sm: 16px, $desktop-md: 36px))
+    +yo('padding-right', ($mob-sm: 16px, $desktop-md: 36px))
+    @extend .u-flex-col
+    gap: 16px
+
+    & > p
+        max-width: 526px
+        @extend .t-body
+        @media (max-width: $mob)
+            font-size: 14px !important
+
+    & h2
+        +yo('font-size', ($mob-sm: 28px, $desktop-md: 56px))
+
+.promo-card__icon 
+    @media (max-width: $tab)
+        position: absolute
+        +yo('top', ($mob-sm: 20px, $tab: 45px))
+        right: 16px
+    & svg
+        +yo('width', ($mob-sm: 40px, $tab: 60px))
+        +yo('height', ($mob-sm: 40px, $tab: 60px))
+    
+.promo-card__images
+    position: absolute
+    top: 50%
+    +yo('right', ($tab: 0px, $desktop-md: 96px))
+    transform: translateY(-50%)
+    display: flex
+    +yo('gap', ($mob-sm: 15px, $desktop-md: 20px))
+
+    & .promo-card__image
+        &:nth-child(1)
+            transform: translateY(25%)
+        &:nth-child(3)
+            transform: translateY(-25%)
+
+    @media (max-width: $tab)
+        margin-top: 50px
+        position: static
+        transform: none
+        justify-content: center
+
+    @media (max-width: $mob)
+        margin-top: 80px
+            
+
+.promo-card__image
+    position: relative
+    +yo('width', ($tab: 100px, $desktop-md: 140px))
+    height: auto
+    aspect-ratio: 140 / 352
+    border-radius: 100px
+    background: $grey-3
+    overflow: hidden
+
+    @media (max-width: $mob)
+        width: 33%
+
+    & img
+        @extend .img__i

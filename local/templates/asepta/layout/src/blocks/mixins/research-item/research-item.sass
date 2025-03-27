@@ -1,0 +1,64 @@
+.research-item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 24px
+    padding: 24px 28px
+    +yo('padding-left', ($mob-sm: 16px, $desktop-md: 28px))
+    +yo('padding-right', ($mob-sm: 16px, $desktop-md: 28px))
+    +yo('border-radius', ($mob-sm: 32px, $desktop-md: 28px))
+    background: rgba($grey-2, .5)
+
+    @media (max-width: $tab-sm)
+        flex-direction: column
+
+.research-item__main
+    display: flex
+    align-items: center
+    +yo('gap', ($mob-sm: 12px, $desktop-md: 24px))
+
+    p
+        max-width: 553px
+        @extend .t-body
+        @media (max-width: $mob)
+            font-size: 14px !important
+            line-height: 1.14 !important
+
+.research-item__image
+    position: relative
+    +yo('width', ($mob-sm: 64px, $desktop-md: 100px))
+    +yo('min-width', ($mob-sm: 64px, $desktop-md: 100px))
+    aspect-ratio: 1
+    +yo('border-radius', ($mob-sm: 16px, $desktop-md: 28px))
+    overflow: hidden
+
+    img
+        @extend .img__i
+
+.research-item__btns
+    display: flex
+    gap: 40px
+    align-items: center
+    @media (max-width: $tab-sm)
+        width: 100%
+        gap: 8px
+        justify-content: space-between
+    .research-item__arrow
+        width: 44px
+        height: 44px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 100%
+        background: $white
+        padding-left: 0
+        padding-right: 0
+        padding-bottom: 0
+        padding-top: 0
+        svg
+            width: 32px
+            height: 32px
+            color: $dark-blue
+    .research-item__btn
+        @media (max-width: $mob)
+            width: calc(100% - 52px)

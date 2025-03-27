@@ -1,0 +1,50 @@
+.main-hero.container
+    .swiper.main-hero__slider(data-slider="full-page")
+        .swiper-wrapper
+            each i in Array(2)
+                .swiper-slide.main-hero__slide
+                    .main-hero__top
+                        p Миссия ASEPTA&nbsp;&mdash; заботиться о&nbsp;том, чтобы заболеваний полости рта было меньше, а&nbsp;здоровых и&nbsp;счастливых улыбок&nbsp;&mdash; больше
+                    +picture({
+                        src: 'main-hero.jpg',
+                        srcWebp: 'main-hero.webp',
+                        tablet: {
+                            src: 'main-hero-tablet.jpg',
+                            srcWebp: 'main-hero-tablet.webp',
+                        },
+                        mobile: {
+                            src: 'main-hero-mobile.jpg',
+                            srcWebp: 'main-hero-mobile.webp',
+                        }
+                    }).main-hero__background
+                    .main-hero__bottom
+                        p Новинки уже<br>на&nbsp;маркетплейсах
+                        +btn({
+                            text: 'Подробнее',
+                            isLink: true
+                        }).btn--white.btn--small
+                .swiper-slide.main-hero__slide
+                    .main-hero__top
+                        p Миссия ASEPTA&nbsp;&mdash; заботиться о&nbsp;том, чтобы заболеваний полости рта было меньше, а&nbsp;здоровых и&nbsp;счастливых улыбок&nbsp;&mdash; больше
+                    +picture({
+                        src: 'main-hero-2.jpg',
+                        srcWebp: 'main-hero-2.webp',
+                        tablet: {
+                            src: 'main-hero-2.jpg',
+                            srcWebp: 'main-hero-2.webp',
+                        },
+                        mobile: {
+                            src: 'main-hero-mobile-2.jpg',
+                            srcWebp: 'main-hero-mobile-2.webp',
+                        }
+                    }).main-hero__background
+                    .main-hero__bottom
+                        p ASEPTA&nbsp;&mdash; территория уверенных улыбок
+                        +btn({
+                            text: 'Подробнее',
+                            isLink: true
+                        }).btn--white.btn--small
+        .main-hero__progress(data-slider-progress)
+            .main-hero__progress-line
+        .main-hero__pagination 
+            .main-hero__pagination-list(data-slider-pagination)

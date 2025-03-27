@@ -1,0 +1,14 @@
+extends ../templates/template.pug
+block content
+    .page.account-page
+        +doctor-sidebar(true)
+        +crumbs(['Главная', 'Врачам', 'Личный кабинет'])
+        .account-page__head.container
+            h1 Оксана Смирнова
+            a(href="#")
+                +svg('edit')
+                span Редактировать данные
+        .page__inner
+            include ../blocks/includes/account-card/account-card.pug
+            +account-webinars(true)
+            include ../blocks/includes/doctor-actions/doctor-actions.pug

@@ -1,0 +1,24 @@
+.account-card.container
+    .account-card__inner
+        .account-card__content
+            .account-card__part
+                +svg("user").account-card__icon
+                .account-card__text-container
+                    h3 Оксана Смирнова
+                    p Стоматолог
+            .account-card__part
+                +svg("map-pin").account-card__icon
+                .account-card__text-container
+                    p Санкт-Петербург, Элита-Центр
+            .account-card__part
+                +svg("message").account-card__icon
+                .account-card__text-container
+                    p +7 (999) 122-11-11
+                    a(href="#") smirnova@mail.com
+            .account-card__part
+                +svg("bell").account-card__icon
+                .account-card__text-container
+                    span Активные подписки
+                    p Новости
+        a(href="#").account-card__btn
+            span Редактировать данные

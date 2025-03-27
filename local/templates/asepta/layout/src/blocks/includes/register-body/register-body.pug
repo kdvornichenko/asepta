@@ -1,0 +1,127 @@
+.register-body.container
+    h1 Регистрация
+    +register-banner({
+        title: 'Регистрация',
+        subtitle: 'Врачам',
+        quest: 'Уже зарегистрированы?',
+        textBtn: 'Войти в раздел'
+    })
+    form(data-form="register").register-body__form
+        fieldset.register-body__form-part
+            .form__input-wrapper
+                input(type="text" placeholder="Ваше имя").form__input.validate
+            .form__select-wrapper.register-body__type
+                +select({
+                    name: 'specialization',
+                    placeholder: 'Специализация',
+                    checked: false,
+                    required: true,
+                    modalTitle: 'Специализация',
+                    options: [
+                        {
+                            value: 'Терапевт',
+                            innerHTML: 'Терапевт',
+                            id: 'terapevt',
+                        },
+                        {
+                            value: 'Ортодонт',
+                            innerHTML: 'Ортодонт',
+                            id: 'ortodont',
+                        },
+                        {
+                            value: 'Ортопед',
+                            innerHTML: 'Ортопед',
+                            id: 'ortoped',
+                        },
+                        {
+                            value: 'Пародонтолог',
+                            innerHTML: 'Пародонтолог',
+                            id: 'parodontolog',
+                        },
+                        {
+                            value: 'Хирург',
+                            innerHTML: 'Хирург',
+                            id: 'hirurg',
+                        },
+                    ]
+                }).select--common
+                        fieldset.register-body__form-part
+            .form__input-wrapper
+                input(type="text" placeholder="Город").form__input.validate
+            .form__input-wrapper
+                input(type="text" placeholder="Место работы").form__input.validate
+            .form__tel-wrapper
+                +select({
+                    name: 'reg_tel',
+                    checked: true,
+                    options: [
+                        {
+                            value: '+7',
+                            innerHTML: '+7',
+                            checked: true,
+                            id: 'tel_1',
+                        },
+                        {
+                            value: '+375',
+                            innerHTML: '+375',
+                            id: 'tel_2',
+                        },
+                        {
+                            value: '+998',
+                            innerHTML: '+998',
+                            id: 'tel_3',
+                        },
+                        {
+                            value: '+996',
+                            innerHTML: '+996',
+                            id: 'tel_4',
+                        },
+                        {
+                            value: '+992',
+                            innerHTML: '+992',
+                            id: 'tel_5',
+                        },
+                    ]
+                }).select--common
+                input(type="tel" placeholder="Номер телефона" data-tel).form__input.validate
+            .form__input-wrapper
+                input(type="email" placeholder="E-mail").form__input.validate
+
+        fieldset.register-body__form-part
+            .form__input-wrapper
+                input(
+                    type="password"
+                    placeholder="Придумайте пароль"
+                    data-form-password
+                    data-form-password-check
+                    minlength="8"
+                    data-length-error="Минимальное кол-во символов: 8"
+                    data-letters-error="Слабый пароль. Используйте буквы."
+                    data-numbers-error="Слабый пароль. Используйте цифры."
+                ).form__input.validate
+                span.form__error
+            .form__input-wrapper
+                input(
+                    type="password"
+                    data-form-password-repeat
+                    placeholder="Повторите пароль"
+                    data-password-error="Пароли не совпадают"
+                ).form__input.validate
+                span.form__error
+            p.register-body__form-part-hint Пароль должен содежать не&nbsp;менее 8&nbsp;символов, а&nbsp;также, латинские буквы и&nbsp;цифры.
+
+        fieldset.register-body__final
+            .form__checbox-wrapper
+                .form__checbox
+                    input(type="checkbox" id="reg")
+                    label(for="reg")
+                        +svg('check')
+                label(for="reg")  Регистрируясь, я подтверждаю, <br>что являюсь врачом или студентом медицинского учреждения.
+            +btn({
+                text: 'Зарегистрироваться'
+            })(type="submit" data-submit).btn--fill
+
+        .register-body__policy
+            +svg('info')
+            p Нажимая кнопку “Зарегистрироваться”, я даю согласие на обработку и передачу моих <a href="#">персональных данных</a>.
+

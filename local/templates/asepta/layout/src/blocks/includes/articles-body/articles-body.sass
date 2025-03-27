@@ -1,0 +1,34 @@
+.articles__cards
+    margin-top: 32px
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: minmax(600px, 60vh) repeat(auto-fill, minmax(300px, 1fr))
+    column-gap: 20px
+    row-gap: 48px
+    @media ( max-width: $desktop )
+        grid-template-columns: repeat(3, 1fr)
+    @media ( max-width: $tab )
+        grid-template-columns: repeat(2, 1fr)
+    @media ( max-width: $mob )
+        grid-template-columns: 1fr
+        grid-template-rows: 1fr
+        row-gap: 32px
+
+    .articles__card
+        .articles__card-img__holder
+            @media ( max-width: $mob )
+                height: 270px
+
+        &.articles__card--main
+            grid-column: span 4
+            @media ( max-width: $desktop )
+                grid-column: span 3
+            @media ( max-width: $tab )
+                grid-column: span 2
+            @media ( max-width: $mob )
+                grid-column: 1
+
+.articles__pagination
+    +yo('margin-top', ($mob: 32px, $desktop-md: 56px))
+    display: flex
+    justify-content: center

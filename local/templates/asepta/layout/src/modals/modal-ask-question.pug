@@ -1,0 +1,21 @@
+include ../templates/mixins.pug
+
++modal('ask-question', 'center')
+    .modal-ask-question
+        .modal-ask-question__inner
+            button.modal-ask-question__close(data-modal-close="ask-question")
+                +svg('cross')
+            p.modal-ask-question__header Задать вопрос
+            .modal-ask-question__body
+                form(data-form).modal-ask-question__form
+                    .form__input-wrapper.modal-ask-question__form-part
+                        input(type="text" placeholder="Ваше имя").form__input.validate
+                    .form__input-wrapper.modal-ask-question__form-part
+                        input(type="email" placeholder="E-mail").form__input.validate
+                    .form__input-wrapper
+                        textarea(placeholder="Ваш вопрос").form__textarea
+                    +btn({
+                        text: 'Отправить'
+                    })(type="submit" data-submit).btn--fill
+                    .modal-ask-question__policy
+                        p Нажимая кнопку, я даю согласие на обработку и передачу моих персональных данных.

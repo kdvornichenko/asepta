@@ -1,0 +1,13 @@
+mixin action-item(data)
+    .action-item&attributes(attributes)
+        .action-item__info
+            p.action-item__title !{data.title}
+            p.action-item__desc !{data.desc}
+        +picture({
+            src: `${data.image}.jpg`,
+            srcWebp: `${data.image}.webp`
+        })
+        +btn({
+            text: data.textBtn,
+            isLink: data.isLinkBtn,
+        }).btn--white

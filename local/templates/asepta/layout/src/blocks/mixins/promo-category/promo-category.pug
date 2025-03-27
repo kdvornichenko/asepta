@@ -1,0 +1,41 @@
+mixin promo-category(data)
+    .promo-category&attributes(attributes)
+        .promo-category__title
+            h2 !{ data.title }
+            p !{ data.subtitle }
+        .promo-category__body
+            .promo-category__body-column 
+                .promo-category__body-products
+                    each promoItem in data.leftPromo
+                        +promo-item({
+                            product: {
+                                title: promoItem.product.title,
+                                desc: promoItem.product.desc,
+                                image: promoItem.product.image,
+                                tags: promoItem.product.tags
+                            },
+                            title: promoItem.title,
+                            desc: promoItem.desc,
+                            volume: promoItem.volume
+                        })
+                +btn({
+                    text: 'Где купить',
+                    isLink: true,
+                }).btn--fill
+            .promo-category__body-column 
+                p !{ data.text }
+                .promo-category__body-products
+                    each promoItem in data.rightPromo
+                        +promo-item({
+                            product: {
+                                title: promoItem.product.title,
+                                desc: promoItem.product.desc,
+                                image: promoItem.product.image,
+                                tags: promoItem.product.tags
+                            },
+                            title: promoItem.title,
+                            desc: promoItem.desc,
+                            volume: promoItem.volume
+                        })
+        .promo-category__text-mobile 
+            p !{ data.text }

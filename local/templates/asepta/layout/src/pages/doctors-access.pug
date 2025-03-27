@@ -1,0 +1,10 @@
+extends ../templates/template.pug
+block content
+    .page.doctor-access
+        +doctor-sidebar(true)
+        +crumbs(['Главная', 'Врачам'])
+        .page__inner
+            include ../blocks/includes/doctor-articles/doctor-articles.pug
+            include ../blocks/includes/doctor-research/doctor-research.pug
+            include ../blocks/includes/doctor-webinar/doctor-webinar.pug
+            include ../blocks/includes/doctor-actions/doctor-actions.pug

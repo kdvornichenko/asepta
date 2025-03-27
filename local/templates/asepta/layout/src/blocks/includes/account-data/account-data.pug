@@ -1,0 +1,113 @@
+.account-data.container
+    .account-data__inner
+        .account-data__part
+            p.account-data__part-heading Личные данные
+            form(data-form="personal-data").account-data__form
+                .account-data__form-main
+                    .form__input-wrapper
+                        input(type="text" placeholder="Ваши ФИО" value="Оксана Смирнова").form__input.validate
+                    .form__select-wrapper.register-body__type
+                        +select({
+                            name: 'specialization',
+                            placeholder: 'Специальность',
+                            checked: true,
+                            required: true,
+                            modalTitle: 'Специальность',
+                            options: [
+                                {
+                                    value: 'Терапевт',
+                                    innerHTML: 'Терапевт',
+                                    id: 'terapevt',
+                                },
+                                {
+                                    value: 'Ортодонт',
+                                    innerHTML: 'Ортодонт',
+                                    id: 'ortodont',
+                                },
+                                {
+                                    value: 'Ортопед',
+                                    innerHTML: 'Ортопед',
+                                    id: 'ortoped',
+                                },
+                                {
+                                    value: 'Пародонтолог',
+                                    innerHTML: 'Пародонтолог',
+                                    id: 'parodontolog',
+                                },
+                                {
+                                    value: 'Хирург',
+                                    innerHTML: 'Хирург',
+                                    id: 'hirurg',
+                                    checked: true,
+                                },
+                            ]
+                        }).select--common
+                    .form__tel-wrapper
+                        +select({
+                            name: 'reg_tel',
+                            checked: true,
+                            options: [
+                                {
+                                    value: '+7',
+                                    innerHTML: '+7',
+                                    checked: true,
+                                    id: 'tel_1',
+                                },
+                                {
+                                    value: '+375',
+                                    innerHTML: '+375',
+                                    id: 'tel_2',
+                                },
+                                {
+                                    value: '+998',
+                                    innerHTML: '+998',
+                                    id: 'tel_3',
+                                },
+                                {
+                                    value: '+996',
+                                    innerHTML: '+996',
+                                    id: 'tel_4',
+                                },
+                                {
+                                    value: '+992',
+                                    innerHTML: '+992',
+                                    id: 'tel_5',
+                                },
+                            ]
+                        }).select--common
+                        input(type="tel" placeholder="Номер телефона" value="(999) 122-11-11" data-tel).form__input.validate
+                    .form__input-wrapper
+                        input(type="email" placeholder="Адрес электронной почты" value="smirnova@mail.com").form__input.validate
+                .form__checbox-wrapper
+                    .form__checbox
+                        input(type="checkbox" id="news" checked)
+                        label(for="news")
+                            +svg('check') 
+                    label(for="news")  Подписаться на&nbsp;новости
+                +btn({
+                    text: 'Сохранить изменения'
+                })(data-submit).btn--fill
+
+        .account-data__part
+            p.account-data__part-heading Изменение пароля
+            form(data-form="passowrd").account-data__form
+                .account-data__form-main
+                    .form__input-wrapper
+                        input(
+                            type="password" 
+                            placeholder="Введите старый пароль"
+                        ).form__input.validate
+                    .form__input-wrapper
+                        input(
+                            type="password" 
+                            placeholder="Введите новый пароль" 
+                            data-form-password 
+                            minlength="8" 
+                            data-length-error="Минимальное кол-во символов: 8"
+                            data-letters-error="Слабый пароль. Используйте буквы."
+                            data-numbers-error="Слабый пароль. Используйте цифры."
+                        ).form__input.validate
+                        span.form__error
+                +btn({
+                    text: 'Сохранить пароль'
+                })(data-submit).btn--fill

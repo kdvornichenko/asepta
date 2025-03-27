@@ -1,0 +1,67 @@
+.learn-experts(data-scroll-to-block)
+    h2 Советы эксперта
+    .learn-experts__filters
+        +filters([
+        {
+            name: 'Все советы',
+            checked: true
+        },
+        {
+            name: 'Здоровье дёсен'
+        },
+        {
+            name: 'Здоровье зубов',
+        },
+        {
+            name: 'Детям'
+        },
+        {
+            name: 'Гигиена полости рта'
+        },
+        {
+            name: 'Больше о продукции'
+        }
+    ])
+    .swiper.learn-experts__body.container(data-slider="experts-slider"   data-width-init="1024")
+        .swiper-wrapper.learn-experts__body-wrapper
+            .swiper-slide.learn-experts__item(data-parallax="fadeIn")
+                a(href="#").learn-expert-card
+                    .learn-expert-card__background
+                        +picture({
+                            src: 'expert-4.jpg',
+                            srcWebp: 'expert-4.webp'
+                        })
+                        .learn-expert-card__type
+                            p Здоровье дёсен
+                    .learn-expert-card__content
+                        span Воспаление десен при ношении брекетов
+                        p Каждый из нас мечтает о красивых ровных зубах. Ослепительная улыбка в любой ситуации способна разрядить обстановку и подарить всем
+            .swiper-slide.learn-experts__item(data-parallax="fadeIn" data-parallax-multiplier="3")
+                a(href="#").learn-expert-card
+                    .learn-expert-card__background
+                        +picture({
+                            src: 'expert-5.jpg',
+                            srcWebp: 'expert-5.webp'
+                        })
+                        .learn-expert-card__type
+                            p Гигиена полости рта
+                    .learn-expert-card__content
+                        span Пробиотики для полости рта
+                        p Сегодня каждому известна важность здоровой микрофлоры кишечника, однако, далеко не каждый из нас задумывается о влиянии микрофлоры
+            .swiper-slide.learn-experts__item(data-parallax="fadeIn" data-parallax-multiplier="5")
+                a(href="#").learn-expert-card
+                    .learn-expert-card__background
+                        +picture({
+                            src: 'expert-6.jpg',
+                            srcWebp: 'expert-6.webp'
+                        })
+                        .learn-expert-card__type
+                            p Детям
+                    .learn-expert-card__content
+                        span Герпетический стоматит у детей: причины, проявления
+                        p Вирусы семейства Herpes viridae являются одними из самых распространенных болезнетворных вирусов на планете. Они способны поражать
+        .swiper-scrollbar(data-slider-scrollbar)
+    +btn({
+        text: 'Смотреть все',
+        isLink: true
+    }).btn--outline.learn-experts__btn

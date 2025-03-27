@@ -1,0 +1,7 @@
+extends ../templates/template.pug
+block content
+    .page(data-page="articles")
+        .page__inner
+            .articles.container
+                include ../blocks/includes/articles-top/articles-top.pug
+                include ../blocks/includes/articles-body/articles-body.pug

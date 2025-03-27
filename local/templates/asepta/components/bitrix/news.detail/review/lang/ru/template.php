@@ -1,0 +1,3 @@
+<?php
+
+$MESS['REVIEW_DETAIL_MODAL_MAIN_TITLE'] = 'Отзыв';

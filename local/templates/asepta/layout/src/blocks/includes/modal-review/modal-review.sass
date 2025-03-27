@@ -1,0 +1,75 @@
+.modal-review
+    position: relative
+    width: 100vw
+    height: 100vh
+    padding-top: 16px
+    padding-bottom: 40px
+    display: flex
+    align-items: center
+    overflow-y: hidden
+    overflow-x: clip
+
+    @media (max-width: $tab-sm)
+        padding-top: 72px
+        padding-bottom: 0
+
+.modal-review__inner
+    max-width: 1126px
+    max-height: 100%
+    margin: 0 auto
+    display: flex
+    +yo('gap', ($tab-sm: 16px, $desktop-md: 40px))
+    @media (max-width: $tab-sm)
+        flex-direction: column
+        padding: 0
+        overflow: hidden
+
+.modal-review__close
+    position: absolute
+    +yo('top', ($mob: 24px, $desktop-md: 40px))
+    +yo('right', ($mob: 16px, $desktop-md: 48px))
+    +yo('padding', ($mob: 0, $desktop-md: 14px))
+    @extend .link-hover
+
+    & svg
+        width: 24px
+        height: 24px
+
+.modal-review__gallery
+    width: 50%
+    @media (max-width: $tab-sm)
+        width: 100%
+
+.modal-review__main
+    width: 50%
+    @extend .review-item
+    padding: 0
+    background: $white
+    z-index: 1
+    @media (max-width: $tab-sm)
+        +yo('padding-left', ($mob-sm: 16px, $tab-sm: 26px))
+        +yo('padding-right', ($mob-sm: 16px, $tab-sm: 26px))
+
+    @media (max-width: $tab-sm)
+        width: 100%
+
+    & p
+        -webkit-line-clamp: unset
+
+.modal-review__main-title
+    margin-bottom: 16px
+    font-size: 28px
+    font-weight: 600
+    @media (min-width: $tab-sm)
+        display: none
+
+.modal-review__main-head
+    @extend .review-item__head 
+
+.modal-review__main-info 
+    @extend .review-item__main 
+
+.modal-review__main-rating 
+    @extend .review-item__rating
+
+.modal-review__main-rating-item

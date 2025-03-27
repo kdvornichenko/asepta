@@ -1,0 +1,69 @@
+include ../templates/mixins.pug
+
+-
+    const productsNav = [
+        {title: 'Назначения', list: ['От воспаления и кровоточивости','Комплексный уход','Против повышенной чувствительности','Укрепление эмали и отбеливание']},
+    ]
+    const learnNav = [
+        {list: ['Популярные вопросы', 'Советы эксперта', 'Где купить']},
+        {list: ['О производителе','Вертекс клуб','Контроль качества','Отзывы', 'Документы']},
+    ]
+
++modal('mobile-menu', 'top')
+    .modal-mobile-menu
+        .modal-mobile-menu__content
+            +search().modal-mobile-menu__search
+            ul.modal-mobile-menu__list
+                li(data-acc).modal-mobile-menu__item
+                    +btn({
+                        text: 'Продукция',
+                        icon: 'arrow-down',
+                    })(data-acc-btn="menu-item").modal-mobile-menu__acc-btn.is-active
+                    div(data-acc-content="menu-item").modal-mobile-menu__acc-content.is-open
+                        div(data-acc-content-inner)
+                            .products__top-container
+                                .products__header Категории
+                                a(href="#").products__see-all Смотреть все
+                            .products__cards
+                                each text, index in ['Для здоровья дёсен','Для детей','Для защиты эмали', 'Новинки']
+                                    a(href="#").products__card
+                                        .products__card-title !{text}
+
+                                        .products__card-img__holder
+                                            +picture({
+                                                src: `mobile-category-${index + 1}.jpg`,
+                                                srcWebp: `mobile-category-${index + 1}.webp`,
+                                            }).products__card-img
+                            .products__nav
+                                each item in productsNav
+                                    .products__list
+                                        .products__title !{item.title}
+                                        ul
+                                            each listItem in item.list
+                                                li: a(href="#") !{listItem}
+                li.modal-mobile-menu__item
+                    .modal-mobile-menu__item-header Врачам
+                li(data-acc).modal-mobile-menu__item
+                    +btn({
+                        text: 'Узнать больше',
+                        icon: 'arrow-down',
+                    })(data-acc-btn="menu-item").modal-mobile-menu__acc-btn
+                    div(data-acc-content="menu-item").modal-mobile-menu__acc-content
+                        div(data-acc-content-inner)
+                            .learn-more__nav
+                                each item in learnNav
+                                    .modal-learn-more__list
+                                        ul
+                                            each listItem in item.list
+                                                li: a(href="#") !{listItem}
+                            .learn-more__card-wrapper
+                                a(href="#").learn-more__card
+                                    .learn-more__card-title О бренде
+                                    .learn-more__card-img__holder
+                                        +picture({
+                                            src: `mobile-menu-learn.jpg`,
+                                            srcWebp: `mobile-menu-learn.webp`,
+                                        }).learn-more__card-img
+                li.modal-mobile-menu__item
+                    .modal-mobile-menu__item-header Где купить
+        .modal-mobile-menu__phone 8&nbsp;(800)&nbsp;555&nbsp;&mdash; 66&nbsp;&mdash; 00

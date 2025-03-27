@@ -1,0 +1,10 @@
+extends ../templates/template.pug
+block content
+    .page.webinars
+        +doctor-sidebar(true)
+        +crumbs(['Главная', 'Врачам', 'Вебинары'])
+        h1 Вебинары
+        .page__inner
+            include ../blocks/includes/hurry-register/hurry-register.pug
+            include ../blocks/includes/webinar-last/webinar-last.pug
+            include ../blocks/includes/doctor-actions/doctor-actions.pug

@@ -1,0 +1,25 @@
+body
+    overflow-x: hidden
+    overflow-y: auto
+    margin-right: calc(-1 * (100vw - 100%))
+
+    +vela(r)
+    +base-text
+    line-height: $base-lh
+    color: $base-text-color
+    text-rendering: optimizeLegibility
+
+    min-height: 100%
+    display: flex
+    flex-direction: column
+    opacity: 0
+
+    +yo('--container-px', ($mob-sm: 16px, $desktop-md: 48px))
+
+body.visible
+    opacity: 1
+
+html, body
+    height: 100%
+    width: 100%
+

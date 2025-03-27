@@ -1,0 +1,11 @@
+mixin expert-card(data)
+    a(href="#").expert-card
+        .expert-card__background
+            +picture({
+                src: `${data.image}.jpg`,
+                srcWebp: `${data.image}.webp`
+            })
+        p !{ data.text }
+        +btn({
+            icon: 'arrow-up-right'
+        }).btn--icon.btn--icon-big

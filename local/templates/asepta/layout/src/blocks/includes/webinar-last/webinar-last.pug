@@ -1,0 +1,69 @@
+-
+    filtersList = [
+        {
+            name: 'Для всех',
+            checked: true,
+        },
+        {
+            name: 'Терапевтам',
+        },
+        {
+            name: 'Ортодонтам',
+        },
+        {
+            name: 'Ортопедам',
+        },
+        {
+            name: 'Пародонтологам',
+        },
+        {
+            name: 'Хирургам',
+        },
+    ];
+    webinarList = [
+        {
+            title: 'Эндодонтия под микроскопом&nbsp;&mdash; современный подход к&nbsp;лечению корневых каналов',
+            image: 'webinar-1',
+            time: '3&nbsp;марта в&nbsp;17:00-19:30 мск'
+        },
+        {
+            title: 'Эстетика мягких тканей вокруг имплантатов: анатомические особенности',
+            image: 'webinar-2',
+            time: '18&nbsp;марта в&nbsp;18:00-19:00 мск'
+        },
+        {
+            title: 'Мотивационное консультирование, или как сделать так, чтобы пациент сам захотел лечиться у&nbsp;вас',
+            image: 'webinar-3',
+            time: '22&nbsp;марта в&nbsp;19:00-20:30 мск'
+        },
+        {
+            title: 'Профессиональная гигиена. Секреты успешной работы с&nbsp;пациентами',
+            image: 'webinar-4',
+            time: '1&nbsp;марта в&nbsp;17:00-19:30 мск'
+        },
+        {
+            title: 'Рекомендации по&nbsp;комплексному применению средств при кровоточивости и&nbsp;повышенной чувствительности в&nbsp;полости рта',
+            image: 'webinar-5',
+            time: '8&nbsp;марта в&nbsp;18:00-19:00 мск'
+        },
+        {
+            title: 'Особенности профилактики и&nbsp;гигиены при гиперестезии зубов в&nbsp;практике врача-стоматолога',
+            image: 'webinar-6',
+            time: '9&nbsp;марта в&nbsp;19:00-20:30 мск'
+        },
+    ]
+
+.webinar-last
+    .container
+        h2 Прошедшие вебинары
+    .webinar-last__filters.container
+        +filters(filtersList)
+    .webinar-last__body.container
+        each i in [1, 2]
+            each item in webinarList
+                .webinar-last__body-item
+                    +webinar-item(item)
+    .webinar-last__btn 
+        +btn({
+            text: 'Показать еще'
+        }).btn--outline

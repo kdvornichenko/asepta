@@ -1,0 +1,23 @@
+mixin select(data)
+  .select(class=`${data.checked ? 'select--checked' : ''}` data-select=data.name)&attributes(attributes)
+    button(type="button" data-placeholder=data.placeholder).select__btn
+      span.select__btn-text !{data.checked ? data.options.find(option => option.checked).innerHTML : data.placeholder}
+      +svg('arrow-down')
+    .select__content(data-simplebar=data.scroll)
+      .select__content-inner
+        if data.modalTitle
+          p !{data.modalTitle}
+        if data.reset
+          button(type="button").select__reset Все
+        each option in data.options
+          .select__option
+            input(
+              type="radio" 
+              data-name=`${option.name ? option.name : option.innerHTML}` 
+              name=data.name 
+              value=option.value 
+              id=option.id 
+              checked=option.checked
+              class=data.required ? 'form__input validate' : ''
+            )
+            label(for=option.id) !{option.innerHTML}

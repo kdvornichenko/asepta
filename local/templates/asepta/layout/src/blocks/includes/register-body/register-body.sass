@@ -1,0 +1,126 @@
+.register-body
+    width: 100%
+    +yo('margin-top', ($mob-sm: 47px, $desktop-md: 100px))
+    display: flex
+    align-items: center
+    gap: 40px
+    @media (max-width: $tab)
+        flex-direction: column
+    
+    .register-banner
+        min-height: 350px
+        @media (max-width: $tab)
+            min-height: 0
+            order: 1
+
+    h1
+        @media (min-width: $tab + 1)
+            display: none
+
+.register-body__form 
+    max-width: 640px
+    min-width: 625px
+    width: 100%
+
+    @media (max-width: $tab)
+        max-width: 100%
+        min-width: 0
+
+.register-body__form-part
+    display: flex
+    flex-wrap: wrap
+    gap: 16px
+
+    @media (max-width: $tab-sm)
+        flex-direction: column
+
+    &:not(:first-child)
+        margin-top: 40px
+
+    > *
+        @media (min-width: $tab-sm + 1)
+            width: calc(50% - 8px)
+
+.register-body__form-part-hint
+    width: 100%
+    font-size: 14px
+    font-weight: 500
+    line-height: 1.14
+    color: rgba($bold, .36)
+    margin-top: -8px
+
+.register-body__type
+    .select 
+        @media (max-width: $tab-sm)
+            z-index: 2
+
+            &.select--open
+                &::before
+                    opacity: 1
+
+            &::before
+                content: ''
+                display: block
+                position: fixed
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: rgba(black, .5)
+                pointer-events: none
+                opacity: 0
+                transition: $trs opacity
+
+            .select__content
+                position: fixed
+                top: unset
+                bottom: 0
+                left: 0
+                width: 100vw
+                border-bottom-left-radius: 0
+                border-bottom-right-radius: 0
+
+        .select__content-inner > p
+            @media (min-width: $tab-sm + 1)
+                display: none
+
+.register-body__final 
+    +yo('margin-top', ($mob-sm: 24px, $desktop-md: 40px))
+    display: flex
+    align-items: center
+    +yo('gap', ($mob-sm: 40px, $desktop-md: 16px))
+
+    @media (max-width: $tab-sm)
+        flex-direction: column
+        align-items: flex-start
+
+    .btn
+        @media (max-width: $tab-sm)
+            width: 100%
+
+.register-body__policy 
+    display: flex
+    align-items: flex-start
+    gap: 8px
+    +yo('margin-top', ($mob-sm: 15px, $desktop-md: 40px))
+
+    svg
+        width: 24px
+        min-width: 24px
+        height: auto
+        aspect-ratio: 1
+        color: rgba($bold, .2)
+        @media (max-width: $tab-sm)
+            display: none
+
+    p
+        font-size: 14px
+        font-weight: 500
+        line-height: 1.14
+        color: rgba($bold, .36)
+        @media (max-width: $tab-sm)
+            text-align: center
+
+        a
+            color: $blue
+            @extend .link-hover

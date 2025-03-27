@@ -1,0 +1,12 @@
+mixin webinar-item(data)
+    a(href="#").webinar-item
+        .webinar-item__image
+            +picture({
+                src: `${data.image}.jpg`,
+                srcWebp: `${data.image}.webp`
+            })
+        .webinar-item__time 
+            .webinar-item__time-icon 
+                +svg('clock')
+            p !{data.time}
+        p !{data.title}

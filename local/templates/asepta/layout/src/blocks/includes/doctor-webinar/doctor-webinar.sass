@@ -1,0 +1,53 @@
+.doctor-webinar
+    width: 100%
+
+    h2
+        text-align: center
+
+.doctor-webinar__body
+    width: 100%
+    +yo('margin-top', ($mob-sm: 28px, $desktop-md: 48px))
+    overflow-y: visible
+    overflow-x: clip
+
+    .swiper-scrollbar
+        width: calc(100% - 32px)
+        left: 50%
+        bottom: -24px
+        transform: translateX(-50%)
+        background: $grey-2
+        @media (min-width: $tab-sm + 1)
+            display: none
+        .swiper-scrollbar-drag
+            background: $blue
+
+.doctor-webinar__body-wrapper
+    display: flex
+    gap: 20px
+    @media (max-width: $tab)
+        flex-wrap: wrap
+    @media (max-width: $tab-sm)
+        flex-wrap: nowrap
+        gap: 0
+
+.doctor-webinar__body-item
+    width: 100%
+    max-width: calc(100% / 3 - 30px / 2)
+    aspect-ratio: 435 / 514
+    box-sizing: border-box
+
+    @media (max-width: $tab)
+        max-width: calc(100% / 2 - 10px)
+        max-height: 50vh
+        &:nth-child(3)
+            max-width: 100%
+            width: 100%
+
+    @media (max-width: $tab-sm)
+        max-width: 100%
+        width: 100%
+        max-height: 100%
+
+.doctor-webinar__btn
+    +yo('margin-top', ($mob-sm: 60px, $desktop-md: 56px))
+    @extend .u-center

@@ -1,0 +1,56 @@
+.webinar-item
+    position: relative
+    width: 100%
+    height: 100%
+    @extend .u-flex-col
+    +yo('gap', ($mob-sm: 16px, $desktop-md: 20px))
+
+    > p
+        +yo('font-size', ($mob-sm: 16px, $desktop-md: 28px))
+        font-weight: 600
+        line-height: normal
+        +overflow-clamp(3)
+        +yo('padding-left', ($mob-sm: 0, $desktop-md: 12px))
+        +yo('padding-right', ($mob-sm: 0, $desktop-md: 12px))
+
+.webinar-item__image
+    position: relative
+    aspect-ratio: 435 / 400
+    width: 100%
+    height: auto
+    +yo('border-radius', ($mob-sm: 32px, $desktop-md: 44px))
+    overflow: hidden
+    
+    img
+        @extend .img__i
+
+.webinar-item__time 
+    position: absolute
+    +yo('top', ($mob-sm: 16px, $desktop-md: 20px))
+    +yo('left', ($mob-sm: 16px, $desktop-md: 20px))
+    display: flex
+    align-items: center
+    gap: 8px
+    padding: 8px
+    padding-right: 16px
+    background: $white
+    border-radius: 1999px
+    max-width: calc(100% - 32px)
+
+    @media (max-width: $mob)
+        max-width: 100%
+
+    p
+        @extend .t-body
+
+.webinar-item__time-icon 
+    width: 40px
+    height: 40px
+    @extend .u-center
+    background: $grey-2
+    border-radius: 50%
+
+    svg
+        width: 24px
+        height: 24px
+        color: black

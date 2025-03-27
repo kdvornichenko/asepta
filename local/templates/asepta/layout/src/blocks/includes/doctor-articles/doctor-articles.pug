@@ -1,0 +1,27 @@
+.doctor-articles
+    .container
+        h2 Статьи и&nbsp;обучающие видео
+    .swiper.doctor-articles__body.container(data-slider="mobile-full" data-width-init="768")
+        .swiper-wrapper.doctor-articles__body-wrapper
+            .swiper-slide.doctor-articles__body-item
+                +article-preview({
+                    title: 'NTU разработает умную повязку на&nbsp;голову для борьбы с&nbsp;бруксизмом',
+                    image: 'article-preview-1',
+                    lock: true,
+                })
+            .swiper-slide.doctor-articles__body-item
+                +article-preview({
+                    title: 'Роль микробиоты в&nbsp;воспалительных заболеваниях полости рта',
+                    image: 'article-preview-2'
+                })
+            .swiper-slide.doctor-articles__body-item
+                +article-preview({
+                    title: 'С&nbsp;Днем стоматолога 2024!',
+                    image: 'article-preview-3'
+                })
+        .swiper-scrollbar(data-slider-scrollbar)
+    .doctor-articles__btn.container
+        +btn({
+            text: 'Смотреть все',
+            isLink: true
+        }).btn--outline

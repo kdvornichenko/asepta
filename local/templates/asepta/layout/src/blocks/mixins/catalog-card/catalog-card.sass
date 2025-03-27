@@ -1,0 +1,34 @@
+.catalog-card
+    display: block
+    width: 100%
+    height: 100%
+    position: relative
+    +yo('padding', ($mob-sm: 13px, $desktop-md: 20px))
+    border-radius: 24px
+    overflow: hidden
+
+    @media (hover: hover)
+        &:hover
+            .btn
+                background: $dark-blue
+                & svg
+                    color: $white
+
+    & p
+        @extend .t-h4
+        font-weight: 700 !important
+        line-height: 1.2
+
+        @media (max-width: $mob)
+            font-size: 26px !important
+
+    & img
+        @extend .img__i
+        z-index: -1
+        user-select: none
+
+    & .btn
+        position: absolute
+        bottom: 14px
+        right: 14px
+        opacity: 0

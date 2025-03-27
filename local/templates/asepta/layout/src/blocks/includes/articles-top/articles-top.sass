@@ -1,0 +1,34 @@
+.articles__top
+    +yo('margin-top', ($mob-sm: 24px, $desktop-md: 40px))
+
+    h1
+        text-align: center
+
+.articles__search
+    width: 55%
+    margin-top: 80px
+    margin-inline: auto
+
+    @media ( max-width: $tab-sm )
+        margin-top: 32px
+
+    @media ( max-width: $desktop-sm )
+        width: 100%
+
+    input
+        width: 100%
+
+        border: 1px solid $grey-2
+
+.articles__filters
+    margin-top: 48px
+    .filters
+        margin: 0
+        padding: 0
+
+    @media ( max-width: $tab-sm )
+        margin-top: 80px
+        .filters
+            justify-content: center
+            margin: auto
+            max-width: 100%

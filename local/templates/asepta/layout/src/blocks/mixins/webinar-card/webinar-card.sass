@@ -1,0 +1,53 @@
+.webinar-card
+    +yo('padding', ($mob-sm: 16px, $desktop-md: 40px))
+    @extend .u-flex-col
+    +yo('gap', ($mob-sm: 24px, $desktop-md: 32px))
+    background: $grey-2
+    +yo('border-radius', ($mob-sm: 24px, $desktop-md: 44px))
+
+    > .btn
+        @media (max-width: $tab-sm)
+            display: none
+
+.webinar-card__item 
+    span
+        @extend .t-desc
+        color: rgba($bold, .36)
+
+    p
+        @extend .t-body
+        margin-top: 4px
+    
+.webinar-card__item-img
+    margin-top: 4px
+    position: relative
+    width: 60px
+    height: auto
+    aspect-ratio: 1
+    border-radius: 12px
+    overflow: hidden
+
+    img
+        @extend .img__i
+
+.webinar-card__person
+    p
+        &:nth-child(1)
+            @extend .t-body
+            font-weight: 700 !important
+            text-transform: uppercase
+
+        &:nth-child(2)
+            margin-top: 16px
+            font-size: 16px
+            line-height: 1.5
+            font-weight: 500
+
+    a
+        display: inline-block
+        margin-top: 8px
+        font-size: 16px
+        line-height: 1.5
+        font-weight: 500
+        color: $blue
+        @extend .link-hover

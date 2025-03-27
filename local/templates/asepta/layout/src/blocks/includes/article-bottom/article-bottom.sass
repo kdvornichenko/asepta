@@ -1,0 +1,61 @@
+.article__bottom
+    +yo('margin-top', ($mob: 80px, $desktop-md: 126px))
+
+.article__bottom-products
+    display: flex
+    flex-direction: column
+    row-gap: 56px
+    @media ( max-width: $tab )
+        row-gap: 80px
+
+.article__bottom-products__btn, .article__bottom-articles__btn
+    width: fit-content
+    margin: auto
+
+.article__bottom-articles
+    +yo('margin-top', ($mob: 80px, $desktop-md: 126px))
+
+    display: flex
+    flex-direction: column
+    +yo('row-gap', ($mob: 32px, $desktop-md: 56px))
+
+    h2
+        text-align: center
+        @media ( max-width: $mob )
+            font-size: 30px
+
+.article__bottom-articles__slider
+    $space-between: 20px
+
+    margin-right: calc(#{$space-between} * -1)
+    +yo('margin-top', ($mob: 28px, $desktop-md: 48px))
+    @media ( max-width: $tab )
+        margin-right: 0
+
+    .swiper-wrapper
+        .swiper-slide
+            width: calc( 25% - #{$space-between} )
+            padding-right: $space-between
+            @media ( max-width: $desktop-md )
+                width: calc( 100% / 3 - (#{$space-between} - 2px) )
+            @media ( max-width: $tab )
+                padding-right: 0
+                .articles__card-img__holder
+                    aspect-ratio: 1.137
+
+            .articles__card-img__holder
+                aspect-ratio: 1.0875
+
+    .swiper-scrollbar
+        position: static
+
+        width: 100%
+
+        margin-top: 30px
+
+        background: $grey-2
+        @media (min-width: $tab + 1)
+            display: none
+
+        .swiper-scrollbar-drag
+            background: $blue

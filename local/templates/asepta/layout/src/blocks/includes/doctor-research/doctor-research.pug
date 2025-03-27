@@ -1,0 +1,20 @@
+.doctor-research.container
+    h2 Клинические исследования
+    .doctor-research__list
+        +research-item({
+            text: 'Полная потеря зубов и&nbsp;ее&nbsp;лечение съемными протезами: особенности микробиоты и&nbsp;мукозального иммунитета',
+            image: 'research-1'
+        })
+        +research-item({
+            text: 'Профилактика рецидивирования локализованного пародонтита у&nbsp;молодых',
+            image: 'research-2'
+        })
+        +research-item({
+            text: 'Сравнительная клиническая оценка эффективности лечения травматических поражений слизистой оболочки полости рта',
+            image: 'research-3'
+        })
+    .doctor-research__btn
+        +btn({
+            text: 'Смотреть все',
+            isLink: true
+        }).btn--outline

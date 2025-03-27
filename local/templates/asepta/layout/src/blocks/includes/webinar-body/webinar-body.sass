@@ -1,0 +1,70 @@
+.webinar-body
+    +yo('margin-top', ($mob-sm: 60px, $desktop-md: 80px))
+    width: 100%
+    display: grid
+    grid-template-columns: 1fr 60%
+    grid-template-rows: auto auto
+    column-gap: 40px
+    row-gap: 60px
+
+    @media (max-width: $desktop-sm)
+        grid-template-columns: 1fr 1fr
+
+    @media (max-width: $tab)
+        display: flex
+        flex-direction: column
+
+.webinar-body__title
+    grid-column-start: 2
+
+    h1
+        +yo('font-size', ($mob-sm: 30px, $desktop-md: 40px))
+        line-height: 1.2
+        font-weight: 700
+
+.webinar-body__card
+    grid-column-start: 1
+    grid-column-end: 1
+    grid-row-start: 1
+    grid-row-end: 3
+
+    .webinar-card
+        position: sticky
+        top: $header-height
+
+.webinar-body__info
+    grid-row-start: 2
+
+    h3
+        +yo('margin-bottom', ($mob-sm: 16px, $desktop-md: 24px))
+        font-size: 30px
+
+        &:not(:first-child)
+            +yo('margin-top', ($mob-sm: 24px, $desktop-md: 40px))
+
+
+    > p
+        +yo('margin-bottom', ($mob-sm: 8px, $desktop-md: 16px))
+        font-size: 16px
+        font-weight: 500
+        line-height: 1.5
+
+    ol
+        @extend .list-number
+        font-size: 16px
+        font-weight: 500
+        line-height: 1.5
+
+.webinar-body__info-hint
+    +yo('margin-top', ($mob-sm: 24px, $desktop-md: 40px))
+
+    p
+        color: rgba($bold, .36)
+
+
+
+.webinar-detail__btn
+    @extend .product-detail-page__btn
+
+    @media (min-width: $tab-sm)
+        display: none

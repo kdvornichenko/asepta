@@ -1,0 +1,9 @@
+include ../templates/mixins.pug
+
++modal('account-nav', 'bottom')
+    .modal-account-nav
+        button.modal-account-nav__close(data-modal-close="account-nav")
+            +svg('cross')
+        ul 
+            li: a(href="#") В&nbsp;личный кабинет
+            li: a(href="#") Выйти

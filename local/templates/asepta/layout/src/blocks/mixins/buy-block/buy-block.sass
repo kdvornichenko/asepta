@@ -1,0 +1,18 @@
+.buy-block
+    h2
+        text-align: center
+    &.is-hidden
+        display: none
+
+.buy-block__items
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+
+    +yo('margin-top', ($mob: 28px, $desktop-md: 48px))
+    +yo('gap', ($mob: 12px, $desktop-md: 24px))
+    @media ( max-width: $desktop )
+        grid-template-columns: repeat(4, 1fr)
+    @media ( max-width: $desktop-sm )
+        grid-template-columns: repeat(3, 1fr)
+    @media ( max-width: $tab-sm )
+        grid-template-columns: repeat(2, 1fr)

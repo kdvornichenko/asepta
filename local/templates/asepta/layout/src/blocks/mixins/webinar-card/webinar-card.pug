@@ -1,0 +1,23 @@
+mixin webinar-card
+    .webinar-card
+        .webinar-card__item 
+            span Дата и&nbsp;время
+            p 3&nbsp;марта в&nbsp;17:00-19:30 мск
+        .webinar-card__item 
+            span Место проведения
+            p Онлайн
+        //- .webinar-card__item 
+        //-     span Лектор:
+        //-     .webinar-card__item-img
+        //-         +picture({
+        //-             src: 'lector.jpg',
+        //-             srcWebp: 'lector.webp'
+        //-         })
+        //- .webinar-card__person 
+        //-     p Солдатова Людмила Николаевна
+        //-     p Кандидат медицинских наук, профессор кафедры клинической стоматологии &laquo;Санкт-Петербургского медико-социального института&raquo;, главный врач стоматологической клиники &laquo;Альфа-Дент&raquo; г. Санкт-Петербург
+        //-     a(href="#") Читать полностью
+        +btn({
+            isLink: true,
+            text: 'Зарегистрироваться'
+        }).btn--fill

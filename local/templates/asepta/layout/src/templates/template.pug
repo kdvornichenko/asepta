@@ -1,0 +1,21 @@
+doctype html
+html(lang='ru')
+    include ../templates/mixins.pug
+    include ../templates/head.pug
+    
+    block vars
+    body
+    
+        //- Header
+        include ../blocks/mixins/header/header.pug
+        +header(disabledCardBtn)
+
+        //- Main content
+        main
+            block content
+
+        //- Footer
+        include ../blocks/mixins/footer/footer.pug
+        
+        include ../templates/modals.pug
+        .modals.js-modals

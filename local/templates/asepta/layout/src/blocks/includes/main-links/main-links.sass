@@ -1,0 +1,89 @@
+.main-links
+    width: 100%
+    display: flex
+    +yo('gap', ($mob-sm: 18px, $desktop-md: 20px))
+    +yo('margin-top', ($mob-sm: 12px, $desktop-md: 22px))
+
+    @media (max-width: $tab-sm)
+        flex-direction: column
+
+    .main-links__item
+        width: 50%
+        height: auto
+        aspect-ratio: 662 / 550
+
+        @media (max-width: $tab-sm)
+            width: 100%
+
+        &:nth-child(1)
+            background: $blue-light
+
+        &:nth-child(2)
+            background: $turquoise
+            .main-links__item-img
+                top: 20%
+                transform: translate(0%, 50%)
+                // @media (max-width: $tab-sm)
+                //     top: unset
+                //     transform: translate(5%, 5%)
+                & img
+                    width: 80%
+                    // @media (max-width: $tab-sm)
+                    //     width: 100%
+
+.main-links__item
+    position: relative
+    width: 50%
+    height: 100%
+    +yo('border-radius', ($mob-sm: 28px, $desktop-md: 44px))
+    overflow: hidden
+
+    @extend .u-flex-col
+    justify-content: space-between
+    +yo('padding-top', ($mob-sm: 30px, $desktop-md: 44px))
+    +yo('padding-bottom', ($mob-sm: 30px, $desktop-md: 44px))
+    +yo('padding-left', ($mob-sm: 30px, $desktop-md: 52px))
+
+    @media (hover: hover)
+        &:hover
+            .main-links__icon .btn
+                background: $dark-blue
+                & svg
+                    color: $white
+
+    & p
+        @extend .t-h2
+        line-height: 1.14
+
+        @media (max-width: $mob)
+            font-size: 32px !important
+
+.main-links__icon
+    display: flex
+    align-items: flex-end
+    z-index: 1
+
+.main-links__item-img
+    position: absolute
+    right: 0
+    bottom: 0
+    transform: translate(20%, 50%)
+
+    picture
+        display: contents
+
+    & img
+        width: 100%
+        height: 100%
+
+    &--first
+        transform: translate(0, 50%)
+        width: 100%
+        top: 50px
+        & img
+
+    &--second
+        transform: translate(10%, 70%)
+        height: 80%
+        & img
+            object-fit: contain

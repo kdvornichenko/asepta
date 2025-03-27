@@ -1,0 +1,180 @@
+-
+    const runningSlides = ['Свежее дыхание','Отбеливание','Для здоровья десен','Анти-кариес','Чувствительная эмаль','Ежедневный уход','Профилактика','Укрепление эмали','Для брекет-систем','Свежее дыхание','Для детей','Отбеливание']
+
+    cards = [
+        {
+            title: '',
+            image: 'catalog-card-4'
+        },
+        {
+            title: '<span>Для здоровья</span><span>дёсен</span>',
+            image: 'catalog-card-3'
+        },
+        {
+            title: '<span>Для защиты</span><span>эмали</span>',
+            image: 'catalog-card-1'
+        },
+        {
+            title: '<span>Для</span><span>детей</span>',
+            image: 'catalog-card-2'
+        },
+        {
+            title: '',
+            image: 'catalog-card-5'
+        },
+    ]
+
+    const reviews = [
+        {
+            name: 'Даниил О.',
+            date: '24&nbsp;Августа, 2024',
+            rating: 5,
+            text: 'Товар пришел целый. Заказывал потому что болели десна. Использую 3-й день и&nbsp;в&nbsp;совокупности с&nbsp;специальной зубной пастой боль стала реже в&nbsp;несколько раз и&nbsp;меньше в&nbsp;болевых ощущениях мазь не&nbsp;горькая, десна не&nbsp;щипет в&nbsp;целом продукт хороший'
+        },
+        {
+            name: 'Виктория П.',
+            date: '24&nbsp;Августа, 2024',
+            rating: 5,
+            text: 'Супер средство! Порекомендовал стоматолог, т.к.&nbsp;от&nbsp;анастезии появились язвочки и&nbsp;долго не&nbsp;заживало. Сейчас использовала, закладывала мазь на&nbsp;место удаленного зуба. Быстро все зажило!'
+        }
+    ]
+
+
+mixin main-slide(id)
+    .main-slide.swiper-slide(class=`main-slide--${id}` data-slide-name=id data-slot="slide")
+        .main-slide__inner(data-slot="inner")
+            .main-slide__content
+                if block
+                    block
+
+.main-slides__wrapper(data-main-slides).swiper
+    .main-slides.swiper-wrapper
+        //- LOGO
+        +main-slide('logo')
+            .main-slide__text.container
+                .main-slide__title(data-slot="logo-text")
+                    div(data-slot="logo-text-svg")
+                        include ../../../assets/img/svg/main-slider-first-slide-text.svg
+                .main-slide__descr
+                    .main-slide__descr-text
+                        span(data-anim-hide) Средства для ухода&nbsp;за
+                        span(data-anim-hide) полостью рта
+                    .main-slide__descr-subtext-wrapper(data-anim-hide)
+                        include ../../../assets/img/svg/main-slider-first-slide-check.svg
+                        .main-slide__descr-subtext
+                            span С&nbsp;доказанной
+                            span эффективностью
+            button(type="button" data-anim-hide data-slot="logo-btn").main-slide__arrow
+                +svg('arrow-right')
+
+        //- RUNNING
+        +main-slide('running')
+            .main-slide__title-wrapper.t-h1
+                .main-slide__title Для людей, которые<br>хотят качественно<br>ухаживать<br>за&nbsp;полостью рта
+                include ../svg/star-draw
+                include ../svg/star-draw
+
+            .main-slide__running-sliders
+                each line, index in Array(3)
+                    - const colors = ['#F69DBE', '#C9A6DF', '#F6D377']
+
+                    .main-slide__running-slider.splide(class=`main-slide__running-slider--${index + 1}` data-slot="running-slider" style=`--running-line-color: ${colors[index]}`)
+                        .splide__track
+                            .splide__list
+                                each slide, slideIndex in runningSlides
+                                    a(href="#" class=slideIndex % 3===0 ? 'is-highlited' : '').splide__slide.main-slide__running-slide !{slide}
+
+        //- COVERFLOW
+        +main-slide('coverflow')
+            .main-catalog(data-slot="coverflow-slider")
+                .main-slide__title-wrapper
+                    .main-slide__title.t-h1 Полный комплекс средств
+                .main-catalog__inner(data-slot="inner")
+                    .main-catalog__list(data-slider="coverflow")
+                        .main-catalog__list-wrapper
+                            each card in cards
+                                .main-catalog__card(data-slot="slide")
+                                    +catalog-card({
+                                        title: card.title,
+                                        image: card.image
+                                    })
+                        .main-catalog__list-scrollbar(data-slot="scrollbar")
+
+        //- REVIEWS
+        +main-slide('reviews')
+            +picture({
+                src: 'main-slider-1.png',
+                srcWebp: 'main-slider-1.webp',
+            }).main-slide__reviews-bg.main-slide__reviews-bg--1(data-slot="reviews-bg-1")
+            +picture({
+                src: 'main-slider-2.png',
+                srcWebp: 'main-slider-2.webp',
+            }).main-slide__reviews-bg.main-slide__reviews-bg--2(data-slot="reviews-bg-2")
+            .main-slide__title-wrapper
+                .main-slide__title.t-h1 Нам доверяют
+            .main-slide__reviews-sliders
+                each slider in Array(2)
+                    .swiper.main-slide__reviews-slider(data-slot="reviews-slider")
+                        .swiper-wrapper
+                            each wrap in Array(2)
+                                each review in reviews
+                                    .swiper-slide.main-slide__reviews-slide(data-modal-open="main-review" data-modal-url="/modals/modal-main-review.html")
+                                        .review-card(data-slot="review-card")
+                                            .review-card__header
+                                                .review-card__header-left
+                                                    .review-card__avatar
+                                                        +picture({src:'svg/ozon-circle.svg'})
+                                                    .review-card__info
+                                                        .review-card__name !{review.name}
+                                                        .review-card__date !{review.date}
+                                                .review-card__rating
+                                                    each star in Array(5)
+                                                        +svg('tooth-fill')
+                                            .review-card__text !{review.text}
+                                            .review-card__more Подробнее
+
+        //- PARALLAX
+        +main-slide('parallax')
+            .main-slide__title-wrapper
+                .main-slide__title Обоснованный выбор
+
+            .main-slide__parallax(data-scrollable)
+                .main-slide__parallax-spacer
+                .main-slide__parallax-grid
+                    .main-slide__parallax-card.main-slide__parallax-card--default.main-slide__parallax-card--1(data-slot="parallax-card"      data-parallax-speed="1" data-parallax-offset="0.2" data-parallax-mult="4")
+                        .main-slide__parallax-card__imgs
+                            +picture({src: '/svg/main-slider-parallax-1.svg'})
+                        .main-slide__parallax-card__text Фармацевтические <br> стандарты качества
+
+                    .main-slide__parallax-card.main-slide__parallax-card--years.main-slide__parallax-card--2(data-slot="parallax-card" data-parallax-speed="0.1" data-parallax-offset="0.5" data-parallax-mult="1")
+                        .main-slide__parallax-card__title 17&nbsp;лет<br>на рынке
+                        .main-slide__parallax-card__text с&nbsp;заботой о&nbsp;вас
+
+                    .main-slide__parallax-card.main-slide__parallax-card--default.main-slide__parallax-card--line.main-slide__parallax-card--3(data-slot="parallax-card" data-parallax-speed="0.5" data-parallax-offset="0.2" data-parallax-mult="2")
+                        .main-slide__parallax-card__imgs
+                            +picture({src: '/svg/main-slider-parallax-2.svg'})
+                            +picture({src: '/svg/main-slider-parallax-3.svg'}).main-slide__parallax-card__img-line
+                        .main-slide__parallax-card__text Активные компоненты<br>с&nbsp;доказанной<br>эффективностью
+
+                    .main-slide__parallax-card.main-slide__parallax-card--research.main-slide__parallax-card--4(data-slot="parallax-card" data-parallax-speed="1" data-parallax-offset="0.2" data-parallax-mult="3")
+                        .main-slide__parallax-card__title 100+
+                        .main-slide__parallax-card__text клинических<br>исследований
+                        .main-slide__parallax-card__bg
+                            +picture({src: '/svg/main-slider-parallax-4.svg'})
+                        .main-slide__parallax-card__imgs
+                            +picture({
+                                scr: 'main-slider-microscope.png',
+                                srcWebp: 'main-slider-microscope.webp'
+                            })
+
+                    .main-slide__parallax-card.main-slide__parallax-card--quality.main-slide__parallax-card--5(data-slot="parallax-card" data-parallax-speed="0.1" data-parallax-offset="0.5" data-parallax-mult="1")
+                        .main-slide__parallax-card__text Знак качества Центрального научно-исследовательского института Челюстно-лицевой хирургии (ЦНИИС ЧЛХ)
+                        .main-slide__parallax-card__imgs
+                            +picture({src: '/svg/main-slider-parallax-5.svg'})
+
+                .main-slide__parallax-spacer
+                
+
+    .main-slides__pagination(data-slot="pagination")
+    
+

@@ -1,0 +1,72 @@
+# Dist & tests
+test
+local/templates/asepta/layout/dist
+dist
+
+# Logs:
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Special
+Thumbs.db
+Desktop.ini
+.DS_Store*
+ehthumbs.db
+Icon?
+
+## Deploy
+.firebase
+.vercel
+## Common
+.vercel
+.gulp
+.vscode
+.idea
+*.ai
+*.gulp
+*.log
+*.psd
+*.zip
+*.sublime*
+.DS_Store*
+Icon?
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+## Front-end
+.firebase
+/dist
+/assets
+/local/**/build
+/local/**/dist
+/**/node_modules
+
+## Back-end
+/bitrix
+/upload
+/.htaccess*
+/.htpasswd*
+/.htsecure*
+/local/templates/**/include_area/
+composer.*
+!/composer.json
+!/composer.lock
+.env
+
+## Seo
+/sitemap*.xml
+/yandex*.html
+/yandex*.txt
+/google*.html
+/google*.txt
+/cmsmagazine*.txt
+/cmsmagazine*.html
+/pinterest*.txt
+/pinterest*.html
+
+/vendor/
+
+.vercel

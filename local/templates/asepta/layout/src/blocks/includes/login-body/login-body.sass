@@ -1,0 +1,47 @@
+.login-body
+    @extend .register-body
+
+    .register-banner
+        @media (min-width: $tab + 1)
+            max-width: 660px
+            aspect-ratio: 660 / 480
+
+.login-body__form 
+    max-width: 348px
+    min-width: 300px
+    width: 100%
+
+    @media (max-width: $tab)
+        max-width: 100%
+        min-width: 0
+
+    > .btn
+        width: 100%
+        margin-top: 40px
+
+    > p
+        margin-top: 16px
+        font-size: 14px
+        font-weight: 500
+        line-height: 1.14
+        color: rgba($bold, .36)
+        text-align: center
+
+        a
+            color: $blue
+            @extend .link-hover
+
+.login-body__form-item
+    .form__input-wrapper
+        &:not(:first-child)
+            margin-top: 16px
+
+    > a
+        margin-top: 4px
+        text-align: right
+        font-size: 16px
+        font-weight: 500
+        line-height: 1.5
+        color: $blue
+        @extend .link-hover
+        float: right

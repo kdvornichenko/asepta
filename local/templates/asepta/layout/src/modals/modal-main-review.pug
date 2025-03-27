@@ -1,0 +1,27 @@
+include ../templates/mixins.pug
+
++modal('main-review', 'center')
+    .modal-main-review
+        .modal-main-review__inner
+            .modal-main-review__header
+                .modal-main-review__header-top
+                    .modal-main-review__title Отзыв
+                    button.modal-main-review__close(data-modal-close="main-review")
+                        +svg('cross')
+
+                .modal-main-review__header-bottom
+                    .modal-main-review__info
+                        .modal-main-review__name Елена&nbsp;С.
+                        .modal-main-review__date 24&nbsp;Августа, 2024
+                    .modal-main-review__rating
+                        each star in Array(5)
+                            +svg('tooth-fill')
+
+            .modal-main-review__body
+                .modal-main-review__product Зубная паста Асепта реминерализация и&nbsp;отбеливание туба 75&nbsp;мл
+                .modal-main-review__text Товар пришел целый. Заказывал потому что болели десна. Использую 3-й день и&nbsp;в&nbsp;совокупности с&nbsp;специальной зубной пастой боль стала реже в&nbsp;несколько раз и&nbsp;меньше в&nbsp;болевых ощущениях мазь не&nbsp;горькая, десна не&nbsp;щипет в&nbsp;целом продукт хороший
+
+            .modal-main-review__footer
+                +btn({text:'Смотреть на', isLink: true}).modal-main-review__btn.btn--outline
+                    +picture({src:'svg/ozon-circle.svg'})
+

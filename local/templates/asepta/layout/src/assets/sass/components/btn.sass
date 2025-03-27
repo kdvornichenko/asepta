@@ -1,0 +1,114 @@
+.btn
+    display: flex
+    align-items: center
+    justify-content: center
+
+    +yo('padding-top', ($mob-sm: 12px, $desktop-md: 18px))
+    +yo('padding-bottom', ($mob-sm: 12px, $desktop-md: 18px))
+    +yo('padding-right', ($mob-sm: 21px, $desktop-md: 37px))
+    +yo('padding-left', ($mob-sm: 21px, $desktop-md: 37px))
+
+    +yo('border-radius', ($mob-sm: 740px, $desktop-md: 1000px))
+
+    &:disabled
+        opacity: .5
+        pointer-events: none
+
+    .btn__text, 
+        @extend .t-body
+        +vela(sb)
+        white-space: nowrap
+
+.btn--small
+    +yo('padding-top', ($mob-sm: 8px, $desktop-md: 10px))
+    +yo('padding-bottom', ($mob-sm: 8px, $desktop-md: 10px))
+    +yo('padding-right', ($mob-sm: 20px, $desktop-md: 24px))
+    +yo('padding-left', ($mob-sm: 20px, $desktop-md: 24px))
+
+    .btn__text
+        @extend .t-desc
+
+.btn--outline
+    border: 1px solid $grey
+    transition: $trs border-color, $trs opacity
+
+    @media (hover: hover)
+        &:hover
+            border-color: $dark-blue
+            .btn__text
+                color: $dark-blue
+
+    .btn__text
+        transition: $trs color
+
+.btn--fill
+    padding: 14px 38px
+    background: $dark-blue
+    transition: $trs background, $trs opacity
+
+    @media (hover: hover)
+        &:hover
+            background: $blue
+
+    .btn__text
+        color: $white
+
+.btn--white
+    background: $white
+    transition: $trs opacity
+
+    .btn__text
+        color: $black
+
+.btn--icon
+    padding: 0
+    @extend .u-center
+    border-radius: 50%
+    aspect-ratio: 1
+    background: $white
+    transition: $trs background, $trs opacity
+
+    &:disabled
+        opacity: .5
+
+    @media (hover: hover)
+        &:hover
+            background: $dark-blue
+            & svg
+                color: $white
+
+    & svg
+        width: 32px 
+        height: 32px
+        color: rgba($bold, .2)
+        transition: $trs color
+
+.btn--icon-big
+    +yo('width', ($mob-sm: 36px, $desktop-md: 44px))
+    +yo('height', ($mob-sm: 36px, $desktop-md: 44px))
+
+.btn--icon-small
+    +yo('width', ($mob-sm: 28px, $desktop-md: 36px))
+    +yo('height', ($mob-sm: 28px, $desktop-md: 36px))
+    
+.btn--close
+    position: relative
+    height: 40px
+    width: 40px
+    &:before, &:after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform-origin: center
+        transition-duration: inherit
+        transition-timing-function: ease
+        width: 30px
+        height: 3px
+        border-radius: 20px
+        background-color: $black
+    &:before
+        transform: translate(-50%, -50%) rotate(45deg)
+    &:after
+        transform: translate(-50%, -50%) rotate(135deg)
+    

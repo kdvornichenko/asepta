@@ -1,0 +1,30 @@
+mixin popular-questions(data)
+    .popular-questions&attributes(attributes)
+        h2 Популярные вопросы
+        .popular-questions__list
+            .popular-questions__item(data-acc)
+                button.popular-questions__question(data-acc-btn="question").is-active
+                    span Содержит ли паста «Асепта Плюс Реминерализация» мяту, ментол в каком-либо виде?
+                .popular-questions__answer.is-open(data-acc-content="question")
+                    .popular-questions__answer-inner(data-acc-content-inner) Да, эти компоненты входят в состав зубной пасты «АСЕПТА MINERALS». В нашей серии есть зубная паста без мяты и ментола в составе – это зубная паста «АСЕПТА EXTRA SENSITIVE».
+            .popular-questions__item(data-acc)
+                button.popular-questions__question(data-acc-btn="question")
+                    span «Асепта Плюс Реминерализация» 75 гр. сменила упаковку? Как она сейчас называется?
+                .popular-questions__answer(data-acc-content="question")
+                    .popular-questions__answer-inner(data-acc-content-inner)  Да, эти компоненты входят в состав зубной пасты «АСЕПТА MINERALS». В нашей серии есть зубная паста без мяты и ментола в составе – это зубная паста «АСЕПТА EXTRA SENSITIVE».
+            .popular-questions__item(data-acc)
+                button.popular-questions__question(data-acc-btn="question")
+                    span  Можно ли реминирализирующий гель использовать в капу на всю ночь или только на 30 минут, после чего капу промыть?
+                .popular-questions__answer(data-acc-content="question")
+                    .popular-questions__answer-inner(data-acc-content-inner)  Да, эти компоненты входят в состав зубной пасты «АСЕПТА MINERALS». В нашей серии есть зубная паста без мяты и ментола в составе – это зубная паста «АСЕПТА EXTRA SENSITIVE».
+            .popular-questions__item(data-acc)
+                button.popular-questions__question(data-acc-btn="question")
+                    span  С какого возраста показано применение реминерализующего геля из линейки plus?
+                .popular-questions__answer(data-acc-content="question")
+                    .popular-questions__answer-inner(data-acc-content-inner)  Да, эти компоненты входят в состав зубной пасты «АСЕПТА MINERALS». В нашей серии есть зубная паста без мяты и ментола в составе – это зубная паста «АСЕПТА EXTRA SENSITIVE».
+            .popular-questions__item(data-acc)
+                button.popular-questions__question(data-acc-btn="question")
+                    span  Где сейчас можно преобрести витаминно-минеральный комплекс «АСЕПТА»?
+                .popular-questions__answer(data-acc-content="question")
+                    .popular-questions__answer-inner(data-acc-content-inner)  Да, эти компоненты входят в состав зубной пасты «АСЕПТА MINERALS». В нашей серии есть зубная паста без мяты и ментола в составе – это зубная паста «АСЕПТА EXTRA SENSITIVE».
+        +btn({text: "Смотреть все"}).btn--outline

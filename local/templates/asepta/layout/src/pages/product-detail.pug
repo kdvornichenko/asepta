@@ -1,0 +1,17 @@
+extends ../templates/template.pug
+
+block vars
+    -
+        const disabledCardBtn = true
+
+block content
+    .page(data-page="product-detail")
+        .page__inner.product-detail-page__inner
+            include ../blocks/includes/product-hero/product-hero.pug
+            include ../blocks/includes/product-reviews/product-reviews.pug
+            include ../blocks/includes/product-offers/product-offers.pug
+            .product-detail-page__btn.container.active-inner(data-active-inner=".product-hero__info" data-modal-url="/modals/modal-buy-product.html" data-modal-open="buy-product")
+                +btn({
+                    text: 'Где купить',
+                    isLink: true,
+                }).btn--fill

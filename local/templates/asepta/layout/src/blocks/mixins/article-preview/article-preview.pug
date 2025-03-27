@@ -1,0 +1,12 @@
+mixin article-preview(data)
+    a(href="#").article-preview
+        if data.lock
+            .article-preview__lock 
+                .article-preview__lock-icon 
+                    +svg('lock')
+                p Доступно после регистрации
+        p !{data.title}
+        +picture({
+            src: `${data.image}.jpg`,
+            srcWebp: `${data.image}.webp`
+        })

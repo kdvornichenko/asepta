@@ -1,0 +1,60 @@
+include ../templates/mixins.pug
+
++modal('search', 'top')
+    -
+        const results = [
+            {
+                section: 'Советы экспертам',
+                title: 'Галитоз - не болезнь, а симптом проблем со здоровьем'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Зубная паста при воспалении десен'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Отбеливание зубов куркумой'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Отбеливание зубов куркумой'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Отбеливание зубов куркумой'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Отбеливание зубов куркумой'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Отбеливание зубов куркумой'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Отбеливание зубов куркумой'
+            },
+            {
+                section: 'Вебинары',
+                title: 'Отбеливание зубов куркумой'
+            },
+        ]
+    .modal-search
+        .modal-search__body
+            form.modal-search__search
+                label(for="search-desktop")
+                    +svg('search')
+                input(type="text" id="search-desktop" name="search")
+                +btn({text: 'Найти'}).modal-search__button
+                +btn({icon: 'cross'}).modal-search__clear
+            .modal-search__results-amount Результаты:
+                span 20
+            .modal-search__results
+                if results
+                    for result in results
+                        a(href="#").modal-search__result
+                                .modal-search__result-section !{result.section}
+                                .modal-search__result-title !{result.title}
+                else
+                    span.modal-search__empty По вашему запросу ничего не найдено

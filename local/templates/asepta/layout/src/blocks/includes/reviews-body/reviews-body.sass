@@ -1,0 +1,26 @@
+.reviews-body
+    width: 100%
+    @extend .u-flex-col
+
+    .crumbs
+        margin: 0 auto
+        +yo('margin-top', ($mob: 0, $desktop-md: 40px))
+        +yo('margin-bottom', ($mob: 0, $desktop-md: 8px))
+
+    h1
+        margin: 0 auto
+
+.reviews-body__list 
+    +yo('margin-top', ($mob: 30px, $desktop-md: 48px))
+    @extend .u-flex-col
+    +yo('gap', ($mob: 12px, $desktop-md: 56px))
+    max-width: 800px
+    margin: 0 auto
+
+    .review-item
+        @media (min-width: $tab-sm + 1)
+            background: none
+
+.reviews-body__btn
+    +yo('margin-top', ($mob: 32px, $desktop-md: 56px))
+    @extend .u-center

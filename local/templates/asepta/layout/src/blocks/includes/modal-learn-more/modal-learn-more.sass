@@ -1,0 +1,123 @@
+.modal--learn-more
+    top: calc(var(--header-height) - 2px)
+
+    +yo('padding-left', ($mob-sm: 16px, $desktop-md: 28px))
+    +yo('padding-right', ($mob-sm: 16px, $desktop-md: 28px))
+
+    opacity: 0
+    transition: $trs
+    &.modal--active
+        opacity: 1
+
+    .modal__container
+        border-radius: 28px
+        height: calc(100% - var(--header-height))
+        max-height: var(--modal-learn-more-height)
+    &.modal--active
+        .modal__container
+            transform: translateX(140px) translateY(0)
+            width: fit-content
+            height: fit-content
+            @media (max-width: $tab)
+                transform: translateX(0) translateY(0)
+
+    .modal__content
+        max-height: 100%
+        overflow-x: hidden
+        overflow-y: auto
+
+    .modal-learn-more
+        padding: 60px 40px
+
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: 20px
+
+        overflow-y: auto
+
+    .modal-learn-more__nav
+        display: flex
+        flex-direction: column
+        row-gap: 40px
+
+    .modal-learn-more__list
+        width: fit-content
+        .modal-learn-more__title
+            margin-bottom: 8px
+
+        li
+            a
+                display: flex
+
+                padding-block: 8px
+                width: 100%
+
+                transition: $trs
+                &:hover
+                    color: $blue
+
+    .modal-learn-more__list li a, .modal-learn-more__nav-btn
+        +vela(m)
+        font-size: 16px
+        line-height: 24px
+    .modal-learn-more__banner
+        aspect-ratio: 394 / 394
+        width: fit-content
+        height: fit-content
+        position: relative
+        min-width: 394px
+        padding: 28px 20px 16px
+        border-radius: 32px
+
+    .modal-learn-more__image
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        border-radius: 32px
+        img
+            border-radius: 32px
+            width: 100%
+    .modal-learn-more__banner-content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+        position: relative
+        z-index: 2
+        h4
+            color: $white
+            font-variant-numeric: lining-nums proportional-nums
+            font-feature-settings: 'ss05' on, 'ss20' on
+            +vela(b)
+            font-size: 30px
+            line-height: 1.2
+        button
+            padding: 9.5px 18px
+            width: fit-content
+            border-radius: 751.323px
+            background: $white
+            .btn__text
+                color: $grey-4
+                font-feature-settings: 'salt' on, 'ss20' on
+                +vela(m)
+                font-size: 16px
+                line-height: 1.5
+    .modal-learn-more__close
+        position: absolute
+        top: 20px
+        right: 20px
+        svg
+            width: 24px
+            height: 24px
+            color: $bold
+
+.modal-learn-more-active
+    .header__nav-list
+        li
+            &:nth-of-type(2)
+                .header__nav-list-btn
+                    svg
+                        transform: rotate(180deg)

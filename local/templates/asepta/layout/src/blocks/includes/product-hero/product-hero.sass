@@ -1,0 +1,212 @@
+.product-hero
+	width: 100%
+	display: flex
+	align-items: flex-start
+	+yo('gap', ($mob: 32px, $desktop-md: 40px))
+	@media (max-width: $tab)
+		flex-direction: column
+
+.product-hero__gallery
+	position: sticky
+	top: $header-height
+	width: 50%
+	max-height: calc(100vh - #{$header-height} - 16px)
+	aspect-ratio: 660 / 754
+	border-radius: 32px
+	overflow: hidden
+	@media (max-width: $tab)
+		position: static
+		width: 100%
+		aspect-ratio: 343 / 462
+	@media (max-width: $mob)
+		height: calc(60vh - #{$header-height})
+		.product-gallery
+			height: calc(60vh - #{$header-height})
+
+.product-hero__info
+	width: 50%
+	@media (max-width: $tab)
+		width: 100%
+
+	& > *
+		@media (min-width: $tab + 1)
+			max-width: 592px
+
+.product-hero__info-main
+	@media (max-width: $tab)
+		display: flex
+		flex-direction: column
+	& h1
+		+yo('margin-top', ($mob: 5px, $desktop-md: 8px))
+		+yo('font-size', ($mob: 30px, $desktop-md: 54px))
+		line-height: 1.14
+		font-weight: 650
+		line-height: 1.14
+		@media (max-width: $tab)
+			order: -1
+
+.product-hero__info-article
+	@extend .t-body
+	color: rgba($bold, .36)
+	@media (max-width: $tab)
+		order: -1
+
+.product-hero__info-description
+	@extend .t-body
+	+yo('margin-top', ($mob: 24px, $desktop-md: 28px))
+
+.product-hero__advantages
+	max-width: 427px
+	margin-top: 32px
+	@extend .u-flex-col
+	+yo('gap', ($mob: 20px, $desktop-md: 24px))
+
+	& li
+		display: flex
+		align-items: center
+		+yo('gap', ($mob: 10px, $desktop-md: 14px))
+
+	& svg
+		+yo('width', ($mob: 32px, $desktop-md: 56px))
+		+yo('min-width', ($mob: 32px, $desktop-md: 56px))
+		+yo('height', ($mob: 32px, $desktop-md: 56px))
+		color: $dark-blue
+
+	& p
+		@extend .t-body
+
+.product-hero__advantages
+    & picture
+        display: contents
+
+.product-hero__info-btns
+	margin-top: 23px
+	display: flex
+	flex-wrap: wrap
+	gap: 12px
+	@media (max-width: $tab)
+		order: -1
+
+	.btn--fill
+		padding: 14px 58px
+		@media (max-width: $tab)
+			display: none
+
+	.btn--icon
+		+yo('width', ($mob: 44px, $desktop-md: 56px))
+		+yo('height', ($mob: 44px, $desktop-md: 56px))
+		transition: $trs
+		@media (max-width: $tab)
+			display: none
+		& svg
+			width: 32px
+			height: 32px
+			color: $bold
+
+	& a
+		@extend .link-hover
+		display: block
+
+
+		& svg, img
+			+yo('width', ($mob: 44px, $desktop-md: 56px))
+			+yo('height', ($mob: 44px, $desktop-md: 56px))
+
+.product-hero__acc-wrapper
+	+yo('margin-top', ($mob: 40px, $desktop-md: 84px))
+	@extend .u-flex-col
+	.product-hero__acc
+		&:first-child
+			padding-top: 0
+
+.product-hero__acc
+	padding: 24px
+	+yo('padding-left', ($mob: 0, $desktop-md: 24px))
+	+yo('padding-right', ($mob: 0, $desktop-md: 24px))
+	border-bottom: 1px solid $grey-2
+
+.product-hero__acc-btn
+	display: flex
+	justify-content: space-between
+	align-items: center
+	cursor: pointer
+	opacity: .36
+	transition: $trs opacity
+
+	&.is-active
+		opacity: 1
+		& p
+			color: $dark-blue
+
+	@media (hover: hover)
+		&:hover
+			opacity: 1
+
+	& p
+		font-size: 28px
+		font-weight: 600
+		transition: $trs color
+
+	& svg
+		width: 24px
+		height: 24px
+
+.product-hero__acc-content
+
+.product-hero__acc-content-inner
+	padding-top: 24px
+
+	& p
+		@extend .t-body
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	& p
+		font-size: 16px !important
+	& ul
+		@extend .list-marked
+		margin-bottom: 20px
+
+		&:last-child
+			margin-bottom: 0
+
+	& > a
+		display: flex
+		align-items: center
+		gap: 16px
+
+		@media (hover: hover)
+			&:hover
+				& svg
+					opacity: 1
+
+		& span
+			@extend .t-body
+			color: $dark-blue
+
+		& svg
+			width: 36px
+			height: 36px
+			opacity: .2
+			transition: $trs opacity
+
+.product-detail-page__btn
+	position: fixed
+	bottom: 0
+	left: 0
+	width: 100vw
+	padding-bottom: 16px
+	transform: translateY(101%)
+	z-index: 1
+	transition: $trs transform
+
+	&.active-inner
+		transform: translateY(0)
+
+	@media (min-width: $tab + 1)
+		display: none
+
+	& .btn
+		width: 100%
+		padding-top: 14px
+		padding-bottom: 14px

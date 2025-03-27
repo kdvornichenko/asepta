@@ -1,0 +1,54 @@
+.list-marked
+    @extend .u-flex-col
+    gap: 16px
+
+    & li
+        position: relative
+        @extend .t-body
+        padding-left: 22px
+
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            top: .4rem
+            // +yo('top', ($mob-sm: -5px, $desktop-md: 0))
+            left: 0
+            // transform: translateY(100%)
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background: $dark-blue
+
+.list-number
+    @extend .u-flex-col
+    gap: 5px
+
+    & li
+        position: relative
+        padding-left: 18px
+        counter-increment: item
+
+        &::before
+            content: counter(item) "."
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+
+ol
+    counter-reset: count
+
+    display: flex
+    flex-direction: column
+    row-gap: 28px
+    li
+        counter-increment: count
+        display: flex
+        align-items: flex-start
+        column-gap: 17px
+        &::before
+            content: counter(count, decimal) '.'
+            display: block
+            +vela(m)
+            color: $dark-blue

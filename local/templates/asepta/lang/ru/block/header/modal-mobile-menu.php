@@ -1,0 +1,8 @@
+<?php
+
+$MESS['MENU_MOBILE_CATALOG_TITLE'] = 'Продукция';
+$MESS['MENU_MOBILE_CATEGORIES_TITLE'] = 'Категории';
+$MESS['MENU_MOBILE_CATALOG_VIEW_ALL'] = 'Смотреть все';
+$MESS['MENU_MOBILE_DOCTORS_TITLE'] = 'Врачам';
+$MESS['MENU_MOBILE_LEARN_MORE_TITLE'] = 'Узнать больше';
+$MESS['MENU_MOBILE_WHERE_TO_BUY'] = 'Где купить';

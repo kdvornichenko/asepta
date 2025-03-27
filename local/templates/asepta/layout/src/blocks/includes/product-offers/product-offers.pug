@@ -1,0 +1,38 @@
+-
+    list = [
+        {
+            title: 'ОПОЛАСКИВАТЕЛЬ FRESH',
+            desc: 'От чувствительности зубов',
+            image: 'product-2'
+        },
+        {
+            title: 'BABY 0-3',
+            desc: 'Зубная паста при прорезывании зубов',
+            image: 'product-1',
+        },
+        {
+            title: 'WHITENING',
+            desc: 'Зубная паста для бережного отбеливания',
+            image: 'product-3',
+        },
+        {
+            title: 'MINERALS',
+            desc: 'Зубная паста для для минерализации эмали',
+            image: 'product-4',
+        },
+    ]
+
+.product-offers
+    .container
+        h2 Идеально сочетаются
+    .swiper.product-offers__list.container(data-slider="loop-line" data-init-breakpoint="1024")
+        .swiper-wrapper
+            each product in list
+                .swiper-slide.product-offers__item 
+                    +product-card({
+                        title: product.title,
+                        desc: product.desc,
+                        image: product.image,
+                        tags: product.tags || []
+                    })
+        .swiper-scrollbar(data-slider-scrollbar)

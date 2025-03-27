@@ -1,0 +1,10 @@
+mixin catalog-card(data)
+    a(href="#").catalog-card
+        p !{ data.title }
+        +picture({
+            src: `${data.image}.jpg`,
+            srcWebp: `${data.image}.webp`
+        })
+        +btn({
+            icon: 'arrow-up-right'
+        }).btn--icon.btn--icon-big

@@ -1,0 +1,129 @@
+.main-hero
+    width: 100%
+    overflow: hidden
+    +yo('padding-left', ($mob-sm: 16px, $desktop-md: 28px))
+    +yo('padding-right', ($mob-sm: 16px, $desktop-md: 28px))
+
+    // padding-top: var(--header-height)
+
+.main-hero__slider
+    +yo('border-radius', ($mob-sm: 26px, $desktop-md: 28px))
+    overflow: hidden
+    &.is-single
+        .main-hero__progress, .main-hero__pagination
+            display: none
+
+.main-hero__slide
+    box-sizing: border-box !important
+    position: relative
+    width: 100% !important
+    height: calc(100dvh - (#{$header-height} + 28px))
+    @extend .u-flex-col
+    justify-content: space-between
+    +yo('padding-top', ($mob-sm: 16px, $desktop-md: 30px))
+    +yo('padding-bottom', ($mob-sm: 57px, $desktop-md: 75px))
+    +yo('padding-left', ($mob-sm: 20px, $desktop-md: 36px))
+    +yo('padding-right', ($mob-sm: 20px, $desktop-md: 36px))
+    color: $white
+    background: $blue
+    z-index: 1
+    @media (max-width: $tab-sm)
+        height: calc(var(--initial-vh) * 90 - 16px)
+
+    &::after
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        height: 50%
+        background: linear-gradient(rgba($black, 0), rgba($black, .3))
+        z-index: -1
+
+.main-hero__background
+    @extend .img__i
+    z-index: -1
+
+.main-hero__top
+    max-width: 392px
+    @media (max-width: $tab-sm)
+        display: none
+    & p
+        @extend .t-body
+        line-height: 1.5
+
+.main-hero__bottom
+    display: flex
+    align-items: flex-end
+    +yo('gap', ($mob-sm: 20px, $desktop-md: 40px))
+    @media (max-width: $tab-sm)
+        max-width: 100%
+        flex-direction: column
+        align-items: flex-start
+    & p
+        @extend .t-h1
+        line-height: 1
+        max-width: 562px
+
+        @media (max-width: $tab-sm)
+            max-width: 100%
+
+    & .btn
+        @media (max-width: $tab-sm)
+            width: 100%
+
+.main-hero__progress
+    position: absolute
+    +yo('left', ($mob-sm: 20px, $desktop-md: 32px))
+    bottom: 36px
+    width: calc(100% - 64px)
+    height: 7px
+    background: rgba($white, .4)
+    backdrop-filter: blur(25px)
+    +yo('border-radius', ($mob-sm: 10px, $desktop-md: 18px))
+    overflow: hidden
+    z-index: 1
+
+    @media (max-width: $tab-sm)
+        display: none
+
+.main-hero__progress-line
+    width: var(--progress)
+    height: 100%
+    background: $white
+    transition: .1s
+
+.main-hero__pagination
+    position: absolute
+    +yo('left', ($mob-sm: 23px, $desktop-md: 32px))
+    bottom: 35px
+    display: flex
+    align-items: center
+    gap: 14px
+    width: calc(100% - 40px)
+    z-index: 1
+
+    @media (min-width: $tab-sm + 1)
+        display: none
+
+    & svg
+        width: 44px
+        height: 44px
+        color: white
+
+.main-hero__pagination-list
+    display: flex
+
+    .swiper-pagination-bullet
+        background: $white
+        // width: 16px
+        width: 8%
+        border-radius: 10px
+        opacity: .4
+        backdrop-filter: blur(25px)
+        transition: $trs
+
+    .swiper-pagination-bullet-active
+        opacity: 1
+        width: 100%

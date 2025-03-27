@@ -1,0 +1,78 @@
+.health-test
+    position: relative
+    margin: 0 48px 0
+    @media (max-width: $tab)
+        margin: 0 16px 0
+    .health-test__content
+        max-width: 100%
+        position: relative
+        width: 100%
+        padding: 60px
+        border-radius: 32px
+        background: linear-gradient(174deg, #00B7F1 20.94%, #00B4F0 48.84%, #00BDF0 67.78%, #00B8EE 85.09%, #00B8EE 97.28%)
+        @media (max-width: $tab)
+            padding: 40px 16px 135px
+            overflow: hidden
+    span
+        &:not(:last-child)
+            color: $white
+            text-align: center
+            font-variant-numeric: lining-nums proportional-nums
+            font-feature-settings: 'ss05' on, 'ss20' on
+            +vela(sb)
+            +yo('font-size', ($mob-sm: 24px, $desktop-md: 28px))
+            line-height: normal
+            display: block
+            width: 100%
+            margin-bottom: 20px
+    .btn
+        padding: 14px 32px
+        min-width: 220px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 100px
+        background: rgba(255, 255, 255, 0.95)
+        margin: 0 auto
+        position: relative
+        z-index: 1
+        .btn__text
+            color: $dark-blue
+            text-align: center
+            font-feature-settings: 'salt' on, 'ss20' on
+            +vela(m)
+            font-size: 20px
+            line-height: 1.4
+    .health-test__img--left
+        position: absolute
+        max-width: 192px
+        left: 124px
+        top: -40px
+        z-index: 0
+        @media (max-width: $desktop-sm)
+            left: 50px
+        @media (max-width: $tab)
+            bottom: -60px
+            top: auto
+            left: 80px
+            max-width: 150px
+        @media (max-width: $mob)
+            left: 59px
+            max-width: 111px
+    .health-test__img--right
+        position: absolute
+        max-width: 173px
+        top: -24px
+        right: 114px
+        z-index: 0
+        @media (max-width: $desktop-sm)
+            right: 50px
+        @media (max-width: $tab)
+            bottom: -30px
+            top: auto
+            right: 80px
+            max-width: 100px
+        @media (max-width: $mob)
+            right: 59px
+            max-width: 94px
+

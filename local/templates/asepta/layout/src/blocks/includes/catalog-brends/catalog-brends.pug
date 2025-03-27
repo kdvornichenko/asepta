@@ -1,0 +1,22 @@
+.catalog-brends
+    .catalog-brends__title.container
+        h2 Вы&nbsp;можете приобрести средства ASEPTA в&nbsp;аптеках и&nbsp;магазинах вашего города, а&nbsp;также на&nbsp;маркетплейсах
+    .swiper.catalog-brends__slider.container(data-slider="scroll")
+        .swiper-wrapper.catalog-brends__slider-wrapper
+            .swiper-slide.catalog-brends__slide
+                +picture({src: "/svg/wildberries.svg"})
+            .swiper-slide.catalog-brends__slide
+                +picture({src: "/svg/ozon.svg"})
+            .swiper-slide.catalog-brends__slide
+                +picture({src: "/svg/yandex-market.svg"})
+            .swiper-slide.catalog-brends__slide
+                +picture({src: "/svg/apteka-ru.svg"})
+            .swiper-slide.catalog-brends__slide
+                +picture({src: "/svg/doctor-slon.svg"})
+            .swiper-slide.catalog-brends__slide
+                +picture({src: "/svg/eapteka.svg"})
+    .catalog-brends__btn
+        +btn({
+            text: 'Смотреть все',
+            isLink: true
+        }).btn--outline

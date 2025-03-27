@@ -1,0 +1,29 @@
+-
+    filtersMock = [
+        {
+            name: 'Все',
+            checked: true
+        },
+        {
+            name: 'Для детей'
+        },
+        {
+            name: 'Зубные пасты',
+        },
+        {
+            name: 'Бальзамы и гели'
+        },
+        {
+            name: 'Ополаскиватели'
+        },
+    ]
+
+mixin filters(filters = filtersMock, isRadio)
+    ul.filters&attributes(attributes)
+        each filter, index in filters
+            li.filters__item
+                if isRadio
+                    input(type="radio" name="filters-radio" id=`filters-radio--${index + 1}` data-filter=filter.filter checked=filter.checked)
+                    label(for=`filters-radio--${index + 1}`) !{ filter.name }
+                else 
+                    a(href="#" class=filter.checked ? 'is-active' : '') !{ filter.name }

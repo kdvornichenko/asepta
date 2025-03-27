@@ -1,0 +1,20 @@
+include ../templates/mixins.pug
+
++modal('review-info', 'center')
+    .modal-review-info
+        .modal-review-info__inner.container
+            button.modal-review__close(data-modal-close="review-info")
+                +svg('cross')
+                
+            .modal-review-info__main-title
+                p Отзыв 
+
+            .modal-review-info__main-head 
+                .modal-review-info__main-info 
+                    p Наталия
+                    span 24 Августа, 2024
+                .modal-review-info__main-rating 
+                    each i in Array(5)
+                        .modal-review-info__main-rating-item
+                            +svg('tooth')
+            p Замечательное средство..дико заболел зуб..уже записалась к&nbsp;стоматологу, зная,.что на&nbsp;зубе киста. Ходила мучалась,.считая часы до&nbsp;приема врача. У&nbsp;коллеги по&nbsp;работе нашелся этот бальзам. Не&nbsp;особо поверила, но&nbsp;решила попробовать. Консистенция специфическая.

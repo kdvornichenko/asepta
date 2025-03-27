@@ -1,0 +1,17 @@
+.doctor-research
+    width: 100%
+
+    h2
+        text-align: center
+
+        @media (max-width: $mob)
+            font-size: 30px !important
+
+.doctor-research__list
+    +yo('margin-top', ($mob-sm: 28px, $desktop-md: 48px))
+    @extend .u-flex-col
+    +yo('gap', ($mob-sm: 16px, $desktop-md: 20px))
+
+.doctor-research__btn
+    +yo('margin-top', ($mob-sm: 32px, $desktop-md: 64px))
+    @extend .u-center

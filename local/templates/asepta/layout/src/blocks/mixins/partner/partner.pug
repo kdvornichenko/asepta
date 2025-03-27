@@ -1,0 +1,6 @@
+mixin partner(data)
+    a(href="#" target="_blank").partner
+        .partner__img-holder
+            +picture({
+                src: `svg/${data.img}.svg`
+            }).partner__img

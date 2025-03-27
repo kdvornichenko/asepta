@@ -1,0 +1,111 @@
+$info-height: var(--bestseller-info-height)
+
+.main-bestsellers
+    & h2
+        text-align: center
+
+.main-bestsellers__slider
+    position: relative
+    width: 100%
+    +yo('margin-top', ($mob-sm: 28px, $desktop-md: 40px))
+    +yo('margin-bottom', ($mob-sm: 28px, $desktop-md: 40px))
+    overflow-y: visible
+    padding: 0 !important
+    @media (max-width: $tab-sm)
+        height: auto
+        max-height: 100%
+.main-bestsellers__wrapper
+    display: flex
+    align-items: center
+    backface-visibility: hidden
+    height: 100%
+
+.main-bestsellers__slide
+    height: auto
+    aspect-ratio: 468 / 572
+    box-sizing: border-box !important
+    border-radius: 44px
+    width: 23.3% !important
+    max-height: 70%
+    overflow: hidden
+    transition: $trs width, $trs transform, $trs max-height
+
+    @media (max-width: $tab)
+        width: 40% !important
+    @media (max-width: $mob)
+        width: 80% !important
+
+    &:not(.is-big)
+        .product-card
+            aspect-ratio: 336 / 376
+            @media (min-width: $tab + 1)
+                transform: translateY(0)
+            .btn
+                opacity: 0
+            .product-card__info
+                opacity: 0
+                height: 0
+                overflow: hidden
+                @media (max-width: $tab)
+                    opacity: 1
+                    height: fit-content
+                    overflow: visible
+            .product-card__tags
+                opacity: 0
+            .product-card__image
+                height: 90%
+        @media (max-width: $tab-sm)
+            width: 60%
+
+    &.is-big
+        width: 30% !important
+        max-height: 100%
+        z-index: 1
+        @media (max-width: $tab)
+            width: 40% !important
+        @media (max-width: $tab-sm)
+            width: 100% !important
+            transform: scale(0.9) !important
+
+    .product-card
+        transform: translateY(0) !important
+        transition: 0
+        .product-card__info
+            height: $info-height
+            transition: $trs
+        .product-card__tags
+            transition: $trs
+        .product-card__image
+            transition: $trs
+
+.main-bestsellers__btn
+    display: flex
+
+    & .btn
+        margin: 0 auto
+
+.main-bestsellers__navigation
+    position: absolute
+    top: 0
+    right: 48px
+    display: flex
+    gap: 32px
+    @media (max-width: $tab)
+        display: none
+    &.is-hidden
+        display: none
+
+    button
+        padding: 8px
+        @extend .u-center, .link-hover
+        & svg
+            width: 36px
+            height: 36px
+    .splide__arrow
+        position: unset
+        background: transparent
+        opacity: 1
+        transform: 0
+        width: 36px
+        height: 37px
+        padding: 0

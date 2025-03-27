@@ -1,0 +1,78 @@
+.modal-filters
+    +yo('padding-top', ($mob-sm: 24px, $desktop-md: 40px))
+    +yo('padding-bottom', ($mob-sm: 24px, $desktop-md: 40px))
+    +yo('padding-left', ($mob-sm: 16px, $desktop-md: 32px))
+    +yo('padding-right', ($mob-sm: 16px, $desktop-md: 32px))
+    @extend .u-flex-col
+    justify-content: space-between
+    height: 100%
+
+.modal-filters__head
+    p
+        +yo('font-size', ($mob-sm: 26px, $desktop-md: 30px))
+        +yo('margin-bottom', ($mob-sm: 4px, $desktop-md: 12px))
+        font-weight: 700
+
+    span
+        @extend .t-desc
+        color: rgba($bold, .36)
+
+.modal-filters__form
+    height: 100%
+    @extend .u-flex-col
+    justify-content: space-between
+
+    @media (max-width: $tab-sm)
+        gap: 40px
+
+.modal-filters__form-list
+    @extend .u-flex-col
+    +yo('gap', ($mob-sm: 12px, $desktop-md: 20px))
+
+    input
+        display: none
+
+        &:checked ~
+            label
+                background: $grey-2
+                border-color: $grey-2
+
+    label
+        display: block
+        width: 100%
+        +yo('padding', ($mob-sm: 16px, $desktop-md: 20px))
+        border: 1px solid rgba($bold, .2)
+        border-radius: 1000px
+        cursor: pointer
+        @extend .link-hover
+        transition: $trs
+
+        @media (max-width: $tab-sm)
+            text-align: center
+
+.modal-filters__form-btns
+    display: flex
+    gap: 12px
+
+    @media (max-width: $tab-sm)
+        flex-direction: column-reverse
+
+    .btn
+        gap: 5px
+        width: 50%
+        @media (max-width: $tab-sm)
+            width: 100%
+
+        .count
+            color: $white
+            +yo('font-size', ($mob-sm: 16px, $desktop-md: 20px))
+            font-weight: 500
+
+.modal-filters__close
+    position: absolute
+    +yo('top', ($mob-sm: 36px, $desktop-md: 40px))
+    +yo('right', ($mob-sm: 16px, $desktop-md: 32px))
+    display: flex
+    svg
+        +yo('width', ($mob-sm: 32px, $desktop-md: 24px))
+        +yo('height', ($mob-sm: 32px, $desktop-md: 24px))

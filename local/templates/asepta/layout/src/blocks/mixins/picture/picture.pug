@@ -1,0 +1,19 @@
+mixin picture(options)
+    picture
+        if options.srcWebp
+            source(type="image/webp" srcset=`assets/img/webp/${options.srcWebp}` media=options.mobile ? "(min-width: 1024px)" : '')
+        if options.tablet
+            source(type="image/jpeg" srcset=`assets/img/${options.tablet.src}` media="(min-width: 768px) and (max-width: 1023px)")
+            if options.tablet.srcWebp
+                source(type="image/webp" srcset=`assets/img/webp/${options.tablet.srcWebp}` media="(min-width: 768px) and (max-width: 1023px)")
+        if options.mobile
+            source(type="image/jpeg" srcset=`assets/img/${options.mobile.src}` media="(max-width: 767px)")
+            if options.mobile.srcWebp
+                source(type="image/webp" srcset=`assets/img/webp/${options.mobile.srcWebp}` media="(max-width: 767px)")
+        source(type="image/jpeg" srcset=`assets/img/${options.src}` media="(min-width: 1024px)")
+        img(
+            class=options.lazy ? 'lazyload' : '' 
+            data-src=options.lazy && `assets/img/${options.src}` 
+            src=`assets/img/${options.src}` 
+            alt=""
+        )&attributes(attributes)

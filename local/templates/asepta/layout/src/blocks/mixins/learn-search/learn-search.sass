@@ -1,0 +1,139 @@
+.learn-search
+    position: relative
+    margin: 60px 48px 0
+    @media (max-width: $tab-sm)
+        margin: 24px 16px 0
+.learn-search__content
+    border-radius: 28px
+    background: $pink-2
+    padding: 60px 36px
+    position: relative
+    @media (max-width: $tab-sm)
+        padding: 24px 16px
+        &::before
+            display: block
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            border-radius: 28px
+            z-index: 1
+            background: linear-gradient(138deg, rgba(61, 31, 94, 0.50) 23.51%, rgba(61, 31, 94, 0.00) 97.6%)
+    img
+        position: absolute
+        bottom: 0
+        right: 0
+        height: 100%
+        z-index: 0
+        border-radius: 0 28px 28px 0
+
+
+.learn-search__input-wraper
+    position: relative
+    background: $white
+    padding: 4px
+    padding-left: 60px
+    border-radius: 1000px
+    display: flex
+    max-width: 672px
+    height: 50px
+    align-items: center
+    z-index: 1
+    @media (max-width: $desktop-sm)
+        max-width: 500px
+    @media (max-width: $tab)
+        display: none
+    label
+        position: absolute
+        top: 50%
+        left: 24px
+        transform: translateY(-50%)
+        @extend .u-center
+        cursor: pointer
+
+    svg
+        width: 24px
+        height: 24px
+        color: $blue
+
+    input
+        font-size: 16px !important
+        width: 100%
+        height: 100%
+        padding-right: 4px
+        @extend .t-desc
+        &::placeholder
+            opacity: .5
+            color: black
+.learn-search__input-wraper--mob
+    position: relative
+    background: $white
+    border-radius: 1000px
+    border: 1px solid $grey-2
+    padding: 10px 24px
+    padding-left: 60px
+    border-radius: 1000px
+    max-width: 100%
+    max-height: 50px
+    align-items: center
+    z-index: 1
+    display: none
+    margin: 32px 48px 0
+    @media (max-width: $tab)
+        display: flex
+    @media (max-width: $tab-sm)
+        margin: 32px 16px 0
+    label
+        position: absolute
+        top: 50%
+        left: 24px
+        transform: translateY(-50%)
+        @extend .u-center
+        cursor: pointer
+
+    svg
+        width: 24px
+        height: 24px
+        color: $blue
+
+    input
+        font-size: 16px !important
+        width: 100%
+        height: 100%
+        padding-right: 4px
+        @extend .t-desc
+        &::placeholder
+            opacity: .5
+            color: black
+.learn-search__text
+    color: $white
+    font-variant-numeric: lining-nums proportional-nums
+    font-feature-settings: 'ss05' on, 'ss20' on
+    +vela(b)
+    +yo('font-size', ($mob-sm: 24px, $desktop-md: 30px))
+    line-height: 1.2
+    max-width: 774px
+    margin-bottom: 82px
+    position: relative
+    z-index: 1
+    @media (max-width: $desktop-sm)
+        max-width: 500px
+        margin-bottom: 50px
+    @media (max-width: $tab)
+        margin-bottom: 0
+.learn-search__btn
+    margin-left: auto
+    width: 164px
+    height: 100%
+    padding: 14px 20px
+    border-radius: 100px
+    background: $dark-blue
+    .btn__text
+        color: $white
+        text-align: center
+        font-feature-settings: 'salt' on, 'ss20' on
+        +vela(m)
+        font-size: 16px
+        line-height: 1.5

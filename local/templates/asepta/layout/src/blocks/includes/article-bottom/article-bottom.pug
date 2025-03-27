@@ -1,0 +1,88 @@
+-
+    const list = [
+        {
+            title: 'ОПОЛАСКИВАТЕЛЬ FRESH',
+            desc: 'От чувствительности зубов',
+            image: 'product-2'
+        },
+        {
+            title: 'BABY 0-3',
+            desc: 'Зубная паста при прорезывании зубов',
+            image: 'product-1',
+        },
+        {
+            title: 'WHITENING',
+            desc: 'Зубная паста для бережного отбеливания',
+            image: 'product-3',
+        },
+        {
+            title: 'MINERALS',
+            desc: 'Зубная паста для для минерализации эмали',
+            image: 'product-4',
+        },
+    ]
+
+    const cards = [
+        {
+            title: 'Влияет&nbsp;ли зубная паста на&nbsp;прочность зубов?',
+            descr: 'Ежедневная чистка зубов пастой&nbsp;&mdash; эффективный способ сохранить их&nbsp;здоровье. Процедура позволяет удалить из&nbsp;ротовой полости остатки пищи, которые',
+            label: 'Детям'
+        },
+        {
+            title: 'Воспаление десен при ношении брекетов',
+            descr: 'Каждый из&nbsp;нас мечтает о&nbsp;красивых ровных зубах. Ослепительная улыбка в&nbsp;любой ситуации способна разрядить обстановку и&nbsp;подарить всем',
+            label: 'Здоровье дёсен'
+        },
+        {
+            title: 'Пробиотики для полости рта',
+            descr: 'Сегодня каждому известна важность здоровой микрофлоры кишечника, однако, далеко не&nbsp;каждый из&nbsp;нас задумывается о&nbsp;влиянии микрофлоры',
+            label: 'Гигиена полости рта'
+        },
+        {
+            title: 'Влияет&nbsp;ли зубная паста на&nbsp;прочность зубов?',
+            descr: 'Ежедневная чистка зубов пастой&nbsp;&mdash; эффективный способ сохранить их&nbsp;здоровье. Процедура позволяет удалить из&nbsp;ротовой полости остатки пищи, которые',
+            label: 'Детям'
+        },
+        {
+            title: 'Воспаление десен при ношении брекетов',
+            descr: 'Каждый из&nbsp;нас мечтает о&nbsp;красивых ровных зубах. Ослепительная улыбка в&nbsp;любой ситуации способна разрядить обстановку и&nbsp;подарить всем',
+            label: 'Здоровье дёсен'
+        },
+        {
+            title: 'Пробиотики для полости рта',
+            descr: 'Сегодня каждому известна важность здоровой микрофлоры кишечника, однако, далеко не&nbsp;каждый из&nbsp;нас задумывается о&nbsp;влиянии микрофлоры',
+            label: 'Гигиена полости рта'
+        },
+    ]
+
+.article__bottom
+    .article__bottom-products
+        .product-offers
+            h2 Продукты из статьи
+            .swiper.product-offers__list(data-slider="loop-line" data-init-breakpoint="1024")
+                .swiper-wrapper
+                    each product in list
+                        .swiper-slide.product-offers__item 
+                            +product-card({
+                                title: product.title,
+                                desc: product.desc,
+                                image: product.image,
+                                tags: product.tags || []
+                            })
+                .swiper-scrollbar(data-slider-scrollbar)
+        +btn({isLink: true, text: 'Смотреть все'}).btn--outline.article__bottom-products__btn
+
+    .article__bottom-articles
+        .article__bottom-articles__inner
+            h2 Читать далее
+            .swiper.article__bottom-articles__slider(data-slider-article="mobile-full" data-width-init="1024")
+                .swiper-wrapper
+                    each card, index in cards
+                        - const cardWithImg = { ...card, img: { src: `articles-${index + 1}.jpg`, srcWebp: `articles-${index + 1}.webp` } }
+                        .swiper-slide
+                            +articles-card(cardWithImg)
+                .swiper-scrollbar(data-slider-scrollbar)
+        +btn({
+            text: 'Смотреть все',
+            isLink: true
+        }).btn--outline.article__bottom-articles__btn

@@ -1,0 +1,130 @@
+-
+    list = [
+        {
+            title: 'BABY 0-3',
+            desc: 'Зубная паста при прорезывании зубов',
+            image: 'product-1',
+            tags: ['НОВИНКА']
+        },
+        {
+            title: 'ОПОЛАСКИВАТЕЛЬ FRESH',
+            desc: 'От чувствительности зубов',
+            image: 'product-2'
+        },
+        {
+            isArticle: true,
+            title: 'ASEPTA — территория<br>уверенных улыбок',
+            textBtn: 'Подробнее о бренде',
+            image: 'article-1'
+        },
+        {
+            title: 'WHITENING',
+            desc: 'Зубная паста<br>для бережного отбеливания',
+            image: 'product-3',
+            tags: ['НОВИНКА']
+        },
+        {
+            title: 'Гель для десен<br>с прополисом',
+            desc: 'Для регенерации слизистых',
+            image: 'product-5'
+        },
+        {
+            title: 'MINERALS',
+            desc: 'Зубная паста<br>для минерализации эмали',
+            image: 'product-4',
+            tags: ['НОВИНКА']
+        },
+        {
+            title: 'BABY 0-3',
+            desc: 'Зубная паста при прорезывании зубов',
+            image: 'product-1',
+            tags: ['НОВИНКА']
+        },
+        // ----- 
+        {
+            isArticle: true,
+            isDark: true,
+            title: 'Сравнение народных методов лечения и средств серии «Асепта»',
+            textBtn: 'Читать подробнее',
+            image: 'article-2'
+        },
+        {
+            title: 'ОПОЛАСКИВАТЕЛЬ FRESH',
+            desc: 'От чувствительности зубов',
+            image: 'product-2'
+        },
+        {
+            title: 'Гель для десен<br>с прополисом',
+            desc: 'Для регенерации слизистых',
+            image: 'product-5'
+        },
+        {
+            title: 'BABY 0-3',
+            desc: 'Зубная паста при прорезывании зубов',
+            image: 'product-1',
+            tags: ['НОВИНКА']
+        },
+        {
+            title: 'WHITENING',
+            desc: 'Зубная паста<br>для бережного отбеливания',
+            image: 'product-3',
+        },
+        {
+            title: 'MINERALS',
+            desc: 'Зубная паста<br>для минерализации эмали',
+            image: 'product-4',
+        },
+        {
+            title: 'BABY 0-3',
+            desc: 'Зубная паста при прорезывании зубов',
+            image: 'product-1',
+            tags: ['НОВИНКА']
+        },
+    ]
+
+.catalog-body.container
+    +crumbs(['Главная', 'Каталог'])
+    h1 Вся продукция
+    .catalog-body__filters
+        +filters
+        +btn({
+            text: 'Подобрать уход',
+            icon: 'tooth-transparent'
+        })(data-modal-url="modals/modal-filters.html" data-modal-open="filters").btn--outline
+    .catalog-body__list
+        each product in list
+            article.catalog-body__product(
+                class=product.isArticle ? 'catalog-body__product--article' : ''
+                class=product.isDark ? 'catalog-body__product--dark' : ''
+            )
+                if product.isArticle
+                    a(href="#")
+                        p !{ product.title }
+                        +btn({
+                            text: product.textBtn
+                        }).btn--white.btn--small
+                        +picture({
+                            src: `${product.image}.jpg`,
+                            srcWebp: `${product.image}.webp`
+                        })
+                else 
+                    +product-card({
+                        title: product.title,
+                        desc: product.desc,
+                        image: product.image,
+                        tags: product.tags || []
+                    })
+    .catalog-body__btn
+        +btn({
+            text: 'Показать еще',
+            isLink: true
+        }).btn--outline
+    +btn({
+        text: 'Подобрать уход',
+        icon: 'tooth-transparent'
+    })(
+        data-modal-url="modals/modal-filters.html" 
+        data-modal-open="filters" 
+        data-active-inner=".catalog-body__list" 
+        data-active-inner-rate="400"
+    ).btn--outline.catalog-body__fixed-btn

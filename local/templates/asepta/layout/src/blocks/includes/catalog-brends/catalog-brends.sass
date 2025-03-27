@@ -1,0 +1,62 @@
+.catalog-brends
+
+.catalog-brends__title
+    display: flex
+    justify-content: center
+
+    & h2
+        text-align: center
+        max-width: 946px
+        line-height: 1.14
+        @media (max-width: $mob)
+            font-size: 30px
+
+.catalog-brends__slider
+    width: 100%
+    +yo('margin-top', ($mob-sm: 40px, $desktop-md: 68px))
+
+.catalog-brends__slider-wrapper
+    align-items: stretch
+
+    @media (max-width: $tab)
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-auto-rows: 1fr
+        gap: 8px
+
+.catalog-brends__slide
+    position: relative
+    @extend .u-center
+    height: auto
+
+    @media (max-width: $tab)
+        width: 100%
+        background: $grey-2
+        border-radius: 12px
+
+    @media (min-width: $tab + 1)
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            right: 0
+            width: 1px
+            height: 100%
+            background: $grey
+    & a
+        display: flex
+        height: fit-content
+        align-items: center
+    & picture
+        display: contents
+    & img
+        width: 30vw
+        height: auto
+    & svg
+        width: 30vw
+        height: auto
+
+.catalog-brends__btn
+    +yo('margin-top', ($mob-sm: 24px, $desktop-md: 56px))
+    @extend .u-center

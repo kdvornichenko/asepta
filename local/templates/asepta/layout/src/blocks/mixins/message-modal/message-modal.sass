@@ -1,0 +1,42 @@
+.modal--message-modal
+    z-index: 10000
+  
+.message-modal
+    position: relative
+    max-width: calc(100vw - 2 * var(--unit))
+    padding: 12px 24px 12px 40px
+    display: flex
+    align-items: center
+    gap: 16px
+    background: $dark-blue
+    border-top-right-radius: 8px
+    border-bottom-right-radius: 8px
+    color: $white
+
+.message-modal__close
+    position: absolute
+    top: 10px
+    right: 10px
+    &::before,
+    &::after
+        width: 20px
+        height: 2px
+
+.message-modal__info-icon
+    @extend .u-center
+    svg
+        width: 24px
+        height: 24px
+        path
+            stroke: $white
+
+.message-modal__title
+    @extend .t-body
+    font-weight: 500
+
+.message-modal__text
+    margin-top: 12px
+    line-height: 120%
+
+.message-modal__link
+    margin-top: 16px

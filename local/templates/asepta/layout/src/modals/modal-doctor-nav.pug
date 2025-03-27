@@ -1,0 +1,14 @@
+include ../templates/mixins.pug
+
++modal('doctor-nav', 'top')
+    .modal-doctor-nav
+        p Врачам
+        +search.modal-doctor-nav__search
+        nav 
+            ul 
+                li: a(href="#") Врачам
+                li: a(href="#") Статьи
+                li: a(href="#") Клинические исследования
+                li: a(href="#") Вебинары
+        button(data-modal-close="doctor-nav").modal-doctor-nav__close
+            +svg('cross')

@@ -1,0 +1,19 @@
+.doctor-lock-webinar 
+    .container
+        h2 Вебинары
+    .container
+        +private-access({
+            text: 'Для просмотра этого раздела, необходимо войти или зарегистрироваться.',
+            btns: [
+                {
+                    text: 'Войти',
+                    isLink: true,
+                    className: 'btn--outline'
+                },
+                {
+                    text: 'Зарегистрироваться',
+                    isLink: true,
+                    className: 'btn--white'
+                }
+            ],
+        }).private-access--yellow

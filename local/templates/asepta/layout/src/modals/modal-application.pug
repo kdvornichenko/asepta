@@ -1,0 +1,100 @@
+include ../templates/mixins.pug
+
++modal('application', 'center')
+    .modal-application
+        .modal-application__inner.container
+            button.modal-application__close(data-modal-close="application")
+                +svg('cross')
+            p Заявка на&nbsp;визит медицинского представителя
+            .modal-application__body 
+                form(data-form).modal-application__form
+                    p Ваши данные
+                    .form__input-wrapper
+                        input(type="text" placeholder="Ваши ФИО").form__input.validate
+                    .form__tel-wrapper.modal-application__form-part
+                        +select({
+                            name: 'reg_tel',
+                            checked: true,
+                            options: [
+                                {
+                                    value: '+7',
+                                    innerHTML: '+7',
+                                    checked: true,
+                                    id: 'tel_1',
+                                },
+                                {
+                                    value: '+375',
+                                    innerHTML: '+375',
+                                    id: 'tel_2',
+                                },
+                                {
+                                    value: '+998',
+                                    innerHTML: '+998',
+                                    id: 'tel_3',
+                                },
+                                {
+                                    value: '+996',
+                                    innerHTML: '+996',
+                                    id: 'tel_4',
+                                },
+                                {
+                                    value: '+992',
+                                    innerHTML: '+992',
+                                    id: 'tel_5',
+                                },
+                            ]
+                        }).select--common
+                        input(type="tel" placeholder="Номер телефона" data-tel).form__input.validate
+                    .form__input-wrapper.modal-application__form-part
+                        input(type="email" placeholder="Адрес электронной почты").form__input.validate
+                    .form__input-wrapper.modal-application__form-part
+                        input(type="text" placeholder="Название клиники").form__input.validate
+                    .form__input-wrapper.modal-application__form-part
+                        input(type="text" placeholder="Город").form__input.validate
+                    .form__input-wrapper
+                        input(type="text" placeholder="Адрес клиники").form__input.validate
+                    p Данные сотрудника вашей клиники, с которым будет назначена встреча
+                    .form__input-wrapper
+                        input(type="text" placeholder="ФИО врача").form__input.validate
+                    .form__select-wrapper.modal-application__type
+                        +select({
+                            name: 'specialization',
+                            placeholder: 'Специальность',
+                            checked: false,
+                            required: true,
+                            modalTitle: 'Специальность',
+                            options: [
+                                {
+                                    value: 'Терапевт',
+                                    innerHTML: 'Терапевт',
+                                    id: 'terapevt',
+                                },
+                                {
+                                    value: 'Ортодонт',
+                                    innerHTML: 'Ортодонт',
+                                    id: 'ortodont',
+                                },
+                                {
+                                    value: 'Ортопед',
+                                    innerHTML: 'Ортопед',
+                                    id: 'ortoped',
+                                },
+                                {
+                                    value: 'Пародонтолог',
+                                    innerHTML: 'Пародонтолог',
+                                    id: 'parodontolog',
+                                },
+                                {
+                                    value: 'Хирург',
+                                    innerHTML: 'Хирург',
+                                    id: 'hirurg',
+                                },
+                            ]
+                        }).select--common
+                    .form__input-wrapper
+                        textarea(placeholder="Дополнительная информация").form__textarea
+                    +btn({
+                        text: 'Отправить заявку'
+                    })(type="submit" data-submit).btn--fill
+                    .modal-application__policy 
+                        p Нажимая кнопку, я даю согласие на обработку и передачу моих <a href="#">персональных данных</a>.

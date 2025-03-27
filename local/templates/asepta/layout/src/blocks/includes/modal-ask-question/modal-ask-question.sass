@@ -1,0 +1,66 @@
+.modal--center.modal--ask-question
+    .modal__container
+        border-radius: 24px
+        @media (max-width: $tab-sm)
+            width: 100%
+            top: auto
+            bottom: 0
+            transform: translate(-50%, 0)
+            border-radius: 24px 24px 0px 0px
+.modal-ask-question
+    min-width: 760px
+    padding: 60px
+    @media (max-width: $tab-sm)
+        min-width: 100%
+        padding: 16px 16px 40px
+    .modal-ask-question__header
+        color: $bold
+        font-variant-numeric: lining-nums proportional-nums
+        font-feature-settings: 'ss05' on, 'ss20' on
+        +vela(b)
+        +yo('font-size', ($mob: 28px, $desktop-md: 30px))
+        line-height: 1.2
+        margin-bottom: 32px
+        @media (max-width: $tab-sm)
+            margin-bottom: 40px
+    .modal-ask-question__close
+        position: absolute
+        +yo('top', ($mob-sm: 16px, $desktop-md: 14px))
+        +yo('right', ($mob-sm: 16px, $desktop-md: 14px))
+        @extend .link-hover
+        svg
+            width: 24px
+            height: 24px
+    .modal-ask-question__form-part
+        margin-bottom: 16px
+        .form__input
+            padding: 12px 24px
+            border-radius: 1000px
+            border: 1px solid $grey-2
+            background: $white
+            color: rgba(0, 0, 0, 0.36)
+            font-feature-settings: 'salt' on, 'ss20' on
+            +vela(m)
+            font-size: 16px
+            line-height: 1.5
+    .form__textarea
+        height: 200px
+        border-radius: 20px
+        border: 1px solid $grey-2
+        background: $white
+        @media (max-width: $tab-sm)
+            height: 92px
+    .btn
+        margin-top: 32px
+        width: 100%
+        @media (max-width: $tab-sm)
+            margin-top: 40px
+    .modal-ask-question__policy
+        margin-top: 16px
+        p
+            color: rgba(0, 0, 0, 0.36)
+            text-align: center
+            font-feature-settings: 'salt' on, 'ss20' on
+            +vela(m)
+            font-size: 14px
+            line-height: 1.14

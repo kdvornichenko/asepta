@@ -1,0 +1,7 @@
+mixin socials()
+    .socials&attributes(attributes)
+        each link in ['vk', 'f'] 
+            +btn({
+                isLink: true,
+                icon: link
+            })(target="_blank", rel="noopener noreferrer").btn--icon.btn--icon-big.socials__link

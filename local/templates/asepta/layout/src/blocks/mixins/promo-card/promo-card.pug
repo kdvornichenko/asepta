@@ -1,0 +1,24 @@
+mixin promo-card
+    .promo-card&attributes(attributes)
+        .promo-card__info
+            .promo-card__icon 
+                +svg('tooth-protection')
+            h2 Защита зубов
+            p Зубные пасты для профессионального ежедневного ухода за полостью рта. Деликатное воздействие при повышенной чувствительности зубов.
+        .promo-card__images 
+            .promo-card__image
+                +picture({
+                    src: 'promo-card-1.png',
+                    srcWebp: 'promo-card-1.webp'
+                })
+            .promo-card__image
+                +picture({
+                    src: 'promo-card-2.png',
+                    srcWebp: 'promo-card-2.webp'
+                })
+            .promo-card__image
+                +picture({
+                    src: 'promo-card-3.png',
+                    srcWebp: 'promo-card-3.webp'
+                })
+                

@@ -1,0 +1,25 @@
+-
+    gallery = [
+        'product-1',
+        'product-detail-2',
+        'product-detail-3',
+        'product-detail-4'
+    ]
+
+.product-gallery(data-slider-wrapper)
+    .swiper.product-gallery__main(data-slider-body)
+        .swiper-wrapper 
+            each image in gallery
+                .swiper-slide.product-gallery__main-slide
+                    +picture({
+                        src: `${image}.png`,
+                        srcWebp: `${image}.webp`
+                    })
+    .swiper.product-gallery__thumbs(data-slider-thumbs)
+        .swiper-wrapper.product-gallery__thumbs-wrapper
+            each image in gallery
+                .swiper-slide.product-gallery__thumbs-slide
+                    +picture({
+                        src: `${image}.jpg`,
+                        srcWebp: `${image}.webp`
+                    })

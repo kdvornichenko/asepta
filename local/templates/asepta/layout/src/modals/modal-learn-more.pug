@@ -1,0 +1,26 @@
+include ../templates/mixins.pug
+
+-
+    const nav = [
+        { list: ['Популярные вопросы' ,'Советы эксперта','Где купить']},
+        { list: ['О производителе','Вертекс клуб','Контроль качества','Документы']},
+    ]
+
++modal('learn-more', 'top')
+    .modal-learn-more
+        button.modal-learn-more__close(data-modal-close="learn-more")
+            +svg('cross')
+        .modal-learn-more__nav
+            each item in nav
+                .modal-learn-more__list
+                    ul
+                        each listItem in item.list
+                            li: a(href="#") !{listItem}
+
+        .modal-learn-more__banner
+            .modal-learn-more__image
+                +picture({src: "learn-more.jpg", srcWebp: "learn-more.webp"})
+            .modal-learn-more__banner-content
+                h4 О бренде
+                +btn({ text: "Читать"})
+

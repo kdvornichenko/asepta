@@ -1,0 +1,93 @@
+// Обязательные стили
+[data-select]
+  position: relative
+  &.select--open
+    .select__content
+      height: var(--content-height)
+    .select__btn
+      svg
+        transform: rotate(180deg)
+  &.select--hide-checked-option
+    .select__option
+      input:checked + label
+        display: none
+  &.select--checked
+    .select__reset
+      display: block
+  .select__content
+    position: absolute
+    top: 100%
+    min-width: 100%
+    height: 0
+    overflow: hidden
+    transition: $trs
+    z-index: 1
+  .select__option
+    input
+      display: none
+    label
+      display: block
+      cursor: pointer
+  .select__reset
+    display: none
+    cursor: pointer
+  .select__btn
+    svg
+      fill: none
+      transition: $trs
+
+    
+// COMMON
+.select--common
+  height: 100%
+  width: 100%
+  .select__btn
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 10px
+    padding: 13px 24px
+    border-radius: 1000px
+    border: 1px solid $grey-2
+    cursor: pointer
+    span
+      font-size: 16px
+      font-weight: 500
+      line-height: 1.5
+    svg
+      margin-bottom: 2px
+      width: 15px
+      height: 15px
+  
+  .select__content
+    top: 100%
+    border-radius: 20px
+    box-shadow: 0px 6px 12px -6px rgba(24, 39, 75, 0.12), 0px 8px 24px -4px rgba(24, 39, 75, 0.08)
+    background: $white
+
+  .select__content-inner
+    padding: 16px 24px
+
+    > p
+      font-size: 28px
+      font-weight: 600
+      line-height: normal
+      margin-bottom: 16px
+
+  .select__option
+    &:not(:last-child)
+      border-bottom: 1px solid $grey-2
+    
+    label
+      position: relative
+      padding: 16px
+      width: 100%
+      font-weight: 500
+      font-size: 16px
+      line-height: 1.5
+      @extend .link-hover
+      transition: $trs
+          
+    input:checked + label
+      opacity: .5

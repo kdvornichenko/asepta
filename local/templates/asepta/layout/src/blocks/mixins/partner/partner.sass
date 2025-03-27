@@ -1,0 +1,24 @@
+.partner
+    display: flex
+    align-items: center
+    justify-content: center
+
+    +yo('border-radius', ($mob: 20px, $desktop-md: 32px))
+    background-color: $grey-2
+
+    transition: $trs
+    aspect-ratio: 16 / 9
+    @media ( hover: hover )
+        &:hover
+            background-color: $grey
+
+.partner__img-holder
+    +yo('padding-inline', ($mob: 30px, $desktop-md: 70px))
+
+    display: flex
+
+    picture
+        display: contents
+
+.partner__img
+    width: 100%

@@ -1,0 +1,184 @@
+.footer
+    width: 100%
+    margin-top: auto
+    display: grid
+    grid-template-columns: 1fr 1fr
+    +yo('gap', ($mob-sm: 12px, $desktop-md: 20px))
+    +yo('padding-bottom', ($mob-sm: 16px, $desktop-md: 48px))
+
+    @media (max-width: $tab)
+        display: flex
+        flex-direction: column
+
+.footer__item
+    background: $grey-2
+    +yo('border-radius', ($mob-sm: 28px, $desktop-md: 44px))
+
+    &--big
+        +yo('padding-top', ($mob-sm: 36px, $desktop-md: 55px))
+        +yo('padding-right', ($mob-sm: 35px, $desktop-md: 57px))
+        +yo('padding-bottom', ($mob-sm: 36px, $desktop-md: 55px))
+        +yo('padding-left', ($mob-sm: 35px, $desktop-md: 57px))
+
+.footer__list
+    & nav
+        display: flex
+        +yo('gap', ($mob-sm: 0, $desktop-md: 100px))
+        +yo('margin-bottom', ($mob-sm: 53px, $desktop-md: 40px))
+
+        @media (max-width: $desktop-sm)
+            justify-content: space-between
+            gap: 16px
+
+        @media (max-width: $tab)
+            flex-direction: column
+            gap: 36px
+
+        & ul
+            @extend .u-flex-col
+            gap: 16px
+            @media (max-width: $tab)
+                gap: 12px
+
+
+        & a, p
+            font-size: 16px
+            line-height: 1.5
+            font-weight: 600
+            @extend .link-hover
+
+        & p
+            cursor: auto
+            font-weight: 500
+            opacity: .36 !important
+
+    & > a
+        display: block
+        margin-top: 2px
+        @extend .t-desc, .link-hover--reverse
+        font-weight: 500
+
+
+.footer__list-column
+    @extend .u-flex-col
+    gap: 46px
+
+    @media (max-width: $tab)
+        gap: 36px
+
+.footer__contacts
+    position: relative
+    @extend .u-flex-col
+    justify-content: space-between
+    gap: 44px
+    overflow: hidden
+
+    @media (max-width: $tab)
+        order: -1
+
+    & ul
+        @extend .u-flex-col
+        gap: 20px
+
+        & a
+            @extend .t-h3, .link-hover
+
+    & .footer__contacts-picture
+        position: absolute
+        right: 0
+        width: 50%
+        pointer-events: none
+        left: unset !important
+        top: -100px
+        transform: translateX(30%)
+        @media (max-width: $tab)
+            max-width: 300px
+        // @media (max-width: $tab-sm)
+        //     top: 0
+        //     transform: none
+        @media (max-width: $mob)
+            width: 45%
+
+.footer__contacts-bottom
+    @extend .u-flex-col
+    gap: 20px
+
+    & > a
+        @extend .t-h3, .link-hover
+
+    & .footer__contacts-email
+        font-size: 20px
+        line-height: 28px
+
+.footer__contacts-add
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    & a
+        @extend .t-body, .link-hover
+        font-weight: 600
+
+    & p
+        @extend .t-desc
+        font-weight: 500
+        opacity: .36
+        @media (max-width: $mob)
+            line-height: 1.9 !important
+            display: none
+    & .footer__vertex-logo
+        width: 114px
+        height: 30px
+        position: unset
+
+
+.footer__add
+    grid-column-start: 1
+    grid-column-end: 3
+
+    +yo('padding-top', ($mob-sm: 36px, $desktop-md: 25px))
+    +yo('padding-right', ($mob-sm: 35px, $desktop-md: 53px))
+    padding-bottom: 25px
+    +yo('padding-left', ($mob-sm: 35px, $desktop-md: 53px))
+
+
+    display: grid
+    grid-template-columns: repeat(3, auto)
+    align-items: center
+    column-gap: 48px
+    row-gap: 20px
+
+    @media (max-width: $tab)
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+
+
+    .logo svg
+        +yo('width', ($mob-sm: 273px, $desktop-md: 288px))
+        @media (max-width: $tab)
+            width: 100%
+
+.footer__add-main
+    & p
+        @extend .t-desc
+        font-weight: 700
+
+    & span
+        max-width: 660px
+        +yo('margin-top', ($mob-sm: 8px, $desktop-md: 4px))
+        display: block
+        @extend .t-12
+
+.footer__add-copyrite
+    align-self: flex-end
+    display: flex
+    justify-content: flex-end
+
+    @media (max-width: $tab)
+        align-self: unset
+
+    p
+        @extend .t-desc
+        font-weight: 500
+        opacity: .7

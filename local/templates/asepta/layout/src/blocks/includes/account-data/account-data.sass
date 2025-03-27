@@ -1,0 +1,45 @@
+.account-data
+    width: 100%
+    +yo('margin-top', ($mob-sm: 60px, $desktop-md: 80px))
+
+.account-data__inner
+    max-width: 640px
+    margin: 0 auto
+    @extend .u-flex-col
+    gap: 60px
+
+.account-data__part-heading
+    +yo('font-size', ($mob-sm: 30px, $desktop-md: 28px))
+    font-weight: 700
+    line-height: 1.2
+    text-align: center
+
+.account-data__form
+    @extend .u-flex-col
+    align-items: flex-start
+    gap: 32px
+
+    .form__checbox-wrapper
+        align-items: center
+
+        > label
+            font-size: 16px
+            line-height: 1.5
+
+    > .btn
+        margin: 0 auto
+        @media (max-width: $tab-sm)
+            width: 100%
+
+.account-data__form-main
+    width: 100%
+    margin-top: 28px
+    display: flex
+    flex-wrap: wrap
+    gap: 16px
+
+    > *
+        width: calc(50% - 8px)
+
+        @media (max-width: $tab-sm)
+            width: 100%

@@ -1,0 +1,44 @@
+mixin header(disableCardBtn = false)
+    header.header(data-header)
+        .header__inner.container
+            nav.header__nav
+                button.header__menu(data-modal-url="/modals/modal-mobile-menu.html" data-modal-open="mobile-menu")
+                    span
+                    span
+                ul.header__nav-list
+                    li
+                        button.header__nav-list-btn(data-modal-url="/modals/modal-menu.html" data-modal-open="menu")
+                            p Продукция
+                            +svg('arrow-down')
+                    li
+                        button.header__nav-list-btn(data-modal-url="/modals/modal-learn-more.html" data-modal-open="learn-more")
+                            p Узнать больше
+                            +svg('arrow-down')
+                        .header__nav-list-inner(data-acc-content="more")
+                            ul(data-acc-content-inner)
+                                li: a(href="") О производстве
+                                li: a(href="") Советы эксперта
+                                li: a(href="") Вопросы и ответы
+                                li: a(href="") Вертекс клуб
+                                li: a(href="") Контроль качества
+                    li: a(href="#") Врачам
+
+            .header__logo
+                +logo()(data-header-logo)
+
+            .header__right
+                a(href="tel: 88005556600").header__right-tel 8&nbsp;(800)&nbsp;555&nbsp;&mdash; 66&nbsp;&mdash; 00
+                +btn({
+                    text: 'Где купить'
+                }).btn--small.btn--outline
+                button.header__search(data-modal-url="/modals/modal-search.html" data-modal-open="search")
+                    +svg('search')
+                button.header__search-close(data-modal-close="search")
+                    +svg('cross')
+                button.header__close(data-modal-close="mobile-menu")
+                    +svg('cross')
+                if !disableCardBtn
+                    +btn({
+                        icon: 'cart',
+                        isLink: true
+                    }).header__right-basket

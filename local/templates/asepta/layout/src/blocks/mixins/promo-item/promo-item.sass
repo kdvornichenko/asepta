@@ -1,0 +1,20 @@
+.promo-item
+
+.promo-item__info
+    margin-top: 24px
+    @extend .u-flex-col
+    gap: 16px
+
+    @media (max-width: $tab-sm)
+        display: none !important
+
+    & p
+        @extend .t-body
+
+        &:first-child
+            text-transform: uppercase
+            font-weight: 700
+
+    & span
+        @extend .t-body
+        color: rgba($bold, .36)

@@ -1,0 +1,62 @@
+.loader 
+    position: absolute
+    z-index: 101
+    display: flex
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    justify-content: center
+    align-items: center
+    background: rgba($white, .2)
+    backdrop-filter: blur(2px)
+    transition: $trs
+    opacity: 0
+    pointer-events: none
+
+    .lds-ellipsis 
+        margin: 0 auto
+        position: relative
+        transform: translateY(-50%)
+        width: 100px
+        text-align: center
+        z-index: 9999
+        span 
+            display: inline-block
+            width: 15px
+            height: 15px
+            margin: 0 6px
+            border-radius: 50%
+            background: linear-gradient(to top, $white 0%, $black 100%)
+            transition: $trs
+            animation: ball-pulse-sync 1s 0s infinite ease-in-out
+            &:nth-child(1) 
+                animation: ball-pulse-sync 1s -0.14s infinite ease-in-out
+            &:nth-child(2) 
+                animation: ball-pulse-sync 1s -70ms infinite ease-in-out
+        
+.is-loading
+    pointer-events: none
+    * 
+        pointer-events: none !important
+  
+    .loader
+        opacity: 1
+        pointer-events: auto
+
+body.is-loading
+    .loader
+        position: fixed
+
+@keyframes ball-pulse-sync
+    33%
+        opacity: 1
+        transform: translateY(10px)  
+
+    66% 
+        opacity: 0
+        transform: translateY(-10px)  
+
+    100% 
+        opacity: 1
+        transform: translateY(0)

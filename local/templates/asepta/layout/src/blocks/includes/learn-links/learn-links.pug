@@ -1,0 +1,32 @@
+.learn-links.container
+    a(href="#" data-parallax-parent).learn-links__item
+        p Где купить
+        .learn-links__item-img(data-parallax="slideTop" data-parallax-start="top bottom"  data-parallax-end="top top")
+            +picture({
+                src: 'cart.png',
+                srcWebp: 'cart.webp'
+            })
+        .learn-links__icon
+            +btn({
+                icon: 'arrow-up-right'
+            }).btn--icon.btn--icon-big
+    a(href="#" data-modal-url="/modals/modal-ask-question.html" data-modal-open="ask-question").learn-links__item
+        p Задать вопрос
+        .learn-links__item-img(data-parallax="slideLeft slideTop"  data-parallax-end="top top")
+            +picture({
+                src: 'question.png',
+                srcWebp: 'question.webp'
+            })
+        .learn-links__icon
+            +btn({
+                icon: 'arrow-up-right'
+            }).btn--icon.btn--icon-big
+
+    //- +big-link({
+    //-     title: 'Где купить',
+    //-     image: 'big-link-1'
+    //- })
+    //- +big-link({
+    //-     title: 'Врачам',
+    //-     image: 'big-link-2'
+    //- })

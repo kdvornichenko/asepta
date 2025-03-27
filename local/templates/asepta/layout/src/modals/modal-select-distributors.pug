@@ -1,0 +1,27 @@
+include ../templates/mixins.pug
+
++modal('select-distributors', 'center')
+    .modal-select-distributors
+        .modal-select-distributors__inner.container
+            button.modal-select-distributors__close(data-modal-close="select-distributors")
+                +svg('cross')
+                
+            .modal-select-distributors__head 
+                p Официальные дистрибьюторы
+                span Мы&nbsp;реализуем свою продукцию только через официальных дистрибьюторов и&nbsp;дилеров по&nbsp;всей России и&nbsp;СНГ.
+            .modal-select-distributors__list
+                a(href="#") 
+                    +picture({
+                        src: 'distributor-1.png',
+                    })
+                    span Авельдент
+                a(href="#") 
+                    +picture({
+                        src: 'distributor-2.png',
+                    })
+                    span Северная Каролина
+                a(href="#") 
+                    +picture({
+                        src: 'distributor-3.png',
+                    })
+                    span Рокада Мед

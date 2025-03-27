@@ -1,0 +1,11 @@
+extends ../templates/template.pug
+
+block content
+    .page.learn-more
+        +crumbs(['Главная', 'Врачам'])
+        .page__inner
+            +learn-search()
+            include ../blocks/includes/learn-experts/learn-experts.pug
+            include ../blocks/includes/health-test/health-test.pug
+            +popular-questions()
+            include ../blocks/includes/learn-links/learn-links.pug

@@ -1,0 +1,16 @@
+mixin webinar-item-horizontal(data)
+    .webinar-item-horizontal
+        .webinar-item-horizontal__part
+            .webinar-item-horizontal__image 
+                +picture({
+                    src: `${data.image}.jpg`,
+                    srcWebp: `${data.image}.webp`
+                })
+        .webinar-item-horizontal__part
+            .webinar-item-horizontal__body 
+                p !{data.title}
+        .webinar-item-horizontal__part
+            .webinar-item-horizontal__time 
+                .webinar-item-horizontal__time-icon 
+                    +svg('clock')
+                p !{data.time}

@@ -1,0 +1,157 @@
+.learn-experts
+    width: 100%
+    @extend .u-flex-col
+    align-items: center
+    h2
+        color: $bold
+        text-align: center
+        font-variant-numeric: lining-nums proportional-nums
+        font-feature-settings: 'ss05' on, 'ss20' on
+        +vela(b)
+        +yo('font-size', ($mob-sm: 30px, $desktop-md: 56px))
+        line-height: 1.14
+        letter-spacing: 0.56px
+        +yo('margin-bottom', ($mob-sm: 28px, $desktop-md: 48px))
+.learn-experts__body
+    width: 100%
+    +yo('margin-top', ($mob-sm: 28px, $desktop-md: 40px))
+    +yo('margin-bottom', ($mob-sm: 64px, $desktop-md: 56px))
+    margin-right: 20px
+    overflow-y: visible
+    overflow-x: clip
+    .swiper-scrollbar
+        width: calc(100% - 32px)
+        left: 50%
+        bottom: -29px
+        transform: translateX(-50%)
+        background: $grey-2
+        @media (min-width: $tab + 1)
+            display: none
+        .swiper-scrollbar-drag
+            background: $blue
+
+.learn-experts__body-wrapper
+    display: flex
+    width: 100%
+    gap: 20px
+    @media (max-width: $tab)
+        gap: 0
+
+.learn-experts__item
+    box-sizing: border-box !important
+    width: 100%
+    max-width: calc(100% / 3 - 13px)
+    height: 100%
+    opacity: 0
+
+    @media (max-width: $tab)
+        max-width: none
+
+    @media (max-width: $mob)
+        max-width: 100%
+        max-height: 100%
+
+    .expert-card
+        aspect-ratio: unset
+        height: 100%
+
+.learn-experts__btn
+    @media (min-width: $tab-sm + 1)
+        animation-delay: .5s
+        animation-duration: 1s
+        animation-fill-mode: forwards
+        transform: translateY(100%)
+        opacity: 0
+        .scroll-to-block-finish &
+            animation-name: slideTop
+
+    @keyframes slideTop
+        100%
+            transform: translateY(0)
+            opacity: 1
+
+.learn-expert-card
+    position: relative
+    +yo('border-radius', ($mob-sm: 32px, $desktop-md: 44px))
+    display: flex
+    flex-direction: column
+    @media (hover: hover)
+        &:hover
+            .learn-expert-card__content span
+                color: $dark-blue
+
+    & > .btn
+        position: absolute
+        +yo('bottom', ($mob-sm: 22px, $desktop-md: 28px))
+        +yo('right', ($mob-sm: 22px, $desktop-md: 28px))
+
+
+.learn-expert-card__type
+    position: absolute
+    +yo('top', ($mob-sm: 16px, $desktop-md: 20px))
+    +yo('left', ($mob-sm: 16px, $desktop-md: 20px))
+    +yo('padding', ($mob-sm: 10px, $desktop-md: 8px))
+    display: flex
+    align-items: center
+    +yo('gap', ($mob-sm: 6px, $desktop-md: 8px))
+    background: $white
+    border-radius: 1602px
+
+    & p
+        @extend .t-body
+        font-weight: 600 !important
+.learn-expert-card__background
+    position: relative
+    width: 100%
+    height: 100%
+    z-index: -1
+    +yo('border-radius', ($mob-sm: 32px, $desktop-md: 44px))
+    aspect-ratio: 435 / 400
+.learn-expert-card__type-img
+    position: relative
+    +yo('width', ($mob-sm: 32px, $desktop-md: 40px))
+    +yo('height', ($mob-sm: 32px, $desktop-md: 40px))
+    border-radius: 50%
+
+    & img
+        @extend .img__i
+
+.learn-expert-card__background
+
+    & img
+        @extend .img__i
+        +yo('border-radius', ($mob-sm: 32px, $desktop-md: 44px))
+
+.learn-expert-card__content
+    padding: 20px 12px 0
+    span
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 2
+        overflow: hidden
+        color: $bold
+        font-variant-numeric: lining-nums proportional-nums
+        font-feature-settings: 'ss05' on, 'ss20' on
+        text-overflow: ellipsis
+        +vela(sb)
+        +yo('font-size', (320px: 16px, 1440px: 28px))
+        line-height: normal
+        margin-bottom: 12px
+    p
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 2
+        overflow: hidden
+        color: $bold
+        font-feature-settings: 'salt' on, 'ss20' on
+        text-overflow: ellipsis
+        +vela(m)
+        +yo('font-size', (320px: 12px, 1440px: 16px))
+        font-style: normal
+        font-weight: 500
+        line-height: 1.5
+
+.learn-experts__filters
+    .filters
+        @media (max-width: $tab-sm)
+            justify-content: center

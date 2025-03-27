@@ -1,0 +1,19 @@
+html.lenis, html.lenis body
+  height: auto
+
+body.no-scroll
+	overflow: hidden
+	width: calc(100% - var(--scrollbar-w))
+	height: 100vh
+
+.lenis.lenis-smooth
+	scroll-behavior: auto !important
+
+.lenis.lenis-smooth [data-lenis-prevent]
+	overscroll-behavior: contain
+
+.lenis.lenis-stopped
+	overflow: hidden
+
+.lenis.lenis-smooth iframe
+  pointer-events: none

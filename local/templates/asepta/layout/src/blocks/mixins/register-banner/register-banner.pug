@@ -1,0 +1,17 @@
+mixin register-banner(data)
+    .register-banner
+        .register-banner__top
+            p !{data.title}
+            span !{data.subtitle}
+        .register-banner__image
+            +picture({
+                src: 'magnifier.jpg',
+                srcWebp: 'magnifier.webp'
+            })
+        .register-banner__bottom
+            p !{data.quest}
+            +btn({
+                text: data.textBtn,
+                isLink: true
+            }).btn--outline
+            

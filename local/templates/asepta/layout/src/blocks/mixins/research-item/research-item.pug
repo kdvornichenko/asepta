@@ -1,0 +1,18 @@
+mixin research-item(data)
+    .research-item
+        .research-item__main
+            .research-item__image
+                +picture({
+                    src: `${data.image}.jpg`,
+                    srcWebp: `${data.image}.webp`
+                })
+            p !{data.text}
+        .research-item__btns
+            +btn({
+                isLink: true,
+                text: 'Открыть PDF'
+            }).btn--fill.research-item__btn
+            +btn({
+                isLink: true,
+                icon: 'arrow-up-right'
+            }).research-item__arrow

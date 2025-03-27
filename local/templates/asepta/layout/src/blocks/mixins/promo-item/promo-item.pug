@@ -1,0 +1,12 @@
+mixin promo-item(data)
+    .promo-item
+        +product-card({
+            title: data.product.title,
+            desc: data.product.desc,
+            image: data.product.image,
+            tags: data.product.tags
+        })
+        .promo-item__info 
+            p !{ data.title }
+            p !{ data.desc }
+            span !{ data.volume }

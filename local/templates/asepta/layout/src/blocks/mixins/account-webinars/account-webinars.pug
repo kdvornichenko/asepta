@@ -1,0 +1,28 @@
+mixin account-webinars(showWebinars=false)
+    .account-webinars.container
+        h2 Мои вебинары
+        if showWebinars
+            .account-webinars__list
+                .account-webinars__item 
+                    +webinar-item({
+                        title: 'Эндодонтия под микроскопом&nbsp;&mdash; современный подход к&nbsp;лечению корневых каналов',
+                        image: 'webinar-1',
+                        time: '3&nbsp;марта в&nbsp;17:00-19:30 мск'
+                    })
+                .account-webinars__item 
+                    +webinar-item({
+                        title: 'Эстетика мягких тканей вокруг имплантатов: анатомические особенности',
+                        image: 'webinar-2',
+                        time: '18&nbsp;марта в&nbsp;18:00-19:00 мск'
+                    })
+                .account-webinars__item 
+                    +webinar-item({
+                        title: 'Мотивационное консультирование, или как сделать так, чтобы пациент сам захотел лечиться у&nbsp;вас',
+                        image: 'webinar-3',
+                        time: '22&nbsp;марта в&nbsp;19:00-20:30 мск'
+                    })
+        else
+            .account-webinars__empty
+                .account-webinars__empty-icon 
+                    +svg('tv')
+                p Скоро здесь появятся ваши вебинары

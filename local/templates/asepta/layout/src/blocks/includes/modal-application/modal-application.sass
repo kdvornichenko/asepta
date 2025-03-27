@@ -1,0 +1,64 @@
+.modal-application
+    position: relative
+
+.modal-application__inner
+    +yo('padding-top', ($mob-sm: 16px, $desktop-md: 60px))
+    +yo('padding-bottom', ($mob-sm: 40px, $desktop-md: 60px))
+
+    > p
+        +yo('font-size', ($mob-sm: 28px, $desktop-md: 30px))
+        line-height: 1.2
+        font-weight: 700
+
+.modal-application__close
+    position: absolute
+    +yo('top', ($mob-sm: 16px, $desktop-md: 14px))
+    +yo('right', ($mob-sm: 16px, $desktop-md: 14px))
+    @extend .link-hover
+
+    svg
+        width: 24px
+        height: 24px
+
+.modal-application__body 
+    +yo('margin-top', ($mob-sm: 40px, $desktop-md: 32px))
+
+    form
+        display: flex
+        flex-wrap: wrap
+        gap: 16px
+
+        > p
+            font-size: 14px
+            font-weight: 500
+            line-height: 1.14
+            color: rgba($bold, .36)
+            &:not(:first-child)
+                margin-top: 16px
+                
+
+        > div
+            width: 100%
+
+            &.modal-application__form-part
+                width: calc(50% - 8px)
+                @media (max-width: $tab-sm)
+                    width: 100%
+
+        .form__textarea
+            height: 100px
+            +yo('border-radius', ($mob-sm: 24px, $desktop-md: 20px))
+
+        .btn
+            margin-top: 16px
+            width: 100%
+
+.modal-application__policy 
+    @extend .register-body__policy
+    margin-top: 0
+    justify-content: center
+
+.modal-application__type
+    .select 
+        .select__content-inner > p
+            display: none

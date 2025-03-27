@@ -1,0 +1,17 @@
+include ../templates/mixins.pug
+
++modal('modal-new', 'aside')
+    .t-h4 Вообще другая модалка подгружена на страницу
+    div(data-acc)
+        +btn({
+            text: 'Пример',
+            icon: 'arrow-down',
+        })(data-acc-btn="example-1")
+        div(data-acc-content="example-1")
+            div(data-acc-content-inner)
+                div Начало
+                div 1
+                div 1
+                div 1
+                div 1
+                div Конец

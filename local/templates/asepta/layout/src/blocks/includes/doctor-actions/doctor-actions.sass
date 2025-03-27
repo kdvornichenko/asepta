@@ -1,0 +1,18 @@
+.doctor-actions
+    width: 100%
+    display: flex
+    +yo('gap', ($mob-sm: 12px, $desktop-md: 20px))
+
+    @media (max-width: $tab)
+        flex-direction: column
+
+.doctor-actions__item
+    width: 50%
+    height: auto
+    aspect-ratio: 662 / 582
+
+    @media (max-width: $tab)
+        width: 100%
+
+    @media (max-width: $mob)
+        aspect-ratio: unset

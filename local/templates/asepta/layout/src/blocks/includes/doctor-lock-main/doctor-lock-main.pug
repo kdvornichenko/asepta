@@ -1,0 +1,17 @@
+.doctor-lock-main.container
+    +private-access({
+        title: 'Вы&nbsp;видите только открытые публикации',
+        text: 'Чтобы получить доступ ко&nbsp;всем материалам сайта, войдите в&nbsp;раздел или зарегистрируйтесь.',
+        btns: [
+            {
+                text: 'Зарегистрироваться',
+                isLink: true,
+                className: 'btn--white'
+            },
+            {
+                text: 'Войти',
+                isLink: true,
+                className: 'btn--white'
+            },
+        ],
+    }).private-access--blue

@@ -1,0 +1,46 @@
+include ../templates/mixins.pug
+
+-
+    const filters = [
+        {
+            id: 'filter_1',
+            text: 'От&nbsp;воспаления и&nbsp;кровоточивости'
+        },
+        {
+            id: 'filter_2',
+            text: 'От&nbsp;повышенной чувствительности'
+        },
+        {
+            id: 'filter_3',
+            text: 'Отбеливание'
+        },
+        {
+            id: 'filter_4',
+            text: 'Анти-кариес'
+        },
+        {
+            id: 'filter_5',
+            text: 'Для детей'
+        },
+    ]
+
++modal('filters', 'right')
+    .modal-filters
+        button(type="button" data-modal-close="filters").modal-filters__close
+            +svg('cross')
+        form(data-form="filters" data-filters).modal-filters__form
+            .modal-filters__head
+                p Назначение
+                span Подобрать уход
+            fieldset.modal-filters__form-list
+                each filter in filters
+                    .modal-filters__form-checkbox 
+                        input(type="checkbox" name="filter" id=filter.id)
+                        label(for=filter.id) !{filter.text}
+            fieldset.modal-filters__form-btns
+                +btn({
+                    text: 'Очистить'
+                })(type="button" data-reset-filters).btn--outline
+                +btn({
+                    text: 'Применить'
+                })(data-submit data-apply-filters data-modal-close="filters").btn--fill

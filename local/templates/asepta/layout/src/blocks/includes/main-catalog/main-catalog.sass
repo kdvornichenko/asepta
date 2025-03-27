@@ -1,0 +1,80 @@
+.main-catalog
+    width: 100%
+    height: 100%
+    &.was-animated
+        .main-catalog__list-wrapper
+            transform-style: unset
+            @media ( max-width: $tab )
+                transform-style: preserve-3d
+
+    .main-slide__title-wrapper
+        position: relative
+        z-index: 1
+
+.main-catalog__inner
+    height: 100%
+    margin-top: -30px
+    @media ( max-width: $tab-sm )
+        margin-top: 0
+
+    & h2
+        max-width: 570px
+        margin: 0 auto
+        text-align: center
+        line-height: 1
+
+.main-catalog__list-wrapper
+    width: 100%
+    height: 100%
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    perspective: 1600px
+    transform: translate3d(0px, 0px, 0px)
+    transform-style: preserve-3d
+
+.main-catalog__list
+    height: 100%
+    overflow: hidden
+
+    .main-catalog__card
+        .catalog-card
+            & p
+                display: flex
+                flex-direction: column
+                span
+                    width: fit-content
+
+                @media ( max-width: $mob )
+                    font-size: 19px !important
+
+        &.is-active
+            .catalog-card .btn
+                opacity: 1
+
+        @media ( max-width: $tab-sm )
+            aspect-ratio: 220/340
+            height: 340px
+            max-width: unset
+            overflow: unset
+
+    .swiper-scrollbar
+        +yo('bottom', ($tab-sm: -24px, $tab: -64px))
+        background: $grey-2
+        .swiper-scrollbar-drag
+            background: $blue
+
+.main-catalog__card
+    position: relative
+    aspect-ratio: 330 / 523
+
+    height: auto
+
+    border-radius: 24px
+    overflow: hidden
+    box-sizing: border-box
+
+    &.is-hidden
+        display: none

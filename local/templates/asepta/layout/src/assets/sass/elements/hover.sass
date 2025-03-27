@@ -1,0 +1,18 @@
+.link-hover
+    cursor: pointer
+    transition: $trs opacity
+    &:active
+        opacity: .5
+    @media (hover: hover)
+        &:hover
+            opacity: .5
+
+.link-hover--reverse
+    cursor: pointer
+    opacity: .5
+    transition: $trs opacity
+    &:active
+        opacity: 1
+    @media (hover: hover)
+        &:hover
+            opacity: 1

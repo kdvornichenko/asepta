@@ -1,0 +1,17 @@
+.promo-hero
+    width: 100%
+    @extend .u-flex-col
+    +yo('margin-bottom', ($mob: 80px, $desktop-md: 120px))
+
+    .crumbs
+        margin: 0 auto
+        +yo('margin-top', ($mob: 0, $desktop-md: 40px))
+        +yo('margin-bottom', ($mob: 0, $desktop-md: 8px))
+
+    h1
+        margin: 0 auto
+        text-align: center
+        line-height: 1.03
+
+    .promo-card
+        +yo('margin-top', ($mob: 30px, $desktop-md: 60px))

@@ -1,0 +1,36 @@
+.main-experts(data-scroll-to-block)
+    h2 Советы экспертов
+    .swiper.main-experts__body.container(data-slider="mobile-full")
+        .swiper-wrapper.main-experts__body-wrapper
+            .swiper-slide.main-experts__item(data-parallax="fadeIn")
+                +expert-card({
+                    text: 'Воспаление десен при ношении брекетов',
+                    image: 'expert-1',
+                    type: {
+                        name: 'Стоматолог',
+                        image: 'expert-portret-1',
+                    }
+                })
+            .swiper-slide.main-experts__item(data-parallax="fadeIn" data-parallax-multiplier="3")
+                +expert-card({
+                    text: 'Воспаление десен при ношении брекетов',
+                    image: 'expert-2',
+                    type: {
+                        name: 'Ортодонт',
+                        image: 'expert-portret-2',
+                    }
+                })
+            .swiper-slide.main-experts__item(data-parallax="fadeIn" data-parallax-multiplier="5")
+                +expert-card({
+                    text: 'Воспаление десен при ношении брекетов',
+                    image: 'expert-3',
+                    type: {
+                        name: 'Терапевт',
+                        image: 'expert-portret-3',
+                    }
+                })
+        .swiper-scrollbar(data-slider-scrollbar)
+    +btn({
+        text: 'Смотреть все',
+        isLink: true
+    }).btn--outline.main-experts__btn

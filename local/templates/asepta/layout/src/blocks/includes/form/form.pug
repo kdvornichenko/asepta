@@ -1,0 +1,21 @@
+//- Пример формы с валидацией
+form(data-form="form" data-form-error="поле не должно быть пустым")
+    .form__input-wrapper
+        label.form__label Имя:
+        input(type="text" placeholder="Александр").form__input.validate
+        span.form__error
+    .form__input-wrapper
+        label.form__label Фамилия:
+        input(type="text" placeholder="Иванов").form__input.validate
+        span.form__error
+    .form__input-wrapper
+        label.form__label E-mail:
+        input(type="email" placeholder="ivan@mail.ru" data-mail-error="некорректный e-mail").form__input.validate
+        span.form__error
+    .form__input-wrapper
+        label.form__label Телефон:
+        input(type="tel" placeholder="+7 *** *** ****" data-tel-error="некорректный номер телефона" data-tel).form__input.validate
+        span.form__error
+    +btn({
+        text: 'Откликнуться',
+    })(data-submit type="submit").btn.form__submit

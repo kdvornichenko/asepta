@@ -1,0 +1,72 @@
+.learn-links
+    width: 100%
+    display: flex
+    +yo('gap', ($mob-sm: 18px, $desktop-md: 20px))
+    +yo('margin-top', ($mob-sm: 12px, $desktop-md: 22px))
+
+    @media (max-width: $tab-sm)
+        flex-direction: column
+
+    .learn-links__item
+        width: 50%
+        height: auto
+        aspect-ratio: 662 / 512
+
+        @media (max-width: $tab-sm)
+            width: 100%
+
+        &:nth-child(1)
+            background: linear-gradient(128deg, rgba(255, 149, 0, 0.50) -15.58%, rgba(255, 191, 127, 0.28) 112.11%) no-repeat
+
+        &:nth-child(2)
+            background: linear-gradient(162deg, #F69DBE 6.13%, #E887A6 75.78%)
+            .learn-links__item-img
+
+.learn-links__item
+    position: relative
+    width: 50%
+    height: 100%
+    +yo('border-radius', ($mob-sm: 28px, $desktop-md: 44px))
+    overflow: hidden
+
+    @extend .u-flex-col
+    justify-content: space-between
+    +yo('padding-top', ($mob-sm: 30px, $desktop-md: 44px))
+    +yo('padding-bottom', ($mob-sm: 30px, $desktop-md: 44px))
+    +yo('padding-left', ($mob-sm: 30px, $desktop-md: 52px))
+
+    @media (hover: hover)
+        &:hover
+            .learn-links__icon .btn
+                background: $dark-blue
+                & svg
+                    color: $white
+
+    & p
+        @extend .t-h2
+        line-height: 1.14
+        color: $white
+        position: relative
+        z-index: 1
+        @media (max-width: $mob)
+            font-size: 32px !important
+
+.learn-links__icon
+    display: flex
+    align-items: flex-end
+    z-index: 1
+
+.learn-links__item-img
+    position: absolute
+    right: 0
+    bottom: 0
+    left: auto !important
+    picture
+        display: contents
+
+    & img
+        object-fit: contain
+        @media (max-width: $tab)
+            width: 100%
+    @media (max-width: $tab)
+        width: 80%

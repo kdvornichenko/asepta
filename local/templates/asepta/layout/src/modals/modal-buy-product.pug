@@ -1,0 +1,43 @@
+include ../templates/mixins.pug
+
++modal('buy-product', 'right')
+    .modal-buy-product
+        button(type="button" data-modal-close="buy-product").modal-buy-product__close
+            +svg('cross')
+        .modal-buy-product__header Где купить
+        .modal-buy-product__blocks
+            .modal-buy-product__block
+                .modal-buy-product__block-header Маркетплейсы
+                .modal-buy-product__block-content
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'svg/wildberries.svg'})
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'svg/ozon.svg'})
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'svg/yandex-market.svg'})
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'svg/fitomarket.svg'})
+            .modal-buy-product__block
+                .modal-buy-product__block-header Интернет-аптеки
+                .modal-buy-product__block-content
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'svg/apteka-ru.svg'})
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'svg/asna.svg'})
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'farmland.png'})
+                    a.modal-buy-product__item
+                        .modal-buy-product__img-holder
+                            +picture({src: 'svg/planeta-zdorovya.svg'})
+        .modal-buy-product__btn
+            +btn({
+                text: 'Смотреть все',
+                isLink: true
+            }).btn--outline

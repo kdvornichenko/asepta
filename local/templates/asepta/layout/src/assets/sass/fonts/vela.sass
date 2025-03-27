@@ -1,0 +1,42 @@
+@font-face
+    font-family: 'Vela Sans'
+    src: url('../fonts/vela/VelaSans-Regular.woff2') format('woff2'),url('../fonts/vela/VelaSans-Regular.woff') format('woff')
+    font-style: normal
+    font-weight: 400
+    font-display: swap
+
+@font-face
+    font-family: 'Vela Sans'
+    src: url('../fonts/vela/VelaSans-Medium.woff2') format('woff2'),url('../fonts/vela/VelaSans-Medium.woff') format('woff')
+    font-style: normal
+    font-weight: 500
+    font-display: swap
+
+@font-face
+    font-family: 'Vela Sans'
+    src: url('../fonts/vela/VelaSans-SemiBold.woff2') format('woff2'),url('../fonts/vela/VelaSans-SemiBold.woff') format('woff')
+    font-style: normal
+    font-weight: 600
+    font-display: swap
+
+@font-face
+    font-family: 'Vela Sans'
+    src: url('../fonts/vela/VelaSans-Bold.woff2') format('woff2'),url('../fonts/vela/VelaSans-Bold.woff') format('woff')
+    font-style: normal
+    font-weight: 700
+    font-display: swap
+
+=vela($weight: r)
+    @if $weight == r
+        font-family: 'Vela Sans', sans-serif
+        font-weight: 400
+    @if $weight == m
+        font-family: 'Vela Sans', sans-serif
+        font-weight: 500
+    @if $weight == sb
+        font-family: 'Vela Sans', sans-serif
+        font-weight: 600
+    @if $weight == b
+        font-family: 'Vela Sans', sans-serif
+        font-weight: 700
+

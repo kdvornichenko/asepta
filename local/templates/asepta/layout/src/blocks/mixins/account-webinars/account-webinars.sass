@@ -1,0 +1,50 @@
+.account-webinars
+    width: 100%
+    @extend .u-flex-col
+    align-items: center
+
+    h2
+        +yo('margin-bottom', ($mob-sm: 32px, $desktop-md: 48px))
+
+.account-webinars__list
+    display: flex
+    flex-wrap: wrap
+    +yo('gap', ($mob-sm: 14px, $desktop-md: 20px))
+
+    .account-webinars__item 
+        &:nth-child(3)
+            @media (max-width: $tab)
+                width: 100%
+
+.account-webinars__item 
+    width: calc(100% / 3 - 20px * 2 / 3)
+
+    @media (max-width: $tab)
+        width: calc(100% / 2 - 10px)
+        max-height: 60vh
+
+    @media (max-width: $mob)
+        width: 100%
+
+.account-webinars__empty
+    +yo('padding-top', ($mob-sm: 28px, $desktop-md: 54px))
+    @extend .u-flex-col
+    align-items: center
+    gap: 8px
+
+    p
+        font-size: 16px
+        font-weight: 500
+        line-height: 1.5
+        color: rgba($bold, .36)
+
+.account-webinars__empty-icon 
+    width: 60px
+    height: 60px
+    @extend .u-center
+    background: $grey-2
+    border-radius: 50%
+
+    svg
+        width: 24px
+        height: 24px

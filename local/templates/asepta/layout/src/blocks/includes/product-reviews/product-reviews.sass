@@ -1,0 +1,77 @@
+.product-reviews
+    width: 100%
+
+    & h2
+        text-align: center
+
+.product-reviews__slider
+    @extend .u-flex-col
+    align-items: flex-end
+    gap: 32px
+    @media (max-width: $tab)
+        margin-top: 28px
+        overflow-y: visible
+        overflow-x: clip
+
+.product-reviews__slider-item
+    width: 46%
+    height: auto
+    min-height: 267px
+    box-sizing: border-box
+    cursor: pointer
+
+    @media (min-width: $desktop)
+        width: 35%
+
+    @media (max-width: $tab)
+        aspect-ratio: 272 / 306
+
+    @media (max-width: $tab-sm)
+        width: 80%
+
+.product-reviews__navigation
+    display: flex
+    gap: 32px
+    @media (min-width: $tab + 1)
+        margin-left: auto
+        margin-right: 0
+        padding-right: 0
+    @media (max-width: $tab)
+        position: absolute
+        +yo('top', ($mob: -27px, $tab: -30px))
+        left: 0
+        transform: translateY(-100%)
+        width: 100%
+        justify-content: space-between
+
+.product-reviews__navigation-btn
+    padding: 8px
+    @extend .link-hover
+    transition: $trs opacity
+
+    &.swiper-button-disabled
+        opacity: .15
+
+    &--prev
+        & svg
+            transform: rotate(180deg)
+
+    & svg
+        width: 36px
+        height: 36px
+        @media (max-width: $tab)
+            display: none
+
+    &--mob
+        svg
+            display: inline
+            width: 24px
+            height: 24px
+            @media (min-width: $tab + 1)
+                display: none
+
+.product-reviews__btn
+    +yo('margin-top', ($mob: 36px, $desktop-md: 56px))
+    @extend .u-center
+    &.is-hidden
+        display: none

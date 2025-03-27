@@ -1,0 +1,59 @@
+.main-bestsellers
+    .container
+        h2 Бестселлеры
+    .splide.main-bestsellers__slider.container(data-slider="main-bestseller" data-loop)
+        .splide__track
+            .splide__list.main-bestsellers__wrapper
+                .splide__slide.main-bestsellers__slide(data-bestseller-item)
+                    +product-card({
+                        title: 'BABY 0-3',
+                        desc: 'Зубная паста<br>при прорезывании зубов',
+                        image: 'product-1',
+                        tags: []
+                    })(data-parallax="slideTop")
+                .splide__slide.main-bestsellers__slide(data-bestseller-item)
+                    +product-card({
+                        title: 'ОПОЛАСКИВАТЕЛЬ FRESH',
+                        desc: 'От чувствительности зубов От чувствительности зубов От чувствительности зубов',
+                        image: 'product-2',
+                        tags: ['Ultra care']
+                    })(data-parallax="slideTop")
+                .splide__slide.main-bestsellers__slide(data-bestseller-item)
+                    +product-card({
+                        title: 'WHITENING',
+                        desc: 'Зубная паста <br>для бережного отбеливания',
+                        image: 'product-3',
+                        tags: ['Ultra care', 'Very soft']
+                    })(data-parallax="slideTop" data-parallax-multiplier="2")
+                .splide__slide.main-bestsellers__slide(data-bestseller-item)
+                    +product-card({
+                        title: 'WHITENING',
+                        desc: 'Зубная паста <br>для бережного отбеливания',
+                        image: 'product-3',
+                        tags: ['Ultra care', 'Very soft']
+                    })(data-parallax="slideTop" data-parallax-multiplier="2")
+                .splide__slide.main-bestsellers__slide(data-bestseller-item)
+                    +product-card({
+                        title: 'WHITENING',
+                        desc: 'Зубная паста <br>для бережного отбеливания',
+                        image: 'product-3',
+                        tags: ['Ultra care', 'Very soft']
+                    })(data-parallax="slideTop" data-parallax-multiplier="2")
+                .splide__slide.main-bestsellers__slide(data-bestseller-item)
+                    +product-card({
+                        title: 'WHITENING',
+                        desc: 'Зубная паста <br>для бережного отбеливания',
+                        image: 'product-3',
+                        tags: ['Ultra care', 'Very soft']
+                    })(data-parallax="slideTop" data-parallax-multiplier="2")
+        .splide__arrows
+        .main-bestsellers__navigation
+            button(data-slider-prev).splide__arrow.splide__arrow--prev
+                +svg('arrow-right')
+            button(data-slider-next).splide__arrow.splide__arrow--next
+                +svg('arrow-right')
+    .container.main-bestsellers__btn
+        +btn({
+            text: 'Смотреть все',
+            isLink: true
+        }).btn--outline

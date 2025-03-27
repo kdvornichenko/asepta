@@ -1,0 +1,19 @@
+mixin learn-search
+    .learn-search&attributes(attributes)
+        .learn-search__content
+            h4.learn-search__text Здесь мы собрали материалы о распространенных заболеваниях зубов и десен, а также ответы на часто задаваемые вопросы.
+            .learn-search__input-wraper
+                label(for="search-dektop")
+                    +svg('search')
+                input(type="text" placeholder="Поиск по разделу" id="search-dektop" name="search").learn-search__input
+                +btn({text: "Найти"}).learn-search__btn
+            +picture({
+                src: 'learn-more-search.png',
+                mobile: {
+                    src: 'learn-more-search-mob.png',
+                },
+            })
+        .learn-search__input-wraper--mob
+            label(for="search-dektop")
+                +svg('search')
+            input(type="text" placeholder="Поиск по разделу" id="search-dektop" name="search").learn-search__input--mob

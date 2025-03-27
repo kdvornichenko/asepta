@@ -1,0 +1,57 @@
+-
+    reviews = [
+        {
+            name: 'Наталия',
+            date: '24 Августа, 2024',
+            rating: 5,
+            text: 'Замечательное средство..дико заболел зуб..уже записалась к стоматологу, зная,.что на зубе киста. Ходила мучалась,.считая часы до приема врача. У коллеги по работе нашелся этот бальзам. Не особо поверила, но решила попробовать. Консистенция специфическая.',
+            modal: 'review-info'
+        },
+        {
+            name: 'Сергей',
+            date: '14 Августа, 2024',
+            rating: 4,
+            text: 'Действительно подходит для ухода за чувствительной эмалью зубов. Во время использования болевых ощущений не было. Очень хорошая зубная паста. Теперь думаю брать её всегда. Укрепляет и реминерализирует.',
+            images: ['review-1', 'review-1', 'review-1'],
+            modal: 'review'
+        },
+        {
+            name: 'Наталия',
+            date: '24 Августа, 2024',
+            rating: 3,
+            text: 'Замечательное средство..дико заболел зуб..уже записалась к стоматологу, зная,.что на зубе киста. Ходила мучалась,.считая часы до приема врача. У коллеги по работе нашелся этот бальзам. Не особо поверила, но решила попробовать. Консистенция специфическая.',
+            images: ['review-1', 'review-1', 'review-1', 'review-1'],
+            modal: 'review'
+        },
+        {
+            name: 'Сергей',
+            date: '14 Августа, 2024',
+            rating: 5,
+            text: 'Действительно подходит для ухода за чувствительной эмалью зубов. Во время использования болевых ощущений не было. Очень хорошая зубная паста. Теперь думаю брать её всегда. Укрепляет и реминерализирует.',
+            images: ['review-1', 'review-1', 'review-1'],
+            modal: 'review'
+        },
+    ]
+
+.product-reviews
+    .container
+        h2 Отзывы
+    .swiper.product-reviews__slider.container(data-slider="reviews")
+        .product-reviews__navigation.container
+            button(data-slider-prev).product-reviews__navigation-btn.product-reviews__navigation-btn--prev
+                +svg('arrow-right')
+                .product-reviews__navigation-btn--mob
+                    +svg('arrow-right-small')
+            button(data-slider-next).product-reviews__navigation-btn
+                +svg('arrow-right')
+                .product-reviews__navigation-btn--mob
+                    +svg('arrow-right-small')
+        .swiper-wrapper
+            each review in reviews
+                .swiper-slide.product-reviews__slider-item(data-modal-url=`/modals/modal-${review.modal}.html` data-modal-open=review.modal)
+                    +review-item(review)
+    .product-reviews__btn.container
+        +btn({
+            isLink: true,
+            text: 'Смотреть все'
+        }).btn--outline

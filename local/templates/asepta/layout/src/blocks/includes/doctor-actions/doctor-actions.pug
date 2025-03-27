@@ -1,0 +1,15 @@
+.doctor-actions.container
+    +action-item({
+        title: 'Визит медицинского представителя',
+        desc: 'В&nbsp;случае Вашей заинтересованности в&nbsp;новой серии средств &laquo;АСЕПТА&raquo; медицинский представитель компании &laquo;Вертекс&raquo; осуществит визит в&nbsp;Вашу клинику.',
+        image: 'action-1',
+        textBtn: 'Отправить заявку',
+        isLinkBtn: false,
+    })(data-modal-url="/modals/modal-application.html" data-modal-open="application").doctor-actions__item
+    +action-item({
+        title: 'Заказать продукцию у&nbsp;официальных дистрибьюторов',
+        desc: 'Мы&nbsp;реализуем свою продукцию только через официальных дистрибьюторов и&nbsp;дилеров по&nbsp;всей России и&nbsp;СНГ.',
+        image: 'action-2',
+        textBtn: 'Выбрать дистрибьютера',
+        isLinkBtn: false,
+    })(data-modal-url="/modals/modal-select-distributors.html" data-modal-open="select-distributors").doctor-actions__item
